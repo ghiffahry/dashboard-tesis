@@ -1,0 +1,80 @@
+:root {
+  /* warna institusional */
+  --navy-950: #0a1a30;
+  --navy-900: #0f2847;
+  --navy-800: #163a63;
+  --navy-700: #1e4d82;
+  --navy-600: #2b63a3;
+  --navy-100: #dde8f5;
+  --navy-050: #f0f5fb;
+  --putih: #ffffff;
+  --kertas: #fafbfc;
+  --abu-latar: #f4f6f9;
+  --tinta: #14181f;
+  --tinta-lemah: #565f6d;
+  --garis: #d8dde5;
+  --garis-kuat: #b6c0cc;
+  --oker: #b8862f;
+  --terakota: #a34b3a;
+  --hijau-data: #3d6b52;
+  --merah-peringatan: #a3312a;
+  --fokus: #2b63a3;
+
+  /* tipografi */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-teks: "Instrument Sans", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* skala spasi */
+  --spasi-1: 4px;
+  --spasi-2: 8px;
+  --spasi-3: 12px;
+  --spasi-4: 16px;
+  --spasi-6: 24px;
+  --spasi-8: 32px;
+  --spasi-12: 48px;
+  --spasi-16: 64px;
+
+  /* tata letak */
+  --lebar-maks-konten: 1280px;
+  --radius-kecil: 2px;
+}
+
+[data-tema="gelap"] {
+  --latar: #121417;
+  --panel: #1a1d21;
+  --teks: #e8ecf1;
+  --garis: #2a3444;
+  --kertas: #121417;
+  --putih: #1a1d21;
+  --tinta: #e8ecf1;
+  --tinta-lebih: #98a2b0;
+  --garis-kuat: #3a4658;
+  --navy-050: #16233a;
+  --navy-100: #1c2e4a;
+  --fokus: #d9a03f;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("font/fraunces-variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  src: url("font/instrument-sans.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("font/ibm-plex-mono.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}

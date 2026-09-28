@@ -1,0 +1,32 @@
+{
+  "versi": "v1.0.0",
+  "tanggal_build": "2026-09-28T02:02:21Z",
+  "hash_aset": {
+    "aset/.gitkeep": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "aset/analisis-moran.js": "sha256:bcd5068234747462b6b0c78e5533c10ed97ad67020701942f5e92fac50210423",
+    "aset/analisis.js": "sha256:783c7d34898984bbc9dd4224b1cd2446774e5b572f9c10a134b5219c138937b6",
+    "aset/cache-data.js": "sha256:6c3e52fdea6e6399b1421b296b0706ace047244431405abc56c6992ed3061f7b",
+    "aset/desain.css": "sha256:af9a2ff1628ce48fad9636ccb08f08f54042fe2110bf8fe5b2b8078a4135b639",
+    "aset/font/.gitkeep": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "aset/font/fraunces-variable.woff2": "sha256:1230f31e62ca481c9e08bfcb2f66835b87a20cd4e6358e8911caf0fdca6360ce",
+    "aset/font/ibm-plex-mono.woff2": "sha256:f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe",
+    "aset/font/instrument-sans.woff2": "sha256:c4fcfea41f2c1cfeea9211fa43679845454a1d0e0d7e95e069c7e73c4ae302d2",
+    "aset/format.js": "sha256:686563deeafea20b671e89366ccaabfbca4cda772c6f5d5b1ada38e29234e95a",
+    "aset/gaya.css": "sha256:e2425df43723da4ac638da9f9cb4d01219920734e4de90350103aa6a0829873b",
+    "aset/peta.js": "sha256:397dab0b8a990689b3680754df4560489bb802c2e37899d2d6f61e38cabb03d2",
+    "aset/shell.js": "sha256:85208c258a41927994284aaf03353209e2ea89f1efa5e7b598c9608fa3eb119a",
+    "aset/state.js": "sha256:71a0963426e7b329a6b281677724fad09649b4350a855dd0ef027bcd53eae1b6",
+    "aset/tokens.css": "sha256:02d0b3060bc36c35bb7921cc8434ab3467fd3d1f251affac9ff425977f66cdc8",
+    "aset/umum.js": "sha256:5ba5503723279594720b0578bad7b37824c2f90ad1130b5f78a79451aba9190c",
+    "data/indikator.json": "sha256:517a658a9c994b607b585f93e3a3a6333027e3074a5290d4278fe3025c1fa6c6",
+    "data/moran.json": "sha256:60f05ed823403a5ccbb88169b1c26f0acd34690b89098deaa84b3669d245bff9",
+    "data/nilai-wilayah-tahunan.json": "sha256:be74f248ed9c43f402d3814b8584e6a34131c6b5df86f69038146c9fe6dda8ca",
+    "data/peringkat.json": "sha256:b78a9346114d88b020029293d275854f3ebd934562b34c1197d805408e74c24d",
+    "data/scatter-moran.json": "sha256:f01a47fa2082bf8a6e537b9ccf348f1f7a2af2b8492e28ecb3a346946bae4940",
+    "data/sebaran.json": "sha256:abd3ac567e9427b9c46225f5c038ca64bee023584de68de0893e8440c351d29b",
+    "data/seri-tahunan.json": "sha256:519c57ecd61ed7f6d30f854a040d08354aa77815d5203e36d5bde7fc4a5b505e",
+    "data/sumatera.geojson": "sha256:c6c02f4f6aed44668ead2cc528e460e3d0a9d50cecbc374977d15387bf9864cb",
+    "data/sumatera.geojson.gz": "sha256:ad4d638f95bf301d8d8814a6931bcdec14eb97d11a93a9a50e7d73d809c2b3aa",
+    "data/validasi-join.json": "sha256:a576b1d0bde107f45b1c0330cdcb78af775318eb45e33bb02aa5b0c906a24ab3"
+  }
+}

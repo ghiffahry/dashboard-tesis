@@ -1,0 +1,146 @@
+[
+  {
+    "kunci": "Akses.Air.Bersih_(persen)",
+    "label": "Akses Air Bersih",
+    "satuan": "persen",
+    "min": 0.0431,
+    "maks": 1.0,
+    "mean": 0.7318674734356553
+  },
+  {
+    "kunci": "Gini.indeks_(indeks)",
+    "label": "Gini indeks",
+    "satuan": "indeks",
+    "min": 0.18,
+    "maks": 0.44,
+    "mean": 0.2948229043683589
+  },
+  {
+    "kunci": "IDG_(indeks)",
+    "label": "IDG",
+    "satuan": "indeks",
+    "min": 37.93,
+    "maks": 84.15,
+    "mean": 61.40612750885479
+  },
+  {
+    "kunci": "IPM.Indeks_(indeks)",
+    "label": "IPM Indeks",
+    "satuan": "indeks",
+    "min": 57.41,
+    "maks": 89.55,
+    "mean": 71.67606847697756
+  },
+  {
+    "kunci": "Kepadatan.Pendudukan_(jiwa.per.km2)",
+    "label": "Kepadatan Pendudukan",
+    "satuan": "jiwa.per.km2",
+    "min": 2.98,
+    "maks": 9286.26,
+    "mean": 597.0531936245573
+  },
+  {
+    "kunci": "Laju.PE.ADHK_(persen)",
+    "label": "Laju PE ADHK",
+    "satuan": "persen",
+    "min": -0.2034,
+    "maks": 0.198,
+    "mean": 0.03803063754427391
+  },
+  {
+    "kunci": "Miskin_(persen)",
+    "label": "Miskin",
+    "satuan": "persen",
+    "min": 0.0201,
+    "maks": 0.3408,
+    "mean": 0.10773884297520661
+  },
+  {
+    "kunci": "PAD.JtTh_(juta.rupiah)",
+    "label": "PAD JtTh",
+    "satuan": "juta.rupiah",
+    "min": 2000.25,
+    "maks": 3868916.37,
+    "mean": 156999.4370070838
+  },
+  {
+    "kunci": "PDRB.Kapita_(juta.rupiah)",
+    "label": "PDRB Kapita",
+    "satuan": "juta.rupiah",
+    "min": 10.41,
+    "maks": 321.48,
+    "mean": 38.34620425029516
+  },
+  {
+    "kunci": "Pendapatan.Industri_(Juta)",
+    "label": "Pendapatan Industri",
+    "satuan": "Juta",
+    "min": 0.227773,
+    "maks": 4.553402,
+    "mean": 1.6728611263282174
+  },
+  {
+    "kunci": "Pendapatan.Jasa_(Juta)",
+    "label": "Pendapatan Jasa",
+    "satuan": "Juta",
+    "min": 0.284436,
+    "maks": 4.159398,
+    "mean": 1.7197719185360094
+  },
+  {
+    "kunci": "Pendapatan.Pertanian_(Juta)",
+    "label": "Pendapatan Pertanian",
+    "satuan": "Juta",
+    "min": 0.370676,
+    "maks": 4.925591,
+    "mean": 1.3794221363636363
+  },
+  {
+    "kunci": "Prevalensi_(persen)",
+    "label": "Prevalensi",
+    "satuan": "persen",
+    "min": 0.0254,
+    "maks": 0.2411,
+    "mean": 0.08626534828807556
+  },
+  {
+    "kunci": "RLS.Tahun_(tahun)",
+    "label": "RLS Tahun",
+    "satuan": "tahun",
+    "min": 4.64,
+    "maks": 13.37,
+    "mean": 8.757969303423849
+  },
+  {
+    "kunci": "Rasio.Puskesmas.per.10rb.Penduduk",
+    "label": "Rasio Puskesmas per 10rb Penduduk",
+    "satuan": "",
+    "min": 0.1191,
+    "maks": 2.0367,
+    "mean": 0.6107594451003541
+  },
+  {
+    "kunci": "Sanitasi.Layak_(persen)",
+    "label": "Sanitasi Layak",
+    "satuan": "persen",
+    "min": 0.0372,
+    "maks": 1.0,
+    "mean": 0.7135219598583236
+  },
+  {
+    "kunci": "TPAK_(persen)",
+    "label": "TPAK",
+    "satuan": "persen",
+    "min": 0.5183,
+    "maks": 0.928,
+    "mean": 0.6935547815820544
+  },
+  {
+    "kunci": "TPT_(persen)",
+    "label": "TPT",
+    "satuan": "persen",
+    "min": 0.0019,
+    "maks": 0.1705,
+    "mean": 0.048864521841794566
+  }
+]

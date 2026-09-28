@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="id" data-tema="terang">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230f2847'/%3E%3Cpath d='M8 3.5 13 6l-5 2.5L3 6z' fill='%23f0f5fb'/%3E%3Crect x='4.6' y='9' width='6.8' height='1.3' rx='0.6' fill='%23f0f5fb'/%3E%3Crect x='4.6' y='11.2' width='6.8' height='1.3' rx='0.6' fill='%23f0f5fb'/%3E%3C/svg%3E">
+<title>Beranda · Ruang Data Sumatera</title>
+<link rel="stylesheet" href="aset/tokens.css">
+<link rel="stylesheet" href="aset/gaya.css">
+<style>
+body {
+  background: var(--abu-latar);
+}
+
+.dash-baris {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--spasi-6);
+  margin-bottom: var(--spasi-2);
+}
+
+.dash-baris h1 {
+  margin-bottom: 0;
+}
+
+#judul-tahun {
+  color: var(--navy-600);
+}
+
+.pilih-tahun {
+  display: flex;
+  align-items: center;
+  gap: var(--spasi-2);
+  color: var(--tinta-lemah);
+  font-size: 13px;
+}
+
+.dash-sub {
+  color: var(--tinta-lemah);
+  margin-bottom: var(--spasi-6);
+}
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--spasi-6);
+  margin-bottom: var(--spasi-6);
+}
+
+.span-4 { grid-column: span 4; }
+.span-8 { grid-column: span 8; }
+
+.peta-grafik {
+  position: relative;
+}
+
+#tooltip-grafik {
+  position: absolute;
+  display: none;
+  z-index: 10;
+  padding: var(--spasi-1) var(--spasi-2);
+  background: var(--navy-900);
+  color: var(--putih);
+  border-radius: var(--radius-kecil);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.catatan {
+  color: var(--tinta-lemah);
+  font-size: 13px;
+  margin-top: var(--spasi-3);
+}
+
+.dua-kolom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spasi-6);
+}
+
+.tautan-cepat {
+  display: flex;
+  align-items: center;
+  gap: var(--spasi-3);
+  margin-bottom: var(--spasi-8);
+}
+
+.tautan-cepat .label-kecil {
+  margin-right: var(--spasi-2);
+}
+
+@media (max-width: 900px) {
+  .span-4, .span-8 { grid-column: span 12; }
+
+  .dua-kolom {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+<link rel="stylesheet" href="aset/desain.css?v=biru-putih-20260928">
+<link rel="stylesheet" href="aset/polesan.css?v=indicator-aware-2-20260928">
+</head>
+<body>
+<div id="shell"></div>
+<main>
+  <div class="dash-baris">
+    <h1>Gambaran Sumatera <span id="judul-tahun">2025</span></h1>
+    <div class="home-selection-controls">
+      <label for="eksplorasi-peubah">Indikator<select id="eksplorasi-peubah"><option value="">Memuat indikator…</option></select></label>
+      <label for="pilih-tahun">Tahun<select id="pilih-tahun"></select></label>
+    </div>
+  </div>
+  <p class="dash-sub" id="home-deskripsi">Pola wilayah, perubahan waktu, dan asosiasi spasial dari 154 kabupaten/kota.</p>
+  <div class="interpretasi ringkasan-interpretasi"><span class="mark">i</span><p><strong>Cara membaca:</strong> Ringkasan menunjukkan gambaran umum, Peta memperlihatkan pola lokasi, dan Analisis memisahkan perubahan spasial, temporal, serta gabungannya. Moran’s I menunjukkan asosiasi, bukan sebab-akibat.</p></div>
+  <div class="dash-grid">
+    <section class="kartu span-8" aria-labelledby="judul-grafik">
+      <h2 id="judul-grafik">Tren indikator terpilih</h2>
+      <p class="label-kecil" id="grafik-satuan">Rata-rata 154 kabupaten/kota</p>
+      <div class="peta-grafik" id="wadah-grafik">
+        <div id="tooltip-grafik" role="status"></div>
+      </div>
+      <p class="catatan">Rata-rata tidak dibobot jumlah penduduk. Arah tahunan dihitung dari 154 kabupaten/kota. Arahkan kursor ke titik untuk melihat nilai.</p>
+    </section>
+    <aside class="panel-samping span-4" aria-labelledby="judul-perubahan">
+      <h2 id="judul-perubahan">Perubahan 2015-2025</h2>
+      <p class="label-kecil">Rata-rata perubahan absolut per wilayah</p>
+      <p class="angka-besar status-memuat" id="perubahan-besar">Memuat…</p>
+      <div id="bar-transisi"></div>
+      <p class="catatan">Perpindahan kuartil nilai 2015 ke 2025. Naik berarti masuk kuartil nilai lebih tinggi, bukan selalu perbaikan.</p>
+    </aside>
+  </div>
+  <div class="dash-grid">
+    <section class="kartu span-8" aria-labelledby="judul-peringkat">
+      <h2 id="judul-peringkat">Peringkat Perubahan</h2>
+      <div class="dua-kolom">
+        <div>
+          <h3>Perubahan terendah</h3>
+          <div id="peringkat-atas"></div>
+        </div>
+        <div>
+          <h3>Perubahan tertinggi</h3>
+          <div id="peringkat-bawah"></div>
+        </div>
+      </div>
+      <p class="catatan" id="catatan-peringkat">Perubahan nilai tiap wilayah dari tahun 2015 ke 2025.</p>
+    </section>
+    <section class="kartu span-4" aria-labelledby="judul-moran">
+      <h2 id="judul-moran">Autokorelasi Spasial</h2>
+      <p class="label-kecil">Moran's I tahun <span id="moran-tahun">2025</span></p>
+      <p class="angka-besar status-memuat" id="moran-nilai">Memuat…</p>
+      <p class="status-memuat" id="moran-rincian">Memuat…</p>
+      <p class="status-memuat" id="moran-lisa">Memuat…</p>
+      <p class="catatan">Asosiasi spasial, bukan kausalitas: nilai Moran's I menunjukkan wilayah bertetangga cenderung berasosiasi pada nilai yang berdekatan.</p>
+    </section>
+  </div>
+  <section class="kartu ringkasan-sebaran" aria-labelledby="judul-sebaran">
+    <div class="sebaran-heading"><div><p class="eyebrow">Distribusi tahun aktif · <span id="sebaran-tahun">2025</span></p><h2 id="judul-sebaran">Sebaran antarwilayah</h2></div><p id="sebaran-sampel" class="label-kecil">n = 154 wilayah</p></div>
+    <div class="sebaran-statistik" aria-live="polite">
+      <div><span>Minimum</span><strong id="sebaran-min">-</strong></div><div><span>Kuartil 1</span><strong id="sebaran-q1">-</strong></div><div><span>Median</span><strong id="sebaran-median">-</strong></div><div><span>Kuartil 3</span><strong id="sebaran-q3">-</strong></div><div><span>Maksimum</span><strong id="sebaran-max">-</strong></div>
+    </div>
+  </section>
+  <section class="home-explorer" aria-labelledby="judul-eksplorasi">
+    <div><p class="eyebrow">Langkah berikutnya</p><h2 id="judul-eksplorasi">Lihat pola di peta atau analisis</h2><p>Indikator dan tahun yang dipilih di bagian atas halaman akan dibawa ke tampilan berikutnya.</p></div>
+    <div class="home-explorer-controls">
+      <div class="home-explorer-actions"><a class="pil primary" id="tautan-peta-pilihan" href="peta.html">Lihat peta</a><a class="pil" id="tautan-analisis-pilihan" href="analisis.html">Lihat analisis</a></div>
+    </div>
+  </section>
+</main>
+<footer>
+  <p id="info-build">Sumber: data tesis 2015-2025 | Versi: memuat…</p>
+</footer>
+<script type="module">
+import { renderFooter, SUMBER_DATA } from "./aset/umum.js";
+import { bacaState } from "./aset/state.js";
+import { renderShell } from "./aset/shell.js";
+import { ambilJson } from "./aset/cache-data.js";
+import { formatProporsiSebagaiPersen, formatDesimalId, hitungNaik } from "./aset/format.js";
+
+const TAHUN_DAFTAR = [];
+for (let t = 2015; t <= 2025; t++) TAHUN_DAFTAR.push(t);
+
+const NS = "http://www.w3.org/2000/svg";
+const WARNA_TRANSISI = { tetap: "var(--navy-600)", naik: "var(--merah-peringatan)", turun: "var(--hijau-data)" };
+const ARAH_URUT = ["tetap", "naik", "turun"];
+
+const state = bacaState(location.search);
+let seri = null;
+let peringkat = null;
+let moran = null;
+let nilaiWilayah = null;
+let indikatorAktif = { kunci: "Miskin_(persen)", label: "Kemiskinan", satuan: "persen" };
+
+function el(id) {
+  return document.getElementById(id);
+}
+
+function isiPilihTahun() {
+  const sel = el("pilih-tahun");
+  for (const t of TAHUN_DAFTAR) {
+    const o = document.createElement("option");
+    o.value = String(t);
+    o.textContent = String(t);
+    sel.appendChild(o);
+  }
+  sel.value = String(state.tahun);
+  sel.addEventListener("change", () => {
+    state.tahun = Number(sel.value);
+    el("judul-tahun").textContent = String(state.tahun);
+    renderGrafik();
+    renderMoran();
+    renderSebaran();
+    const lowerYear = el("eksplorasi-tahun");
+    if (lowerYear) lowerYear.value = String(state.tahun);
+    perbaruiTautanEksplorasi();
+    sinkronkanURL();
+  });
+}
+
+function isiEksplorasi(indikator) {
+  const pilihPeubah = el("eksplorasi-peubah");
+  if (!pilihPeubah || !Array.isArray(indikator)) return;
+  pilihPeubah.textContent = "";
+  for (const x of indikator) {
+    const op = document.createElement("option");
+    op.value = x.kunci;
+    op.textContent = `${x.label} · ${x.satuan || "indikator"}`;
+    pilihPeubah.append(op);
+  }
+  pilihPeubah.value = indikator.some((x) => x.kunci === state.peubah) ? state.peubah : "Miskin_(persen)";
+  state.peubah = pilihPeubah.value;
+  indikatorAktif = indikator.find((x) => x.kunci === pilihPeubah.value) || indikatorAktif;
+  pilihPeubah.addEventListener("change", () => {
+    state.peubah = pilihPeubah.value;
+    indikatorAktif = indikator.find((x) => x.kunci === state.peubah) || indikatorAktif;
+    renderGrafik(); renderPerubahan(); renderPeringkat(); renderMoran(); renderSebaran(); perbaruiTautanEksplorasi();
+  });
+  perbaruiTautanEksplorasi();
+}
+function perbaruiTautanEksplorasi() {
+  const query = new URLSearchParams({ tahun: String(state.tahun), peubah: state.peubah }).toString();
+  el("tautan-peta-pilihan").href = `peta.html?${query}`;
+  el("tautan-analisis-pilihan").href = `analisis.html?${query}`;
+  sinkronkanURL();
+}
+function sinkronkanURL() {
+  const params = new URLSearchParams(location.search);
+  params.set("tahun", String(state.tahun));
+  params.set("peubah", state.peubah);
+  history.replaceState({}, "", "?" + params.toString());
+}
+function dataWilayah() {
+  const acuan = peringkat?.["Miskin_(persen)"] || [];
+  return acuan.map((r) => {
+    const rawAwal = nilaiWilayah?.[state.peubah]?.["2015"]?.[r.wilayah], rawAkhir = nilaiWilayah?.[state.peubah]?.["2025"]?.[r.wilayah];
+    const awal = rawAwal === null || rawAwal === undefined ? NaN : Number(rawAwal), akhir = rawAkhir === null || rawAkhir === undefined ? NaN : Number(rawAkhir);
+    return { ...r, nilai_2015: awal, nilai_2025: akhir, delta: Number.isFinite(awal) && Number.isFinite(akhir) ? akhir - awal : NaN };
+  }).filter((r) => Number.isFinite(r.nilai_2015) && Number.isFinite(r.nilai_2025));
+}
+function rataRataTahunan() {
+  const hasil = [];
+  for (const t of TAHUN_DAFTAR) {
+    const nilai = Number(seri?.[state.peubah]?.Sumatera?.[String(t)]);
+    hasil.push({ tahun: t, nilai });
+  }
+  return hasil;
+}
+
+function renderSebaran() {
+  const nilai = Object.values(nilaiWilayah?.[state.peubah]?.[String(state.tahun)] || {}).filter((v) => v !== null && v !== undefined && Number.isFinite(Number(v))).map(Number).sort((a, b) => a - b);
+  const persen = indikatorAktif.satuan === "persen";
+  const tampil = (v) => Number.isFinite(v) ? (persen ? formatProporsiSebagaiPersen(v) : formatDesimalId(v, 2) + " " + indikatorAktif.satuan) : "-";
+  const kuantil = (p) => {
+    if (!nilai.length) return NaN;
+    const pos = (nilai.length - 1) * p, bawah = Math.floor(pos), atas = Math.ceil(pos);
+    return nilai[bawah] + (nilai[atas] - nilai[bawah]) * (pos - bawah);
+  };
+  el("sebaran-tahun").textContent = String(state.tahun);
+  el("judul-sebaran").textContent = `Sebaran ${indikatorAktif.label.toLowerCase()} antarwilayah`;
+  el("sebaran-sampel").textContent = `n = ${nilai.length} wilayah`;
+  [["sebaran-min", nilai[0]], ["sebaran-q1", kuantil(.25)], ["sebaran-median", kuantil(.5)], ["sebaran-q3", kuantil(.75)], ["sebaran-max", nilai.at(-1)]].forEach(([id, v]) => { el(id).textContent = tampil(v); });
+}
+
+function renderGrafik() {
+  const wadah = el("wadah-grafik");
+  wadah.querySelectorAll("svg").forEach((s) => s.remove());
+  const titik = rataRataTahunan().filter((t) => Number.isFinite(t.nilai));
+  const persen = indikatorAktif.satuan === "persen";
+  const satuan = persen ? "%" : indikatorAktif.satuan;
+  const nilaiTampil = (v) => persen ? formatProporsiSebagaiPersen(v) : formatDesimalId(v, 2) + " " + satuan;
+  el("judul-grafik").textContent = `Tren rata-rata ${indikatorAktif.label.toLowerCase()}`;
+  el("grafik-satuan").textContent = `Rata-rata 154 kabupaten/kota · ${satuan} · tahun aktif ${state.tahun}`;
+  el("home-deskripsi").textContent = `${indikatorAktif.label} di 154 kabupaten/kota Sumatera, 2015-2025. Pilih indikator untuk memperbarui ringkasan dan grafik.`;
+  if (titik.length < 2) return;
+
+  const W = 760;
+  const H = 300;
+  const padK = 26;
+  const padB = 24;
+  const padAtas = 32;
+
+  const nilai = titik.map((t) => t.nilai);
+  let min = Math.min(...nilai);
+  let max = Math.max(...nilai);
+  const jarak = (max - min) * 0.18 || max * 0.1 || 0.01;
+  min -= jarak;
+  max += jarak;
+
+  const x = (i) => padK + (i * (W - padK * 2)) / (titik.length - 1);
+  const y = (v) => padAtas + (1 - (v - min) / (max - min)) * (H - padAtas - padB);
+
+  const svg = document.createElementNS(NS, "svg");
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  svg.setAttribute("width", "100%");
+  svg.setAttribute("height", String(H));
+  svg.setAttribute("role", "img");
+  svg.setAttribute("aria-label", `Grafik rata-rata ${indikatorAktif.label} per tahun 2015 sampai 2025`);
+
+  const garis = titik.map((t, i) => `${i === 0 ? "M" : "L"}${x(i).toFixed(1)},${y(t.nilai).toFixed(1)}`).join(" ");
+  const area = `${garis} L${x(titik.length - 1).toFixed(1)},${H - padB} L${x(0).toFixed(1)},${H - padB} Z`;
+
+  const pArea = document.createElementNS(NS, "path");
+  pArea.setAttribute("d", area);
+  pArea.setAttribute("fill", "var(--navy-600)");
+  pArea.setAttribute("opacity", "0.14");
+  svg.appendChild(pArea);
+
+  const pGaris = document.createElementNS(NS, "path");
+  pGaris.setAttribute("d", garis);
+  pGaris.setAttribute("fill", "none");
+  pGaris.setAttribute("stroke", "var(--navy-700)");
+  pGaris.setAttribute("stroke-width", "2");
+  pGaris.setAttribute("stroke-linejoin", "round");
+  pGaris.setAttribute("stroke-linecap", "round");
+  svg.appendChild(pGaris);
+
+  const tooltip = el("tooltip-grafik");
+  titik.forEach((t, i) => {
+    const c = document.createElementNS(NS, "circle");
+    c.setAttribute("cx", x(i).toFixed(1));
+    c.setAttribute("cy", y(t.nilai).toFixed(1));
+    c.setAttribute("r", t.tahun === state.tahun ? "5.5" : "4");
+    c.setAttribute("fill", "var(--navy-700)");
+    c.setAttribute("stroke", "var(--putih)");
+    c.setAttribute("stroke-width", "2");
+    c.style.cursor = "pointer";
+    c.addEventListener("mouseenter", () => {
+      tooltip.style.display = "block";
+      tooltip.textContent = `${t.tahun}: ${nilaiTampil(t.nilai)}`;
+      const sb = svg.getBoundingClientRect();
+      const cb = c.getBoundingClientRect();
+      let left = cb.left - sb.left + cb.width / 2 - tooltip.offsetWidth / 2;
+      left = Math.max(0, Math.min(left, sb.width - tooltip.offsetWidth));
+      tooltip.style.left = `${left}px`;
+      tooltip.style.top = `${cb.top - sb.top - tooltip.offsetHeight - 8}px`;
+    });
+    c.addEventListener("mouseleave", () => {
+      tooltip.style.display = "none";
+    });
+    svg.appendChild(c);
+
+    const label = document.createElementNS(NS, "text");
+    label.setAttribute("x", x(i).toFixed(1));
+    label.setAttribute("y", (y(t.nilai) - 12).toFixed(1));
+    label.setAttribute("text-anchor", "middle");
+    label.style.fontFamily = "var(--font-mono)";
+    label.style.fontSize = "10px";
+    label.style.fill = t.tahun === state.tahun ? "var(--navy-900)" : "var(--navy-800)";
+    if (t.tahun === state.tahun) label.style.fontWeight = "700";
+    label.textContent = nilaiTampil(t.nilai);
+    svg.appendChild(label);
+  });
+
+  wadah.appendChild(svg);
+}
+
+function hitungTransisi() {
+  const hitung = { tetap: 0, naik: 0, turun: 0 };
+  const rows = dataWilayah();
+  const q = (key) => {
+    const values = rows.map((r) => r[key]).sort((a, b) => a - b);
+    return [0.25, 0.5, 0.75].map((p) => values[Math.max(0, Math.ceil(values.length * p) - 1)]);
+  };
+  const bounds0 = q("nilai_2015"), bounds1 = q("nilai_2025");
+  const cls = (v, b) => v <= b[0] ? 1 : v <= b[1] ? 2 : v <= b[2] ? 3 : 4;
+  for (const r of rows) {
+    const diff = cls(r.nilai_2025, bounds1) - cls(r.nilai_2015, bounds0);
+    hitung[diff === 0 ? "tetap" : diff > 0 ? "naik" : "turun"] += 1;
+  }
+  const total = hitung.tetap + hitung.naik + hitung.turun || 1;
+  return { hitung, total };
+}
+
+function renderTransisi(target, total) {
+  target.textContent = "";
+  const { hitung } = hitungTransisi();
+  for (const arah of ARAH_URUT) {
+    const n = hitung[arah];
+    const barisEl = document.createElement("div");
+    barisEl.className = "baris-kpi";
+    const label = document.createElement("span");
+    label.textContent = arah.charAt(0).toUpperCase() + arah.slice(1);
+    const nilai = document.createElement("span");
+    nilai.className = "nilai";
+    nilai.textContent = `${n} (${formatProporsiSebagaiPersen(n / total)})`;
+    barisEl.append(label, nilai);
+    const prog = document.createElement("div");
+    prog.className = "progress";
+    const isi = document.createElement("div");
+    isi.className = "isi";
+    isi.style.width = `${(n / total) * 100}%`;
+    isi.style.background = WARNA_TRANSISI[arah];
+    prog.appendChild(isi);
+    target.append(barisEl, prog);
+  }
+}
+
+function renderPerubahan() {
+  const rows = dataWilayah();
+  const mean = rows.reduce((s, r) => s + r.delta, 0) / (rows.length || 1);
+  const elPerubahan = el("perubahan-besar");
+  elPerubahan.classList.remove("status-memuat");
+  const persen = indikatorAktif.satuan === "persen";
+  const nilai = mean * (persen ? 100 : 1);
+  const sufiks = persen ? " poin" : " " + indikatorAktif.satuan;
+  hitungNaik(elPerubahan, nilai, 500, (n) => (n >= 0 ? "+" : "-" ) + formatDesimalId(Math.abs(n), 2) + sufiks);
+  renderTransisi(el("bar-transisi"), hitungTransisi().total);
+  el("judul-perubahan").textContent = `Perubahan ${indikatorAktif.label}`;
+  el("judul-peringkat").textContent = `Perubahan wilayah · ${indikatorAktif.label}`;
+  el("catatan-peringkat").textContent = `Perubahan nilai tiap wilayah dari 2015 ke 2025 · ${rows.length} wilayah dengan data lengkap.`;
+}
+
+function isiKolomPeringkat(target, daftar) {
+  target.textContent = "";
+  for (const r of daftar) {
+    const b = document.createElement("div");
+    b.className = "baris-kpi";
+    const kiri = document.createElement("span");
+    kiri.textContent = r.wilayah;
+    const chip = document.createElement("span");
+    chip.className = "chip";
+    chip.textContent = r.provinsi;
+    kiri.appendChild(document.createTextNode(" "));
+    kiri.appendChild(chip);
+    const nilai = document.createElement("span");
+    nilai.className = "nilai";
+    const delta = Number(r.delta);
+    nilai.textContent = indikatorAktif.satuan === "persen"
+      ? `${delta >= 0 ? "+" : "−"}${formatDesimalId(Math.abs(delta * 100), 1)} poin`
+      : `${delta >= 0 ? "+" : "−"}${formatDesimalId(Math.abs(delta), 2)} ${indikatorAktif.satuan}`;
+    const a = Number(r.nilai_2015);
+    const c = Number(r.nilai_2025);
+    if (Number.isFinite(a) && Number.isFinite(c)) {
+      const mini = document.createElementNS(NS, "svg");
+      mini.setAttribute("width", "44");
+      mini.setAttribute("height", "16");
+      mini.setAttribute("viewBox", "0 0 44 16");
+      mini.setAttribute("aria-hidden", "true");
+      const lo = Math.min(a, c);
+      const rg = (Math.max(a, c) - lo) || 1;
+      const yy = (v) => (3 + (1 - (v - lo) / rg) * 10).toFixed(1);
+      const pl = document.createElementNS(NS, "polyline");
+      pl.setAttribute("points", `2,${yy(a)} 42,${yy(c)}`);
+      pl.setAttribute("fill", "none");
+      const risiko = ["Miskin_(persen)", "Gini.indeks_(indeks)", "TPT_(persen)"].includes(state.peubah);
+      const capaian = ["Akses.Air.Bersih_(persen)", "IDG_(indeks)", "IPM.Indeks_(indeks)", "Laju.PE.ADHK_(persen)", "RLS.Tahun_(tahun)", "Sanitasi.Layak_(persen)"].includes(state.peubah);
+      pl.setAttribute("stroke", risiko ? (c < a ? "var(--hijau-data)" : "var(--merah-peringatan)") : capaian ? (c > a ? "var(--hijau-data)" : "var(--merah-peringatan)") : "var(--brand)");
+      pl.setAttribute("stroke-width", "1.5");
+      mini.append(pl);
+      b.append(kiri, mini, nilai);
+    } else {
+      b.append(kiri, nilai);
+    }
+    target.appendChild(b);
+  }
+}
+
+function renderPeringkat() {
+  const baris = dataWilayah().sort((a, b) => a.delta - b.delta);
+  isiKolomPeringkat(el("peringkat-atas"), baris.slice(0, 5));
+  isiKolomPeringkat(el("peringkat-bawah"), baris.slice(-5).reverse());
+}
+
+let moranPertama = true;
+
+function renderMoran() {
+  const entri =
+    moran &&
+    moran.moran_dan_lisa &&
+    moran.moran_dan_lisa[state.peubah] &&
+    moran.moran_dan_lisa[state.peubah][String(state.tahun)];
+  el("moran-tahun").textContent = String(state.tahun);
+  el("judul-moran").textContent = "Moran’s I · " + indikatorAktif.label;
+  el("moran-rincian").classList.remove("status-memuat");
+  el("moran-lisa").classList.remove("status-memuat");
+  if (!entri) {
+    const elNilai = el("moran-nilai");
+    elNilai.classList.remove("status-memuat");
+    elNilai.textContent = "-";
+    el("moran-rincian").textContent = "Moran belum dihitung untuk indikator ini. Tersedia untuk kemiskinan, IPM, Gini, dan TPT.";
+    el("moran-lisa").textContent = "";
+    moranPertama = false;
+    return;
+  }
+  const elNilai = el("moran-nilai");
+  elNilai.classList.remove("status-memuat");
+  if (moranPertama) {
+    hitungNaik(elNilai, entri.moran_i, 500, (n) => formatDesimalId(n, 4));
+    moranPertama = false;
+  } else {
+    elNilai.textContent = formatDesimalId(entri.moran_i, 4);
+  }
+  const p = new Intl.NumberFormat("id-ID", {
+    minimumFractionDigits: 3,
+    maximumFractionDigits: 3,
+  }).format(entri.p_value);
+  const status = entri.signifikan ? "signifikan" : "tidak signifikan";
+  el("moran-rincian").textContent =
+    `${indikatorAktif.label}: p = ${p} (${entri.jumlah_permutasi} permutasi), ${status} pada α = 0,05.`;
+  const lisa = entri.lisa_per_wilayah || {};
+  const semua = Object.keys(lisa);
+  const nSig = semua.filter((w) => lisa[w] && lisa[w].signifikan).length;
+  el("moran-lisa").textContent =
+    `${nSig} dari ${semua.length} wilayah berkelompok LISA signifikan BH.`;
+}
+
+async function main() {
+  renderShell("index");
+  await renderFooter(el("info-build"), { sumber: SUMBER_DATA });
+  isiPilihTahun();
+  el("judul-tahun").textContent = String(state.tahun);
+  const hasil = await Promise.allSettled([
+    ambilJson("data/seri-tahunan.json"),
+    ambilJson("data/peringkat.json"),
+    ambilJson("data/moran.json"),
+    ambilJson("data/nilai-wilayah-tahunan.json"),
+    ambilJson("data/indikator.json"),
+  ]);
+  seri = hasil[0].status === "fulfilled" ? hasil[0].value : null;
+  peringkat = hasil[1].status === "fulfilled" ? hasil[1].value : null;
+  moran = hasil[2].status === "fulfilled" ? hasil[2].value : null;
+  nilaiWilayah = hasil[3].status === "fulfilled" ? hasil[3].value : null;
+  if (hasil[4].status === "fulfilled") isiEksplorasi(hasil[4].value);
+  if (hasil.every((h) => h.status === "rejected")) {
+    for (const id of ["perubahan-besar", "moran-nilai", "moran-rincian", "moran-lisa"]) {
+      el(id).classList.remove("status-memuat");
+    }
+    el("perubahan-besar").textContent = "-";
+    el("moran-nilai").textContent = "-";
+    el("moran-rincian").textContent = "Data tidak dapat dimuat.";
+    el("wadah-grafik").textContent = "Data tidak dapat dimuat.";
+    return;
+  }
+  if (seri) {
+    renderGrafik();
+  } else {
+    el("wadah-grafik").textContent = "Data seri tahunan tidak dapat dimuat.";
+  }
+  if (peringkat) {
+    renderPerubahan();
+    renderPeringkat();
+  } else {
+    el("perubahan-besar").classList.remove("status-memuat");
+    el("perubahan-besar").textContent = "-";
+    el("bar-transisi").textContent = "Data peringkat tidak dapat dimuat.";
+    el("peringkat-atas").textContent = "Data peringkat tidak dapat dimuat.";
+    el("peringkat-bawah").textContent = "";
+  }
+  renderSebaran();
+  renderMoran();
+  if ("serviceWorker" in navigator) {
+    try {
+      await navigator.serviceWorker.register("sw.js");
+    } catch {
+      /* mode luring opsional, abaikan bila gagal */
+    }
+  }
+}
+
+main();
+</script>
+</body>
+</html>

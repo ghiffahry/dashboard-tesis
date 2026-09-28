@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.venv/
+venv/
+env/
+
+# Hasil build dan kompresi turunan
+_site/
+data/sumatera.geojson.br
+
+# Input lokal tesis, jangan ikut repository publik
+data/data_tesis_2015-2025.csv
+data/tabel.csv
+data/sumber-spasial/*
+!data/sumber-spasial/README.md
+docs/arsip/prompting.md
+
+# OS dan editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+
+# Log dan berkas sementara
+*.log
+*.tmp
+*.bak
+*~

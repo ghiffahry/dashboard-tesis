@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230f2847'/%3E%3Cpath d='M8 3.5 13 6l-5 2.5L3 6z' fill='%23f0f5fb'/%3E%3Crect x='4.6' y='9' width='6.8' height='1.3' rx='0.6' fill='%23f0f5fb'/%3E%3Crect x='4.6' y='11.2' width='6.8' height='1.3' rx='0.6' fill='%23f0f5fb'/%3E%3C/svg%3E">
+<title>Peta - Ruang Data Sumatera</title>
+<link rel="stylesheet" href="aset/tokens.css">
+<link rel="stylesheet" href="aset/gaya.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="aset/desain.css?v=biru-putih-20260928">
+<link rel="stylesheet" href="aset/polesan.css?v=indicator-aware-2-20260928">
+</head>
+<body class="body-peta">
+<div id="shell"></div>
+<div class="tata-letak">
+  <aside class="sidebar" id="panel-filter" aria-label="Filter data peta">
+    <h2 id="judul-peubah">Kemiskinan 2025</h2>
+    <input class="pencarian" id="pencarian" type="search" placeholder="Cari peubah…" aria-label="Cari peubah">
+    <nav id="daftar-kategori" aria-label="Kategori peubah"></nav>
+    <div class="kontrol-tahun">
+      <label class="label-kecil" for="pilih-tahun">Tahun</label>
+      <select id="pilih-tahun"></select>
+    </div>
+    <section class="panel-moran" aria-labelledby="judul-moran">
+      <h3 id="judul-moran">Autokorelasi spasial</h3>
+      <p class="status-memuat" id="anotasi-moran">Memuat anotasi Moran…</p>
+      <div id="daftar-lisa" class="bar-moran" role="list"></div>
+      <p>Kode HH, LL, HL, LH pada berkas dibaca sebagai Tinggi-Tinggi, Rendah-Rendah, Tinggi-Rendah, Rendah-Tinggi. Wilayah kepulauan tanpa tetangga dibaca sebagai Tidak Terhubung.</p>
+    </section>
+  </aside>
+  <main class="peta-konten">
+    <div class="kanvas-peta" data-peta-style="warna">
+      <div class="map-toolbar" role="group" aria-label="Kontrol tampilan peta">
+        <button id="toggle-filter" type="button" aria-expanded="true" aria-controls="panel-filter">Tutup filter</button>
+        <button id="toggle-legend" type="button" aria-expanded="true" aria-controls="panel-legenda">Legenda</button>
+        <div class="map-style-control" role="group" aria-label="Gaya basemap">
+          <button type="button" data-peta-style="warna" aria-pressed="true">Warna</button>
+          <button type="button" data-peta-style="netral" aria-pressed="false">Netral</button>
+        </div>
+      </div>
+      <div id="elemen-peta" role="application" aria-label="Peta choropleth Sumatera"></div>
+      <div class="kartu" id="kartu-detail" hidden></div>
+      <div class="widget status-memuat" id="ringkasan-widget">Memuat ringkasan…</div>
+      <div class="legenda" id="panel-legenda">
+        <h2>Kuartil indikator</h2>
+        <p class="petunjuk-nilai" id="petunjuk-nilai">Warna lebih terang menunjukkan nilai yang lebih tinggi.</p>
+        <p class="legend-note">Kuartil nilai indikator dan tahun aktif. LISA dihitung terpisah.</p>
+        <ul id="daftar-legenda"><li class="status-memuat">Memuat batas kuantil…</li></ul>
+      </div>
+    </div>
+  </main>
+</div>
+<footer>
+  <p id="info-build">Sumber: data tesis 2015-2025 | Versi: memuat…</p>
+</footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script type="module">
+import { inisialisasiPeta } from "./aset/peta.js?v=indicator-aware-20260928";
+import { renderShell } from "./aset/shell.js";
+import { renderFooter, SUMBER_DATA } from "./aset/umum.js";
+
+async function main() {
+  renderShell("peta", { cari: true });
+  const panelFilter = document.getElementById("panel-filter");
+  const tombolFilter = document.getElementById("toggle-filter");
+  const panelLegenda = document.getElementById("panel-legenda");
+  const tombolLegenda = document.getElementById("toggle-legend");
+  const gayaPeta = document.querySelector(".kanvas-peta");
+  const pilihanGaya = document.querySelectorAll("[data-peta-style]");
+  const mediaPonsel = window.matchMedia("(max-width: 600px)");
+  let filterDiubahPengguna = false;
+  let legendaDiubahPengguna = false;
+  const aturFilter = (terbuka) => {
+    panelFilter.hidden = !terbuka;
+    tombolFilter.setAttribute("aria-expanded", String(terbuka));
+    tombolFilter.textContent = terbuka ? "Tutup filter" : "Filter data";
+  };
+  const aturLegenda = (terbuka) => {
+    panelLegenda.hidden = !terbuka;
+    tombolLegenda.setAttribute("aria-expanded", String(terbuka));
+    tombolLegenda.textContent = terbuka ? "Sembunyikan legenda" : "Legenda";
+  };
+  aturFilter(!mediaPonsel.matches);
+  aturLegenda(!mediaPonsel.matches);
+  tombolFilter.addEventListener("click", () => { filterDiubahPengguna = true; aturFilter(panelFilter.hidden); });
+  mediaPonsel.addEventListener("change", (event) => {
+    if (!filterDiubahPengguna) aturFilter(!event.matches);
+  });
+  document.getElementById("tombol-cari")?.addEventListener("click", () => {
+    filterDiubahPengguna = true;
+    aturFilter(true);
+  });
+  tombolLegenda.addEventListener("click", () => { legendaDiubahPengguna = true; aturLegenda(panelLegenda.hidden); });
+  mediaPonsel.addEventListener("change", (event) => { if (!legendaDiubahPengguna) aturLegenda(!event.matches); });
+  let gayaSimpan = "warna";
+  try { gayaSimpan = localStorage.getItem("eda-gaya-peta") || "warna"; } catch { /* penyimpanan pilihan opsional */ }
+  const pasangGaya = (gaya) => {
+    gayaPeta.dataset.petaStyle = gaya;
+    pilihanGaya.forEach((tombol) => {
+      if (!tombol.matches("button")) return;
+      tombol.setAttribute("aria-pressed", String(tombol.dataset.petaStyle === gaya));
+    });
+  };
+  pasangGaya(gayaSimpan);
+  pilihanGaya.forEach((tombol) => tombol.addEventListener("click", () => {
+    const gaya = tombol.dataset.petaStyle;
+    if (!gaya) return;
+    pasangGaya(gaya);
+    try { localStorage.setItem("eda-gaya-peta", gaya); } catch { /* peta tetap dapat digunakan */ }
+  }));
+  await renderFooter(document.getElementById("info-build"), { sumber: SUMBER_DATA });
+  try {
+    await inisialisasiPeta(document.getElementById("elemen-peta"), {
+      geojsonPrimer: "data/sumatera.geojson.gz",
+      geojsonCadangan: "data/sumatera.geojson",
+      tautanMoran: "data/moran.json",
+      tautanIndikator: "data/indikator.json",
+      tautanNilai: "data/nilai-wilayah-tahunan.json",
+      untaiQuery: location.search,
+      elJudul: document.getElementById("judul-peubah"),
+      elDaftarKategori: document.getElementById("daftar-kategori"),
+      elPencarian: document.getElementById("pencarian"),
+      elTombolCari: document.getElementById("tombol-cari"),
+      elTahun: document.getElementById("pilih-tahun"),
+      elKartu: document.getElementById("kartu-detail"),
+      elRingkasan: document.getElementById("ringkasan-widget"),
+      elLegenda: document.getElementById("daftar-legenda"),
+      elMoran: document.getElementById("anotasi-moran"),
+      elLisa: document.getElementById("daftar-lisa"),
+    });
+  } catch {
+    document.getElementById("ringkasan-widget").textContent = "Gagal membangun peta, periksa berkas GeoJSON dan JSON precompute.";
+  }
+  if ("serviceWorker" in navigator) {
+    try {
+      await navigator.serviceWorker.register("sw.js");
+    } catch {
+      /* mode luring opsional */
+    }
+  }
+}
+
+main();
+</script>
+</body>
+</html>

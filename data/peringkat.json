@@ -1,0 +1,2342 @@
+{
+  "Miskin_(persen)": [
+    {
+      "cagr": 0.0158,
+      "nilai_2015": 0.0833,
+      "nilai_2025": 0.0974,
+      "perubahan_absolut": 0.0141,
+      "perubahan_persen": 16.9268,
+      "provinsi": "Bengkulu",
+      "volatilitas": 0.0043,
+      "wilayah": "Bengkulu Tengah"
+    },
+    {
+      "cagr": 0.0168,
+      "nilai_2015": 0.0567,
+      "nilai_2025": 0.067,
+      "perubahan_absolut": 0.0103,
+      "perubahan_persen": 18.1658,
+      "provinsi": "Kepulauan Bangka Belitung",
+      "volatilitas": 0.0049,
+      "wilayah": "Bangka Tengah"
+    },
+    {
+      "cagr": 0.0205,
+      "nilai_2015": 0.0222,
+      "nilai_2025": 0.0272,
+      "perubahan_absolut": 0.005,
+      "perubahan_persen": 22.5225,
+      "provinsi": "Sumatera Barat",
+      "volatilitas": 0.0022,
+      "wilayah": "Kota Sawah Lunto"
+    },
+    {
+      "cagr": 0.0103,
+      "nilai_2015": 0.0434,
+      "nilai_2025": 0.0481,
+      "perubahan_absolut": 0.0047,
+      "perubahan_persen": 10.8295,
+      "provinsi": "Kepulauan Riau",
+      "volatilitas": 0.0027,
+      "wilayah": "Natuna"
+    },
+    {
+      "cagr": 0.0109,
+      "nilai_2015": 0.0374,
+      "nilai_2025": 0.0417,
+      "perubahan_absolut": 0.0043,
+      "perubahan_persen": 11.4973,
+      "provinsi": "Kepulauan Bangka Belitung",
+      "volatilitas": 0.0035,
+      "wilayah": "Bangka Selatan"
+    },
+    {
+      "cagr": -0.0025,
+      "nilai_2015": 0.0327,
+      "nilai_2025": 0.0319,
+      "perubahan_absolut": -0.0008,
+      "perubahan_persen": -2.4465,
+      "provinsi": "Riau",
+      "volatilitas": 0.0018,
+      "wilayah": "Kota Pekanbaru"
+    },
+    {
+      "cagr": -0.0053,
+      "nilai_2015": 0.0308,
+      "nilai_2025": 0.0292,
+      "perubahan_absolut": -0.0016,
+      "perubahan_persen": -5.1948,
+      "provinsi": "Kepulauan Bangka Belitung",
+      "volatilitas": 0.0026,
+      "wilayah": "Bangka Barat"
+    },
+    {
+      "cagr": -0.006,
+      "nilai_2015": 0.0343,
+      "nilai_2025": 0.0323,
+      "perubahan_absolut": -0.002,
+      "perubahan_persen": -5.8309,
+      "provinsi": "Jambi",
+      "volatilitas": 0.0028,
+      "wilayah": "Kota Sungai Penuh"
+    },
+    {
+      "cagr": -0.0036,
+      "nilai_2015": 0.0658,
+      "nilai_2025": 0.0635,
+      "perubahan_absolut": -0.0023,
+      "perubahan_persen": -3.4954,
+      "provinsi": "Kepulauan Riau",
+      "volatilitas": 0.0037,
+      "wilayah": "Kepulauan Anambas"
+    },
+    {
+      "cagr": -0.0069,
+      "nilai_2015": 0.0463,
+      "nilai_2025": 0.0432,
+      "perubahan_absolut": -0.0031,
+      "perubahan_persen": -6.6955,
+      "provinsi": "Jambi",
+      "volatilitas": 0.0045,
+      "wilayah": "Muaro Jambi"
+    },
+    {
+      "cagr": -0.0099,
+      "nilai_2015": 0.0497,
+      "nilai_2025": 0.045,
+      "perubahan_absolut": -0.0047,
+      "perubahan_persen": -9.4567,
+      "provinsi": "Kepulauan Bangka Belitung",
+      "volatilitas": 0.0035,
+      "wilayah": "Kota Pangkal Pinang"
+    },
+    {
+      "cagr": -0.0069,
+      "nilai_2015": 0.0767,
+      "nilai_2025": 0.0716,
+      "perubahan_absolut": -0.0051,
+      "perubahan_persen": -6.6493,
+      "provinsi": "Riau",
+      "volatilitas": 0.0039,
+      "wilayah": "Rokan Hilir"
+    },
+    {
+      "cagr": -0.0097,
+      "nilai_2015": 0.057,
+      "nilai_2025": 0.0517,
+      "perubahan_absolut": -0.0053,
+      "perubahan_persen": -9.2982,
+      "provinsi": "Jambi",
+      "volatilitas": 0.0036,
+      "wilayah": "Bungo"
+    },
+    {
+      "cagr": -0.0091,
+      "nilai_2015": 0.0733,
+      "nilai_2025": 0.0669,
+      "perubahan_absolut": -0.0064,
+      "perubahan_persen": -8.7312,
+      "provinsi": "Kepulauan Bangka Belitung",
+      "volatilitas": 0.0043,
+      "wilayah": "Belitung Timur"
+    },
+    {
+      "cagr": -0.0087,
+      "nilai_2015": 0.0816,
+      "nilai_2025": 0.0748,
+      "perubahan_absolut": -0.0068,
+      "perubahan_persen": -8.3333,
+      "provinsi": "Jambi",
+      "volatilitas": 0.004,
+      "wilayah": "Kerinci"
+    },
+    {
+      "cagr": -0.0177,
+      "nilai_2015": 0.0563,
+      "nilai_2025": 0.0471,
+      "perubahan_absolut": -0.0092,
+      "perubahan_persen": -16.341,
+      "provinsi": "Kepulauan Bangka Belitung",
+      "volatilitas": 0.0039,
+      "wilayah": "Bangka"
+    },
+    {
+      "cagr": -0.0175,
+      "nilai_2015": 0.0712,
+      "nilai_2025": 0.0597,
+      "perubahan_absolut": -0.0115,
+      "perubahan_persen": -16.1517,
+      "provinsi": "Jambi",
+      "volatilitas": 0.0023,
+      "wilayah": "Tebo"
+    },
+    {
+      "cagr": -0.0066,
+      "nilai_2015": 0.1823,
+      "nilai_2025": 0.1707,
+      "perubahan_absolut": -0.0116,
+      "perubahan_persen": -6.3631,
+      "provinsi": "Aceh",
+      "volatilitas": 0.0142,
+      "wilayah": "Aceh Singkil"
+    },
+    {
+      "cagr": -0.0342,
+      "nilai_2015": 0.0412,
+      "nilai_2025": 0.0291,
+      "perubahan_absolut": -0.0121,
+      "perubahan_persen": -29.3689,
+      "provinsi": "Sumatera Barat",
+      "volatilitas": 0.0023,
+      "wilayah": "Kota Solok"
+    },
+    {
+      "cagr": -0.0284,
+      "nilai_2015": 0.0508,
+      "nilai_2025": 0.0381,
+      "perubahan_absolut": -0.0127,
+      "perubahan_persen": -25.0,
+      "provinsi": "Kepulauan Riau",
+      "volatilitas": 0.004,
+      "wilayah": "Kota Batam"
+    },
+    {
+      "cagr": -0.025,
+      "nilai_2015": 0.0567,
+      "nilai_2025": 0.044,
+      "perubahan_absolut": -0.0127,
+      "perubahan_persen": -22.3986,
+      "provinsi": "Riau",
+      "volatilitas": 0.0029,
+      "wilayah": "Siak"
+    },
+    {
+      "cagr": -0.0192,
+      "nilai_2015": 0.0738,
+      "nilai_2025": 0.0608,
+      "perubahan_absolut": -0.013,
+      "perubahan_persen": -17.6152,
+      "provinsi": "Riau",
+      "volatilitas": 0.003,
+      "wilayah": "Bengkalis"
+    },
+    {
+      "cagr": -0.0238,
+      "nilai_2015": 0.0607,
+      "nilai_2025": 0.0477,
+      "perubahan_absolut": -0.013,
+      "perubahan_persen": -21.4168,
+      "provinsi": "Kepulauan Riau",
+      "volatilitas": 0.0041,
+      "wilayah": "Bintan"
+    },
+    {
+      "cagr": -0.0301,
+      "nilai_2015": 0.0493,
+      "nilai_2025": 0.0363,
+      "perubahan_absolut": -0.013,
+      "perubahan_persen": -26.3692,
+      "provinsi": "Sumatera Barat",
+      "volatilitas": 0.0032,
+      "wilayah": "Kota Padang"
+    },
+    {
+      "cagr": -0.0175,
+      "nilai_2015": 0.0873,
+      "nilai_2025": 0.0732,
+      "perubahan_absolut": -0.0141,
+      "perubahan_persen": -16.1512,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0038,
+      "wilayah": "Padang Lawas"
+    },
+    {
+      "cagr": -0.0243,
+      "nilai_2015": 0.066,
+      "nilai_2025": 0.0516,
+      "perubahan_absolut": -0.0144,
+      "perubahan_persen": -21.8182,
+      "provinsi": "Kepulauan Riau",
+      "volatilitas": 0.0046,
+      "wilayah": "Karimun"
+    },
+    {
+      "cagr": -0.0201,
+      "nilai_2015": 0.0823,
+      "nilai_2025": 0.0672,
+      "perubahan_absolut": -0.0151,
+      "perubahan_persen": -18.3475,
+      "provinsi": "Lampung",
+      "volatilitas": 0.0048,
+      "wilayah": "Tulang Bawang Barat"
+    },
+    {
+      "cagr": -0.0223,
+      "nilai_2015": 0.0752,
+      "nilai_2025": 0.06,
+      "perubahan_absolut": -0.0152,
+      "perubahan_persen": -20.2128,
+      "provinsi": "Sumatera Barat",
+      "volatilitas": 0.004,
+      "wilayah": "Solok Selatan"
+    },
+    {
+      "cagr": -0.0224,
+      "nilai_2015": 0.0765,
+      "nilai_2025": 0.061,
+      "perubahan_absolut": -0.0155,
+      "perubahan_persen": -20.2614,
+      "provinsi": "Sumatera Barat",
+      "volatilitas": 0.0039,
+      "wilayah": "Lima Puluh Kota"
+    },
+    {
+      "cagr": -0.0162,
+      "nilai_2015": 0.1029,
+      "nilai_2025": 0.0874,
+      "perubahan_absolut": -0.0155,
+      "perubahan_persen": -15.0632,
+      "provinsi": "Jambi",
+      "volatilitas": 0.0041,
+      "wilayah": "Sarolangun"
+    },
+    {
+      "cagr": -0.0343,
+      "nilai_2015": 0.0536,
+      "nilai_2025": 0.0378,
+      "perubahan_absolut": -0.0158,
+      "perubahan_persen": -29.4776,
+      "provinsi": "Sumatera Barat",
+      "volatilitas": 0.0035,
+      "wilayah": "Kota Bukittinggi"
+    },
+    {
+      "cagr": -0.0341,
+      "nilai_2015": 0.0542,
+      "nilai_2025": 0.0383,
+      "perubahan_absolut": -0.0159,
+      "perubahan_persen": -29.3358,
+      "provinsi": "Sumatera Barat",
+      "volatilitas": 0.0027,
+      "wilayah": "Kota Pariaman"
+    },
+    {
+      "cagr": -0.0236,
+      "nilai_2015": 0.0758,
+      "nilai_2025": 0.0597,
+      "perubahan_absolut": -0.0161,
+      "perubahan_persen": -21.2401,
+      "provinsi": "Sumatera Barat",
+      "volatilitas": 0.0046,
+      "wilayah": "Agam"
+    },
+    {
+      "cagr": -0.0197,
+      "nilai_2015": 0.0899,
+      "nilai_2025": 0.0737,
+      "perubahan_absolut": -0.0162,
+      "perubahan_persen": -18.02,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0023,
+      "wilayah": "Labuhan Batu"
+    },
+    {
+      "cagr": -0.0413,
+      "nilai_2015": 0.0474,
+      "nilai_2025": 0.0311,
+      "perubahan_absolut": -0.0163,
+      "perubahan_persen": -34.3882,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0021,
+      "wilayah": "Deli Serdang"
+    },
+    {
+      "cagr": -0.0227,
+      "nilai_2015": 0.0793,
+      "nilai_2025": 0.063,
+      "perubahan_absolut": -0.0163,
+      "perubahan_persen": -20.5549,
+      "provinsi": "Sumatera Barat",
+      "volatilitas": 0.0036,
+      "wilayah": "Pasaman Barat"
+    },
+    {
+      "cagr": -0.0294,
+      "nilai_2015": 0.0667,
+      "nilai_2025": 0.0495,
+      "perubahan_absolut": -0.0172,
+      "perubahan_persen": -25.7871,
+      "provinsi": "Sumatera Barat",
+      "volatilitas": 0.003,
+      "wilayah": "Kota Payakumbuh"
+    },
+    {
+      "cagr": -0.0192,
+      "nilai_2015": 0.098,
+      "nilai_2025": 0.0807,
+      "perubahan_absolut": -0.0173,
+      "perubahan_persen": -17.6531,
+      "provinsi": "Jambi",
+      "volatilitas": 0.0038,
+      "wilayah": "Merangin"
+    },
+    {
+      "cagr": -0.03,
+      "nilai_2015": 0.0674,
+      "nilai_2025": 0.0497,
+      "perubahan_absolut": -0.0177,
+      "perubahan_persen": -26.2611,
+      "provinsi": "Sumatera Barat",
+      "volatilitas": 0.0041,
+      "wilayah": "Kota Padang Panjang"
+    },
+    {
+      "cagr": -0.0282,
+      "nilai_2015": 0.0776,
+      "nilai_2025": 0.0583,
+      "perubahan_absolut": -0.0193,
+      "perubahan_persen": -24.8711,
+      "provinsi": "Riau",
+      "volatilitas": 0.0026,
+      "wilayah": "Indragiri Hulu"
+    },
+    {
+      "cagr": -0.026,
+      "nilai_2015": 0.0838,
+      "nilai_2025": 0.0644,
+      "perubahan_absolut": -0.0194,
+      "perubahan_persen": -23.1504,
+      "provinsi": "Kepulauan Bangka Belitung",
+      "volatilitas": 0.0058,
+      "wilayah": "Belitung"
+    },
+    {
+      "cagr": -0.0222,
+      "nilai_2015": 0.0964,
+      "nilai_2025": 0.077,
+      "perubahan_absolut": -0.0194,
+      "perubahan_persen": -20.1245,
+      "provinsi": "Sumatera Selatan",
+      "volatilitas": 0.0045,
+      "wilayah": "Kota Pagar Alam"
+    },
+    {
+      "cagr": -0.0257,
+      "nilai_2015": 0.0846,
+      "nilai_2025": 0.0652,
+      "perubahan_absolut": -0.0194,
+      "perubahan_persen": -22.9314,
+      "provinsi": "Sumatera Barat",
+      "volatilitas": 0.0046,
+      "wilayah": "Pesisir Selatan"
+    },
+    {
+      "cagr": -0.0227,
+      "nilai_2015": 0.0967,
+      "nilai_2025": 0.0769,
+      "perubahan_absolut": -0.0198,
+      "perubahan_persen": -20.4757,
+      "provinsi": "Jambi",
+      "volatilitas": 0.0045,
+      "wilayah": "Kota Jambi"
+    },
+    {
+      "cagr": -0.0231,
+      "nilai_2015": 0.0985,
+      "nilai_2025": 0.078,
+      "perubahan_absolut": -0.0205,
+      "perubahan_persen": -20.8122,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0047,
+      "wilayah": "Humbang Hasundutan"
+    },
+    {
+      "cagr": -0.0261,
+      "nilai_2015": 0.0909,
+      "nilai_2025": 0.0698,
+      "perubahan_absolut": -0.0211,
+      "perubahan_persen": -23.2123,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0033,
+      "wilayah": "Dairi"
+    },
+    {
+      "cagr": -0.0297,
+      "nilai_2015": 0.0814,
+      "nilai_2025": 0.0602,
+      "perubahan_absolut": -0.0212,
+      "perubahan_persen": -26.0442,
+      "provinsi": "Sumatera Barat",
+      "volatilitas": 0.0032,
+      "wilayah": "Pasaman"
+    },
+    {
+      "cagr": -0.0257,
+      "nilai_2015": 0.0941,
+      "nilai_2025": 0.0725,
+      "perubahan_absolut": -0.0216,
+      "perubahan_persen": -22.9543,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0034,
+      "wilayah": "Kota Medan"
+    },
+    {
+      "cagr": -0.0521,
+      "nilai_2015": 0.0526,
+      "nilai_2025": 0.0308,
+      "perubahan_absolut": -0.0218,
+      "perubahan_persen": -41.4449,
+      "provinsi": "Riau",
+      "volatilitas": 0.0031,
+      "wilayah": "Kota Dumai"
+    },
+    {
+      "cagr": -0.0197,
+      "nilai_2015": 0.1232,
+      "nilai_2025": 0.101,
+      "perubahan_absolut": -0.0222,
+      "perubahan_persen": -18.0195,
+      "provinsi": "Bengkulu",
+      "volatilitas": 0.0037,
+      "wilayah": "Lebong"
+    },
+    {
+      "cagr": -0.0472,
+      "nilai_2015": 0.0582,
+      "nilai_2025": 0.0359,
+      "perubahan_absolut": -0.0223,
+      "perubahan_persen": -38.3162,
+      "provinsi": "Sumatera Barat",
+      "volatilitas": 0.0028,
+      "wilayah": "Tanah Datar"
+    },
+    {
+      "cagr": -0.0342,
+      "nilai_2015": 0.0772,
+      "nilai_2025": 0.0545,
+      "perubahan_absolut": -0.0227,
+      "perubahan_persen": -29.4041,
+      "provinsi": "Aceh",
+      "volatilitas": 0.0055,
+      "wilayah": "Kota Banda Aceh"
+    },
+    {
+      "cagr": -0.0321,
+      "nilai_2015": 0.082,
+      "nilai_2025": 0.0592,
+      "perubahan_absolut": -0.0228,
+      "perubahan_persen": -27.8049,
+      "provinsi": "Lampung",
+      "volatilitas": 0.0025,
+      "wilayah": "Mesuji"
+    },
+    {
+      "cagr": -0.0159,
+      "nilai_2015": 0.1552,
+      "nilai_2025": 0.1322,
+      "perubahan_absolut": -0.023,
+      "perubahan_persen": -14.8196,
+      "provinsi": "Sumatera Barat",
+      "volatilitas": 0.004,
+      "wilayah": "Kepulauan Mentawai"
+    },
+    {
+      "cagr": -0.0393,
+      "nilai_2015": 0.0703,
+      "nilai_2025": 0.0471,
+      "perubahan_absolut": -0.0232,
+      "perubahan_persen": -33.0014,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0034,
+      "wilayah": "Kota Binjai"
+    },
+    {
+      "cagr": -0.0235,
+      "nilai_2015": 0.1105,
+      "nilai_2025": 0.0871,
+      "perubahan_absolut": -0.0234,
+      "perubahan_persen": -21.1765,
+      "provinsi": "Riau",
+      "volatilitas": 0.003,
+      "wilayah": "Rokan Hulu"
+    },
+    {
+      "cagr": -0.0215,
+      "nilai_2015": 0.1212,
+      "nilai_2025": 0.0975,
+      "perubahan_absolut": -0.0237,
+      "perubahan_persen": -19.5545,
+      "provinsi": "Sumatera Selatan",
+      "volatilitas": 0.004,
+      "wilayah": "Kota Prabumulih"
+    },
+    {
+      "cagr": -0.0235,
+      "nilai_2015": 0.1124,
+      "nilai_2025": 0.0886,
+      "perubahan_absolut": -0.0238,
+      "perubahan_persen": -21.1744,
+      "provinsi": "Sumatera Selatan",
+      "volatilitas": 0.0032,
+      "wilayah": "Ogan Komering Ulu Timur"
+    },
+    {
+      "cagr": -0.0231,
+      "nilai_2015": 0.1158,
+      "nilai_2025": 0.0917,
+      "perubahan_absolut": -0.0241,
+      "perubahan_persen": -20.8117,
+      "provinsi": "Sumatera Selatan",
+      "volatilitas": 0.0037,
+      "wilayah": "Ogan Komering Ulu Selatan"
+    },
+    {
+      "cagr": -0.0253,
+      "nilai_2015": 0.1069,
+      "nilai_2025": 0.0827,
+      "perubahan_absolut": -0.0242,
+      "perubahan_persen": -22.638,
+      "provinsi": "Jambi",
+      "volatilitas": 0.0034,
+      "wilayah": "Batang Hari"
+    },
+    {
+      "cagr": -0.0176,
+      "nilai_2015": 0.1513,
+      "nilai_2025": 0.1267,
+      "perubahan_absolut": -0.0246,
+      "perubahan_persen": -16.2591,
+      "provinsi": "Sumatera Selatan",
+      "volatilitas": 0.0054,
+      "wilayah": "Musi Rawas"
+    },
+    {
+      "cagr": -0.022,
+      "nilai_2015": 0.1261,
+      "nilai_2025": 0.101,
+      "perubahan_absolut": -0.0251,
+      "perubahan_persen": -19.9048,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0044,
+      "wilayah": "Batu Bara"
+    },
+    {
+      "cagr": -0.0432,
+      "nilai_2015": 0.0717,
+      "nilai_2025": 0.0461,
+      "perubahan_absolut": -0.0256,
+      "perubahan_persen": -35.7043,
+      "provinsi": "Sumatera Barat",
+      "volatilitas": 0.0043,
+      "wilayah": "Dharmasraya"
+    },
+    {
+      "cagr": -0.0302,
+      "nilai_2015": 0.1025,
+      "nilai_2025": 0.0754,
+      "perubahan_absolut": -0.0271,
+      "perubahan_persen": -26.439,
+      "provinsi": "Lampung",
+      "volatilitas": 0.0041,
+      "wilayah": "Tulangbawang"
+    },
+    {
+      "cagr": -0.0415,
+      "nilai_2015": 0.0787,
+      "nilai_2025": 0.0515,
+      "perubahan_absolut": -0.0272,
+      "perubahan_persen": -34.5616,
+      "provinsi": "Sumatera Barat",
+      "volatilitas": 0.0026,
+      "wilayah": "Sijunjung"
+    },
+    {
+      "cagr": -0.0208,
+      "nilai_2015": 0.1443,
+      "nilai_2025": 0.1169,
+      "perubahan_absolut": -0.0274,
+      "perubahan_persen": -18.9882,
+      "provinsi": "Sumatera Selatan",
+      "volatilitas": 0.0071,
+      "wilayah": "Ogan Ilir"
+    },
+    {
+      "cagr": -0.0238,
+      "nilai_2015": 0.1333,
+      "nilai_2025": 0.1048,
+      "perubahan_absolut": -0.0285,
+      "perubahan_persen": -21.3803,
+      "provinsi": "Sumatera Selatan",
+      "volatilitas": 0.0062,
+      "wilayah": "Empat Lawang"
+    },
+    {
+      "cagr": -0.037,
+      "nilai_2015": 0.0917,
+      "nilai_2025": 0.0629,
+      "perubahan_absolut": -0.0288,
+      "perubahan_persen": -31.4068,
+      "provinsi": "Riau",
+      "volatilitas": 0.0039,
+      "wilayah": "Kampar"
+    },
+    {
+      "cagr": -0.029,
+      "nilai_2015": 0.113,
+      "nilai_2025": 0.0842,
+      "perubahan_absolut": -0.0288,
+      "perubahan_persen": -25.4867,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0038,
+      "wilayah": "Langkat"
+    },
+    {
+      "cagr": -0.0291,
+      "nilai_2015": 0.1131,
+      "nilai_2025": 0.0842,
+      "perubahan_absolut": -0.0289,
+      "perubahan_persen": -25.5526,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0052,
+      "wilayah": "Labuhan Batu Utara"
+    },
+    {
+      "cagr": -0.0163,
+      "nilai_2015": 0.1905,
+      "nilai_2025": 0.1616,
+      "perubahan_absolut": -0.0289,
+      "perubahan_persen": -15.1706,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0059,
+      "wilayah": "Nias Selatan"
+    },
+    {
+      "cagr": -0.0306,
+      "nilai_2015": 0.1097,
+      "nilai_2025": 0.0804,
+      "perubahan_absolut": -0.0293,
+      "perubahan_persen": -26.7092,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0044,
+      "wilayah": "Padang Lawas Utara"
+    },
+    {
+      "cagr": -0.0264,
+      "nilai_2015": 0.1263,
+      "nilai_2025": 0.0967,
+      "perubahan_absolut": -0.0296,
+      "perubahan_persen": -23.4363,
+      "provinsi": "Jambi",
+      "volatilitas": 0.0039,
+      "wilayah": "Tanjung Jabung Barat"
+    },
+    {
+      "cagr": -0.0405,
+      "nilai_2015": 0.0886,
+      "nilai_2025": 0.0586,
+      "perubahan_absolut": -0.03,
+      "perubahan_persen": -33.86,
+      "provinsi": "Sumatera Barat",
+      "volatilitas": 0.0042,
+      "wilayah": "Padang Pariaman"
+    },
+    {
+      "cagr": -0.0342,
+      "nilai_2015": 0.1021,
+      "nilai_2025": 0.0721,
+      "perubahan_absolut": -0.03,
+      "perubahan_persen": -29.383,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0058,
+      "wilayah": "Toba Samosir"
+    },
+    {
+      "cagr": -0.0367,
+      "nilai_2015": 0.0968,
+      "nilai_2025": 0.0666,
+      "perubahan_absolut": -0.0302,
+      "perubahan_persen": -31.1983,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0053,
+      "wilayah": "Karo"
+    },
+    {
+      "cagr": -0.0298,
+      "nilai_2015": 0.1162,
+      "nilai_2025": 0.0859,
+      "perubahan_absolut": -0.0303,
+      "perubahan_persen": -26.0757,
+      "provinsi": "Aceh",
+      "volatilitas": 0.0059,
+      "wilayah": "Kota Langsa"
+    },
+    {
+      "cagr": -0.0295,
+      "nilai_2015": 0.1215,
+      "nilai_2025": 0.0901,
+      "perubahan_absolut": -0.0314,
+      "perubahan_persen": -25.8436,
+      "provinsi": "Aceh",
+      "volatilitas": 0.0051,
+      "wilayah": "Kota Lhokseumawe"
+    },
+    {
+      "cagr": -0.0268,
+      "nilai_2015": 0.1322,
+      "nilai_2025": 0.1008,
+      "perubahan_absolut": -0.0314,
+      "perubahan_persen": -23.7519,
+      "provinsi": "Sumatera Selatan",
+      "volatilitas": 0.0038,
+      "wilayah": "Ogan Komering Ulu"
+    },
+    {
+      "cagr": -0.0482,
+      "nilai_2015": 0.0811,
+      "nilai_2025": 0.0495,
+      "perubahan_absolut": -0.0316,
+      "perubahan_persen": -38.9642,
+      "provinsi": "Riau",
+      "volatilitas": 0.0031,
+      "wilayah": "Indragiri Hilir"
+    },
+    {
+      "cagr": -0.0437,
+      "nilai_2015": 0.0877,
+      "nilai_2025": 0.0561,
+      "perubahan_absolut": -0.0316,
+      "perubahan_persen": -36.0319,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0032,
+      "wilayah": "Kota Padangsidimpuan"
+    },
+    {
+      "cagr": -0.0267,
+      "nilai_2015": 0.1348,
+      "nilai_2025": 0.1028,
+      "perubahan_absolut": -0.032,
+      "perubahan_persen": -23.7389,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0059,
+      "wilayah": "Kota Sibolga"
+    },
+    {
+      "cagr": -0.0336,
+      "nilai_2015": 0.1113,
+      "nilai_2025": 0.0791,
+      "perubahan_absolut": -0.0322,
+      "perubahan_persen": -28.9308,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0051,
+      "wilayah": "Mandailing Natal"
+    },
+    {
+      "cagr": -0.0314,
+      "nilai_2015": 0.1203,
+      "nilai_2025": 0.0874,
+      "perubahan_absolut": -0.0329,
+      "perubahan_persen": -27.3483,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0058,
+      "wilayah": "Kota Tebing Tinggi"
+    },
+    {
+      "cagr": -0.0265,
+      "nilai_2015": 0.1411,
+      "nilai_2025": 0.1079,
+      "perubahan_absolut": -0.0332,
+      "perubahan_persen": -23.5294,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.006,
+      "wilayah": "Samosir"
+    },
+    {
+      "cagr": -0.0287,
+      "nilai_2015": 0.1323,
+      "nilai_2025": 0.0989,
+      "perubahan_absolut": -0.0334,
+      "perubahan_persen": -25.2457,
+      "provinsi": "Aceh",
+      "volatilitas": 0.0078,
+      "wilayah": "Aceh Selatan"
+    },
+    {
+      "cagr": -0.0389,
+      "nilai_2015": 0.1033,
+      "nilai_2025": 0.0695,
+      "perubahan_absolut": -0.0338,
+      "perubahan_persen": -32.7202,
+      "provinsi": "Lampung",
+      "volatilitas": 0.0038,
+      "wilayah": "Kota Bandar Lampung"
+    },
+    {
+      "cagr": -0.0287,
+      "nilai_2015": 0.1345,
+      "nilai_2025": 0.1005,
+      "perubahan_absolut": -0.034,
+      "perubahan_persen": -25.2788,
+      "provinsi": "Bengkulu",
+      "volatilitas": 0.0043,
+      "wilayah": "Mukomuko"
+    },
+    {
+      "cagr": -0.043,
+      "nilai_2015": 0.0959,
+      "nilai_2025": 0.0618,
+      "perubahan_absolut": -0.0341,
+      "perubahan_persen": -35.5579,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0041,
+      "wilayah": "Serdang Bedagai"
+    },
+    {
+      "cagr": -0.0419,
+      "nilai_2015": 0.1,
+      "nilai_2025": 0.0652,
+      "perubahan_absolut": -0.0348,
+      "perubahan_persen": -34.8,
+      "provinsi": "Sumatera Barat",
+      "volatilitas": 0.0043,
+      "wilayah": "Solok"
+    },
+    {
+      "cagr": -0.0216,
+      "nilai_2015": 0.1805,
+      "nilai_2025": 0.1451,
+      "perubahan_absolut": -0.0354,
+      "perubahan_persen": -19.6122,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0071,
+      "wilayah": "Nias"
+    },
+    {
+      "cagr": -0.0462,
+      "nilai_2015": 0.0956,
+      "nilai_2025": 0.0596,
+      "perubahan_absolut": -0.036,
+      "perubahan_persen": -37.6569,
+      "provinsi": "Kepulauan Riau",
+      "volatilitas": 0.0072,
+      "wilayah": "Kota Tanjung Pinang"
+    },
+    {
+      "cagr": -0.0261,
+      "nilai_2015": 0.1581,
+      "nilai_2025": 0.1213,
+      "perubahan_absolut": -0.0368,
+      "perubahan_persen": -23.2764,
+      "provinsi": "Lampung",
+      "volatilitas": 0.0044,
+      "wilayah": "Pesisir Barat"
+    },
+    {
+      "cagr": -0.0322,
+      "nilai_2015": 0.133,
+      "nilai_2025": 0.0959,
+      "perubahan_absolut": -0.0371,
+      "perubahan_persen": -27.8947,
+      "provinsi": "Lampung",
+      "volatilitas": 0.0035,
+      "wilayah": "Lampung Tengah"
+    },
+    {
+      "cagr": -0.0291,
+      "nilai_2015": 0.1456,
+      "nilai_2025": 0.1084,
+      "perubahan_absolut": -0.0372,
+      "perubahan_persen": -25.5495,
+      "provinsi": "Aceh",
+      "volatilitas": 0.0049,
+      "wilayah": "Aceh Tamiang"
+    },
+    {
+      "cagr": -0.0346,
+      "nilai_2015": 0.1285,
+      "nilai_2025": 0.0904,
+      "perubahan_absolut": -0.0381,
+      "perubahan_persen": -29.6498,
+      "provinsi": "Sumatera Selatan",
+      "volatilitas": 0.0042,
+      "wilayah": "Kota Palembang"
+    },
+    {
+      "cagr": -0.0426,
+      "nilai_2015": 0.108,
+      "nilai_2025": 0.0699,
+      "perubahan_absolut": -0.0381,
+      "perubahan_persen": -35.2778,
+      "provinsi": "Riau",
+      "volatilitas": 0.004,
+      "wilayah": "Kuantan Singingi"
+    },
+    {
+      "cagr": -0.0458,
+      "nilai_2015": 0.1029,
+      "nilai_2025": 0.0644,
+      "perubahan_absolut": -0.0385,
+      "perubahan_persen": -37.415,
+      "provinsi": "Lampung",
+      "volatilitas": 0.004,
+      "wilayah": "Kota Metro"
+    },
+    {
+      "cagr": -0.0415,
+      "nilai_2015": 0.1141,
+      "nilai_2025": 0.0747,
+      "perubahan_absolut": -0.0394,
+      "perubahan_persen": -34.5311,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0055,
+      "wilayah": "Tapanuli Utara"
+    },
+    {
+      "cagr": -0.0377,
+      "nilai_2015": 0.1245,
+      "nilai_2025": 0.0848,
+      "perubahan_absolut": -0.0397,
+      "perubahan_persen": -31.8876,
+      "provinsi": "Sumatera Selatan",
+      "volatilitas": 0.0029,
+      "wilayah": "Banyu Asin"
+    },
+    {
+      "cagr": -0.0303,
+      "nilai_2015": 0.15,
+      "nilai_2025": 0.1103,
+      "perubahan_absolut": -0.0397,
+      "perubahan_persen": -26.4667,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0058,
+      "wilayah": "Tapanuli Tengah"
+    },
+    {
+      "cagr": -0.0451,
+      "nilai_2015": 0.1096,
+      "nilai_2025": 0.0691,
+      "perubahan_absolut": -0.0405,
+      "perubahan_persen": -36.9526,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0045,
+      "wilayah": "Simalungun"
+    },
+    {
+      "cagr": -0.0339,
+      "nilai_2015": 0.1426,
+      "nilai_2025": 0.101,
+      "perubahan_absolut": -0.0416,
+      "perubahan_persen": -29.1725,
+      "provinsi": "Lampung",
+      "volatilitas": 0.0031,
+      "wilayah": "Tanggamus"
+    },
+    {
+      "cagr": -0.043,
+      "nilai_2015": 0.118,
+      "nilai_2025": 0.076,
+      "perubahan_absolut": -0.042,
+      "perubahan_persen": -35.5932,
+      "provinsi": "Lampung",
+      "volatilitas": 0.0034,
+      "wilayah": "Pringsewu"
+    },
+    {
+      "cagr": -0.0346,
+      "nilai_2015": 0.1417,
+      "nilai_2025": 0.0996,
+      "perubahan_absolut": -0.0421,
+      "perubahan_persen": -29.7107,
+      "provinsi": "Jambi",
+      "volatilitas": 0.0051,
+      "wilayah": "Tanjung Jabung Timur"
+    },
+    {
+      "cagr": -0.0296,
+      "nilai_2015": 0.1627,
+      "nilai_2025": 0.1205,
+      "perubahan_absolut": -0.0422,
+      "perubahan_persen": -25.9373,
+      "provinsi": "Lampung",
+      "volatilitas": 0.0037,
+      "wilayah": "Lampung Selatan"
+    },
+    {
+      "cagr": -0.0504,
+      "nilai_2015": 0.1047,
+      "nilai_2025": 0.0624,
+      "perubahan_absolut": -0.0423,
+      "perubahan_persen": -40.4011,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0081,
+      "wilayah": "Kota Pematang Siantar"
+    },
+    {
+      "cagr": -0.035,
+      "nilai_2015": 0.1418,
+      "nilai_2025": 0.0993,
+      "perubahan_absolut": -0.0425,
+      "perubahan_persen": -29.9718,
+      "provinsi": "Lampung",
+      "volatilitas": 0.0059,
+      "wilayah": "Lampung Barat"
+    },
+    {
+      "cagr": -0.0271,
+      "nilai_2015": 0.1802,
+      "nilai_2025": 0.1369,
+      "perubahan_absolut": -0.0433,
+      "perubahan_persen": -24.0289,
+      "provinsi": "Sumatera Selatan",
+      "volatilitas": 0.0045,
+      "wilayah": "Lahat"
+    },
+    {
+      "cagr": -0.034,
+      "nilai_2015": 0.1508,
+      "nilai_2025": 0.1067,
+      "perubahan_absolut": -0.0441,
+      "perubahan_persen": -29.244,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0047,
+      "wilayah": "Kota Tanjung Balai"
+    },
+    {
+      "cagr": -0.0254,
+      "nilai_2015": 0.1973,
+      "nilai_2025": 0.1525,
+      "perubahan_absolut": -0.0448,
+      "perubahan_persen": -22.7065,
+      "provinsi": "Sumatera Selatan",
+      "volatilitas": 0.0089,
+      "wilayah": "Musi Rawas Utara"
+    },
+    {
+      "cagr": -0.0338,
+      "nilai_2015": 0.1585,
+      "nilai_2025": 0.1124,
+      "perubahan_absolut": -0.0461,
+      "perubahan_persen": -29.0852,
+      "provinsi": "Aceh",
+      "volatilitas": 0.0067,
+      "wilayah": "Aceh Timur"
+    },
+    {
+      "cagr": -0.0242,
+      "nilai_2015": 0.2142,
+      "nilai_2025": 0.1677,
+      "perubahan_absolut": -0.0465,
+      "perubahan_persen": -21.7087,
+      "provinsi": "Aceh",
+      "volatilitas": 0.0066,
+      "wilayah": "Gayo Lues"
+    },
+    {
+      "cagr": -0.0362,
+      "nilai_2015": 0.1516,
+      "nilai_2025": 0.1049,
+      "perubahan_absolut": -0.0467,
+      "perubahan_persen": -30.8047,
+      "provinsi": "Sumatera Selatan",
+      "volatilitas": 0.006,
+      "wilayah": "Kota Lubuklinggau"
+    },
+    {
+      "cagr": -0.0376,
+      "nilai_2015": 0.1478,
+      "nilai_2025": 0.1007,
+      "perubahan_absolut": -0.0471,
+      "perubahan_persen": -31.8674,
+      "provinsi": "Bengkulu",
+      "volatilitas": 0.0047,
+      "wilayah": "Bengkulu Utara"
+    },
+    {
+      "cagr": -0.0263,
+      "nilai_2015": 0.2013,
+      "nilai_2025": 0.1542,
+      "perubahan_absolut": -0.0471,
+      "perubahan_persen": -23.3979,
+      "provinsi": "Aceh",
+      "volatilitas": 0.006,
+      "wilayah": "Nagan Raya"
+    },
+    {
+      "cagr": -0.0249,
+      "nilai_2015": 0.2118,
+      "nilai_2025": 0.1646,
+      "perubahan_absolut": -0.0472,
+      "perubahan_persen": -22.2852,
+      "provinsi": "Aceh",
+      "volatilitas": 0.0076,
+      "wilayah": "Pidie"
+    },
+    {
+      "cagr": -0.0325,
+      "nilai_2015": 0.1691,
+      "nilai_2025": 0.1215,
+      "perubahan_absolut": -0.0476,
+      "perubahan_persen": -28.149,
+      "provinsi": "Lampung",
+      "volatilitas": 0.0048,
+      "wilayah": "Lampung Timur"
+    },
+    {
+      "cagr": -0.0352,
+      "nilai_2015": 0.1582,
+      "nilai_2025": 0.1105,
+      "perubahan_absolut": -0.0477,
+      "perubahan_persen": -30.1517,
+      "provinsi": "Aceh",
+      "volatilitas": 0.0068,
+      "wilayah": "Aceh Besar"
+    },
+    {
+      "cagr": -0.0524,
+      "nilai_2015": 0.1165,
+      "nilai_2025": 0.068,
+      "perubahan_absolut": -0.0485,
+      "perubahan_persen": -41.6309,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0058,
+      "wilayah": "Labuhan Batu Selatan"
+    },
+    {
+      "cagr": -0.05,
+      "nilai_2015": 0.1209,
+      "nilai_2025": 0.0724,
+      "perubahan_absolut": -0.0485,
+      "perubahan_persen": -40.1158,
+      "provinsi": "Riau",
+      "volatilitas": 0.0057,
+      "wilayah": "Pelalawan"
+    },
+    {
+      "cagr": -0.0549,
+      "nilai_2015": 0.1126,
+      "nilai_2025": 0.064,
+      "perubahan_absolut": -0.0486,
+      "perubahan_persen": -43.1616,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0037,
+      "wilayah": "Pakpak Bharat"
+    },
+    {
+      "cagr": -0.0508,
+      "nilai_2015": 0.1209,
+      "nilai_2025": 0.0718,
+      "perubahan_absolut": -0.0491,
+      "perubahan_persen": -40.6121,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0048,
+      "wilayah": "Asahan"
+    },
+    {
+      "cagr": -0.0271,
+      "nilai_2015": 0.2043,
+      "nilai_2025": 0.1552,
+      "perubahan_absolut": -0.0491,
+      "perubahan_persen": -24.0333,
+      "provinsi": "Aceh",
+      "volatilitas": 0.0071,
+      "wilayah": "Simeulue"
+    },
+    {
+      "cagr": -0.0292,
+      "nilai_2015": 0.1919,
+      "nilai_2025": 0.1427,
+      "perubahan_absolut": -0.0492,
+      "perubahan_persen": -25.6384,
+      "provinsi": "Aceh",
+      "volatilitas": 0.0076,
+      "wilayah": "Aceh Utara"
+    },
+    {
+      "cagr": -0.0322,
+      "nilai_2015": 0.1768,
+      "nilai_2025": 0.1275,
+      "perubahan_absolut": -0.0493,
+      "perubahan_persen": -27.8846,
+      "provinsi": "Aceh",
+      "volatilitas": 0.0071,
+      "wilayah": "Kota Sabang"
+    },
+    {
+      "cagr": -0.0311,
+      "nilai_2015": 0.1824,
+      "nilai_2025": 0.133,
+      "perubahan_absolut": -0.0494,
+      "perubahan_persen": -27.0833,
+      "provinsi": "Aceh",
+      "volatilitas": 0.0075,
+      "wilayah": "Aceh Barat Daya"
+    },
+    {
+      "cagr": -0.0422,
+      "nilai_2015": 0.1454,
+      "nilai_2025": 0.0945,
+      "perubahan_absolut": -0.0509,
+      "perubahan_persen": -35.0069,
+      "provinsi": "Sumatera Selatan",
+      "volatilitas": 0.0045,
+      "wilayah": "Muara Enim"
+    },
+    {
+      "cagr": -0.0413,
+      "nilai_2015": 0.1491,
+      "nilai_2025": 0.0978,
+      "perubahan_absolut": -0.0513,
+      "perubahan_persen": -34.4064,
+      "provinsi": "Aceh",
+      "volatilitas": 0.007,
+      "wilayah": "Aceh Tenggara"
+    },
+    {
+      "cagr": -0.0594,
+      "nilai_2015": 0.1137,
+      "nilai_2025": 0.0616,
+      "perubahan_absolut": -0.0521,
+      "perubahan_persen": -45.8223,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0052,
+      "wilayah": "Tapanuli Selatan"
+    },
+    {
+      "cagr": -0.0348,
+      "nilai_2015": 0.1751,
+      "nilai_2025": 0.1229,
+      "perubahan_absolut": -0.0522,
+      "perubahan_persen": -29.8115,
+      "provinsi": "Aceh",
+      "volatilitas": 0.007,
+      "wilayah": "Aceh Tengah"
+    },
+    {
+      "cagr": -0.036,
+      "nilai_2015": 0.1708,
+      "nilai_2025": 0.1184,
+      "perubahan_absolut": -0.0524,
+      "perubahan_persen": -30.6792,
+      "provinsi": "Sumatera Selatan",
+      "volatilitas": 0.0049,
+      "wilayah": "Ogan Komering Ilir"
+    },
+    {
+      "cagr": -0.0435,
+      "nilai_2015": 0.1461,
+      "nilai_2025": 0.0936,
+      "perubahan_absolut": -0.0525,
+      "perubahan_persen": -35.9343,
+      "provinsi": "Lampung",
+      "volatilitas": 0.0046,
+      "wilayah": "Way Kanan"
+    },
+    {
+      "cagr": -0.042,
+      "nilai_2015": 0.1592,
+      "nilai_2025": 0.1037,
+      "perubahan_absolut": -0.0555,
+      "perubahan_persen": -34.8618,
+      "provinsi": "Aceh",
+      "volatilitas": 0.0061,
+      "wilayah": "Aceh Jaya"
+    },
+    {
+      "cagr": -0.0462,
+      "nilai_2015": 0.1488,
+      "nilai_2025": 0.0927,
+      "perubahan_absolut": -0.0561,
+      "perubahan_persen": -37.7016,
+      "provinsi": "Sumatera Selatan",
+      "volatilitas": 0.005,
+      "wilayah": "Penukal Abab Lematang Ilir"
+    },
+    {
+      "cagr": -0.0303,
+      "nilai_2015": 0.2193,
+      "nilai_2025": 0.1612,
+      "perubahan_absolut": -0.0581,
+      "perubahan_persen": -26.4934,
+      "provinsi": "Aceh",
+      "volatilitas": 0.0089,
+      "wilayah": "Pidie Jaya"
+    },
+    {
+      "cagr": -0.0482,
+      "nilai_2015": 0.1495,
+      "nilai_2025": 0.0912,
+      "perubahan_absolut": -0.0583,
+      "perubahan_persen": -38.9967,
+      "provinsi": "Kepulauan Riau",
+      "volatilitas": 0.0099,
+      "wilayah": "Lingga"
+    },
+    {
+      "cagr": -0.0422,
+      "nilai_2015": 0.1803,
+      "nilai_2025": 0.1171,
+      "perubahan_absolut": -0.0632,
+      "perubahan_persen": -35.0527,
+      "provinsi": "Bengkulu",
+      "volatilitas": 0.0087,
+      "wilayah": "Rejang Lebong"
+    },
+    {
+      "cagr": -0.0472,
+      "nilai_2015": 0.1683,
+      "nilai_2025": 0.1038,
+      "perubahan_absolut": -0.0645,
+      "perubahan_persen": -38.3244,
+      "provinsi": "Bengkulu",
+      "volatilitas": 0.0087,
+      "wilayah": "Kepahiang"
+    },
+    {
+      "cagr": -0.0477,
+      "nilai_2015": 0.168,
+      "nilai_2025": 0.103,
+      "perubahan_absolut": -0.065,
+      "perubahan_persen": -38.6905,
+      "provinsi": "Aceh",
+      "volatilitas": 0.0064,
+      "wilayah": "Bireuen"
+    },
+    {
+      "cagr": -0.0377,
+      "nilai_2015": 0.2038,
+      "nilai_2025": 0.1388,
+      "perubahan_absolut": -0.065,
+      "perubahan_persen": -31.894,
+      "provinsi": "Aceh",
+      "volatilitas": 0.0077,
+      "wilayah": "Kota Subulussalam"
+    },
+    {
+      "cagr": -0.0466,
+      "nilai_2015": 0.1761,
+      "nilai_2025": 0.1093,
+      "perubahan_absolut": -0.0668,
+      "perubahan_persen": -37.933,
+      "provinsi": "Lampung",
+      "volatilitas": 0.0046,
+      "wilayah": "Pesawaran"
+    },
+    {
+      "cagr": -0.0361,
+      "nilai_2015": 0.2238,
+      "nilai_2025": 0.155,
+      "perubahan_absolut": -0.0688,
+      "perubahan_persen": -30.7417,
+      "provinsi": "Aceh",
+      "volatilitas": 0.0083,
+      "wilayah": "Aceh Barat"
+    },
+    {
+      "cagr": -0.0357,
+      "nilai_2015": 0.2298,
+      "nilai_2025": 0.1598,
+      "perubahan_absolut": -0.07,
+      "perubahan_persen": -30.4613,
+      "provinsi": "Bengkulu",
+      "volatilitas": 0.0047,
+      "wilayah": "Seluma"
+    },
+    {
+      "cagr": -0.0363,
+      "nilai_2015": 0.2276,
+      "nilai_2025": 0.1572,
+      "perubahan_absolut": -0.0704,
+      "perubahan_persen": -30.9315,
+      "provinsi": "Bengkulu",
+      "volatilitas": 0.0077,
+      "wilayah": "Bengkulu Selatan"
+    },
+    {
+      "cagr": -0.0362,
+      "nilai_2015": 0.2287,
+      "nilai_2025": 0.1582,
+      "perubahan_absolut": -0.0705,
+      "perubahan_persen": -30.8264,
+      "provinsi": "Bengkulu",
+      "volatilitas": 0.0063,
+      "wilayah": "Kaur"
+    },
+    {
+      "cagr": -0.0378,
+      "nilai_2015": 0.232,
+      "nilai_2025": 0.1578,
+      "perubahan_absolut": -0.0742,
+      "perubahan_persen": -31.9828,
+      "provinsi": "Lampung",
+      "volatilitas": 0.0055,
+      "wilayah": "Lampung Utara"
+    },
+    {
+      "cagr": -0.0284,
+      "nilai_2015": 0.2996,
+      "nilai_2025": 0.2247,
+      "perubahan_absolut": -0.0749,
+      "perubahan_persen": -25.0,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0089,
+      "wilayah": "Nias Barat"
+    },
+    {
+      "cagr": -0.0377,
+      "nilai_2015": 0.2379,
+      "nilai_2025": 0.162,
+      "perubahan_absolut": -0.0759,
+      "perubahan_persen": -31.9042,
+      "provinsi": "Aceh",
+      "volatilitas": 0.0084,
+      "wilayah": "Bener Meriah"
+    },
+    {
+      "cagr": -0.0592,
+      "nilai_2015": 0.1835,
+      "nilai_2025": 0.0997,
+      "perubahan_absolut": -0.0838,
+      "perubahan_persen": -45.6676,
+      "provinsi": "Sumatera Selatan",
+      "volatilitas": 0.0092,
+      "wilayah": "Musi Banyuasin"
+    },
+    {
+      "cagr": -0.0558,
+      "nilai_2015": 0.2114,
+      "nilai_2025": 0.1191,
+      "perubahan_absolut": -0.0923,
+      "perubahan_persen": -43.6613,
+      "provinsi": "Bengkulu",
+      "volatilitas": 0.0074,
+      "wilayah": "Kota Bengkulu"
+    },
+    {
+      "cagr": -0.0589,
+      "nilai_2015": 0.2542,
+      "nilai_2025": 0.1385,
+      "perubahan_absolut": -0.1157,
+      "perubahan_persen": -45.5153,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0118,
+      "wilayah": "Kota Gunungsitoli"
+    },
+    {
+      "cagr": -0.044,
+      "nilai_2015": 0.3262,
+      "nilai_2025": 0.2079,
+      "perubahan_absolut": -0.1183,
+      "perubahan_persen": -36.2661,
+      "provinsi": "Sumatera Utara",
+      "volatilitas": 0.0104,
+      "wilayah": "Nias Utara"
+    },
+    {
+      "cagr": -0.0495,
+      "nilai_2015": 0.3408,
+      "nilai_2025": 0.2051,
+      "perubahan_absolut": -0.1357,
+      "perubahan_persen": -39.8181,
+      "provinsi": "Riau",
+      "volatilitas": 0.0113,
+      "wilayah": "Kepulauan Meranti"
+    }
+  ],
+  "matriks_transisi_4x4": [
+    [
+      34,
+      5,
+      0,
+      0
+    ],
+    [
+      5,
+      27,
+      6,
+      0
+    ],
+    [
+      0,
+      6,
+      28,
+      4
+    ],
+    [
+      0,
+      0,
+      4,
+      35
+    ]
+  ],
+  "transisi_kuartil_2015_2025": {
+    "Aceh Barat": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Aceh Barat Daya": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Aceh Besar": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Aceh Jaya": {
+      "arah": "turun",
+      "kuartil_2015": 4,
+      "kuartil_2025": 3
+    },
+    "Aceh Selatan": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Aceh Singkil": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Aceh Tamiang": {
+      "arah": "naik",
+      "kuartil_2015": 3,
+      "kuartil_2025": 4
+    },
+    "Aceh Tengah": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Aceh Tenggara": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Aceh Timur": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Aceh Utara": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Agam": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Asahan": {
+      "arah": "turun",
+      "kuartil_2015": 3,
+      "kuartil_2025": 2
+    },
+    "Bangka": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Bangka Barat": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Bangka Selatan": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Bangka Tengah": {
+      "arah": "naik",
+      "kuartil_2015": 1,
+      "kuartil_2025": 2
+    },
+    "Banyu Asin": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Batang Hari": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Batu Bara": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Belitung": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Belitung Timur": {
+      "arah": "naik",
+      "kuartil_2015": 1,
+      "kuartil_2025": 2
+    },
+    "Bener Meriah": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Bengkalis": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Bengkulu Selatan": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Bengkulu Tengah": {
+      "arah": "naik",
+      "kuartil_2015": 2,
+      "kuartil_2025": 3
+    },
+    "Bengkulu Utara": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Bintan": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Bireuen": {
+      "arah": "turun",
+      "kuartil_2015": 4,
+      "kuartil_2025": 3
+    },
+    "Bungo": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Dairi": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Deli Serdang": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Dharmasraya": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Empat Lawang": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Gayo Lues": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Humbang Hasundutan": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Indragiri Hilir": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Indragiri Hulu": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Kampar": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Karimun": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Karo": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Kaur": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Kepahiang": {
+      "arah": "turun",
+      "kuartil_2015": 4,
+      "kuartil_2025": 3
+    },
+    "Kepulauan Anambas": {
+      "arah": "naik",
+      "kuartil_2015": 1,
+      "kuartil_2025": 2
+    },
+    "Kepulauan Mentawai": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Kepulauan Meranti": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Kerinci": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Kota Banda Aceh": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Kota Bandar Lampung": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Kota Batam": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Kota Bengkulu": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Kota Binjai": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Kota Bukittinggi": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Kota Dumai": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Kota Gunungsitoli": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Kota Jambi": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Kota Langsa": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Kota Lhokseumawe": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Kota Lubuklinggau": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Kota Medan": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Kota Metro": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Kota Padang": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Kota Padang Panjang": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Kota Padangsidimpuan": {
+      "arah": "turun",
+      "kuartil_2015": 2,
+      "kuartil_2025": 1
+    },
+    "Kota Pagar Alam": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Kota Palembang": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Kota Pangkal Pinang": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Kota Pariaman": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Kota Payakumbuh": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Kota Pekanbaru": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Kota Pematang Siantar": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Kota Prabumulih": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Kota Sabang": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Kota Sawah Lunto": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Kota Sibolga": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Kota Solok": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Kota Subulussalam": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Kota Sungai Penuh": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Kota Tanjung Balai": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Kota Tanjung Pinang": {
+      "arah": "turun",
+      "kuartil_2015": 2,
+      "kuartil_2025": 1
+    },
+    "Kota Tebing Tinggi": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Kuantan Singingi": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Labuhan Batu": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Labuhan Batu Selatan": {
+      "arah": "turun",
+      "kuartil_2015": 3,
+      "kuartil_2025": 2
+    },
+    "Labuhan Batu Utara": {
+      "arah": "naik",
+      "kuartil_2015": 2,
+      "kuartil_2025": 3
+    },
+    "Lahat": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Lampung Barat": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Lampung Selatan": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Lampung Tengah": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Lampung Timur": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Lampung Utara": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Langkat": {
+      "arah": "naik",
+      "kuartil_2015": 2,
+      "kuartil_2025": 3
+    },
+    "Lebong": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Lima Puluh Kota": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Lingga": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Mandailing Natal": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Merangin": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Mesuji": {
+      "arah": "turun",
+      "kuartil_2015": 2,
+      "kuartil_2025": 1
+    },
+    "Muara Enim": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Muaro Jambi": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Mukomuko": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Musi Banyuasin": {
+      "arah": "turun",
+      "kuartil_2015": 4,
+      "kuartil_2025": 3
+    },
+    "Musi Rawas": {
+      "arah": "naik",
+      "kuartil_2015": 3,
+      "kuartil_2025": 4
+    },
+    "Musi Rawas Utara": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Nagan Raya": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Natuna": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Nias": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Nias Barat": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Nias Selatan": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Nias Utara": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Ogan Ilir": {
+      "arah": "naik",
+      "kuartil_2015": 3,
+      "kuartil_2025": 4
+    },
+    "Ogan Komering Ilir": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Ogan Komering Ulu": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Ogan Komering Ulu Selatan": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Ogan Komering Ulu Timur": {
+      "arah": "naik",
+      "kuartil_2015": 2,
+      "kuartil_2025": 3
+    },
+    "Padang Lawas": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Padang Lawas Utara": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Padang Pariaman": {
+      "arah": "turun",
+      "kuartil_2015": 2,
+      "kuartil_2025": 1
+    },
+    "Pakpak Bharat": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Pasaman": {
+      "arah": "turun",
+      "kuartil_2015": 2,
+      "kuartil_2025": 1
+    },
+    "Pasaman Barat": {
+      "arah": "naik",
+      "kuartil_2015": 1,
+      "kuartil_2025": 2
+    },
+    "Pelalawan": {
+      "arah": "turun",
+      "kuartil_2015": 3,
+      "kuartil_2025": 2
+    },
+    "Penukal Abab Lematang Ilir": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Pesawaran": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Pesisir Barat": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Pesisir Selatan": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Pidie": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Pidie Jaya": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Pringsewu": {
+      "arah": "turun",
+      "kuartil_2015": 3,
+      "kuartil_2025": 2
+    },
+    "Rejang Lebong": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Rokan Hilir": {
+      "arah": "naik",
+      "kuartil_2015": 1,
+      "kuartil_2025": 2
+    },
+    "Rokan Hulu": {
+      "arah": "naik",
+      "kuartil_2015": 2,
+      "kuartil_2025": 3
+    },
+    "Samosir": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Sarolangun": {
+      "arah": "naik",
+      "kuartil_2015": 2,
+      "kuartil_2025": 3
+    },
+    "Seluma": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Serdang Bedagai": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Siak": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Sijunjung": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Simalungun": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Simeulue": {
+      "arah": "tetap",
+      "kuartil_2015": 4,
+      "kuartil_2025": 4
+    },
+    "Solok": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Solok Selatan": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Tanah Datar": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Tanggamus": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Tanjung Jabung Barat": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Tanjung Jabung Timur": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    },
+    "Tapanuli Selatan": {
+      "arah": "turun",
+      "kuartil_2015": 3,
+      "kuartil_2025": 2
+    },
+    "Tapanuli Tengah": {
+      "arah": "naik",
+      "kuartil_2015": 3,
+      "kuartil_2025": 4
+    },
+    "Tapanuli Utara": {
+      "arah": "turun",
+      "kuartil_2015": 3,
+      "kuartil_2025": 2
+    },
+    "Tebo": {
+      "arah": "tetap",
+      "kuartil_2015": 1,
+      "kuartil_2025": 1
+    },
+    "Toba Samosir": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Tulang Bawang Barat": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Tulangbawang": {
+      "arah": "tetap",
+      "kuartil_2015": 2,
+      "kuartil_2025": 2
+    },
+    "Way Kanan": {
+      "arah": "tetap",
+      "kuartil_2015": 3,
+      "kuartil_2025": 3
+    }
+  }
+}
