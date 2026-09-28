@@ -81,9 +81,9 @@ body[data-peta-makna="konteks"]{--peta-q1:#203e5b;--peta-q2:#4c7599;--peta-q3:#8
 /* Identitas IPB, header peta konsisten, dan kontrol statistik yang tidak menutupi peta. */
 .brand-lockup{display:flex;flex:0 1 auto;min-width:0;align-items:center;gap:9px}
 .topbar .brand-lockup .logo{min-width:0}
-.ipb-mark-link{display:grid;flex:0 0 40px;width:40px;height:40px;place-items:center;overflow:hidden;border:1px solid var(--line);border-radius:50%;background:#fff;transition:transform .18s ease,box-shadow .18s ease}
+.ipb-mark-link{position:relative;display:grid;flex:0 0 40px;width:40px;height:40px;place-items:center;overflow:hidden;border:1px solid var(--line);border-radius:50%;background:#fff;transition:transform .18s ease,box-shadow .18s ease}
 .ipb-mark-link:hover{transform:translateY(-1px);box-shadow:0 3px 10px #263c9226}
-.ipb-mark{display:block;width:38px;height:38px;object-fit:contain}
+.ipb-mark{position:absolute;top:0;left:50%;display:block;width:88px;height:auto;max-width:none;transform:translateX(-50%);vertical-align:middle}
 .topbar .logo-copy{min-width:0}
 .topbar .logo-copy strong{color:var(--brand-dark)}
 .body-peta{background:var(--paper)!important}
@@ -136,7 +136,7 @@ html[data-tema="gelap"] .body-peta .leaflet-control-attribution{background:var(-
  .topbar{width:100%;min-width:0}
  .brand-lockup{gap:7px}
  .ipb-mark-link{flex-basis:36px;width:36px;height:36px}
- .ipb-mark{width:34px;height:34px}
+ .ipb-mark{width:80px;height:auto}
  .topbar .logo{max-width:none;overflow:visible}
  .logo-copy strong{font-size:15px}.logo-copy small{font-size:6.5px;letter-spacing:.08em}
  .body-peta .topbar{width:100%;min-height:58px!important;background:var(--surface)!important}
@@ -148,7 +148,7 @@ html[data-tema="gelap"] .body-peta .leaflet-control-attribution{background:var(-
  .body-peta .map-toolbar{top:66px;right:8px;left:8px}
  .body-peta .kanvas-peta .legenda{width:min(205px,58vw)}
 }
-@media(max-width:360px){.logo-copy small{font-size:6px}.brand-lockup{gap:5px}.ipb-mark-link{flex-basis:32px;width:32px;height:32px}.ipb-mark{width:30px;height:30px}.theme-toggle,.ikon-cari{padding:5px 6px;font-size:9px}}
+@media(max-width:360px){.logo-copy small{font-size:6px}.brand-lockup{gap:5px}.ipb-mark-link{flex-basis:32px;width:32px;height:32px}.ipb-mark{width:66px;height:auto}.theme-toggle,.ikon-cari{padding:5px 6px;font-size:9px}}
 @media(prefers-reduced-motion:reduce){.ipb-mark-link{transition:none}}
 
 .lisa-filter:has(input:disabled){cursor:not-allowed;opacity:.58}

@@ -111,7 +111,7 @@ const contohBaris = [
   const identik = pola(markup[0]) === pola(markup[2]) && pola(markup[2]) === pola(markup[3]);
   const cariKhususPeta = markup[1].includes("tombol-cari")
     && !markup[0].includes("tombol-cari") && !markup[2].includes("tombol-cari") && !markup[3].includes("tombol-cari");
-  const logo = markup.every((m) => m.includes('class="logo"') && m.includes("Ruang Data") && m.includes('class="ipb-mark"') && m.includes("https://www.ipb.ac.id/"));
+  const logo = markup.every((m) => m.includes('class="logo"') && m.includes("Ruang Data") && m.includes('class="ipb-mark"') && m.includes("https://www.ipb.ac.id/wp-content/uploads/2023/12/Logo-IPB-University_Vertical.png") && m.includes('rel="noopener noreferrer"') && m.includes('align="middle"'));
   const wadah = { _html: "", set innerHTML(v) { this._html = v; }, get innerHTML() { return this._html; } };
   globalThis.document = { getElementById: () => wadah, documentElement: { dataset: {} } };
   renderShell("peta", { cari: true });

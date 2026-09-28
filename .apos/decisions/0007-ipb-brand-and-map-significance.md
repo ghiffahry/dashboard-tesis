@@ -14,4 +14,4 @@
 Aksen IPB memperkuat konteks akademik. Status signifikan harus tampak tanpa memberi kesan bahwa kuadran deskriptif otomatis menjadi klaster bermakna. Statistik median dan IQR memberi konteks sebaran yang tidak diberikan rerata saja.
 
 ## Dampak dan batas
-Berkas logo resmi disimpan di `docs/referensi/`; ikon header adalah potongan lambang persegi di `aset/logo-ipb-mark.png`. Sumber: halaman logo IPB University. Kolom `signifikan` dibaca dari hasil precompute, bukan dihitung ulang di browser. Kuartil adalah klasifikasi relatif terhadap indikator-tahun aktif. Sorotan LISA bersifat opsional dan dapat digabung dengan sorotan kuartil.
+Header memakai gambar logo vertikal dari URL yang direkomendasikan halaman logo resmi IPB University. CSS memotong tampilan menjadi lambang untuk menjaga header ringkas; sumber gambar tetap URL resmi IPB. Kolom `signifikan` dibaca dari hasil precompute, bukan dihitung ulang di browser. Kuartil adalah klasifikasi relatif terhadap indikator-tahun aktif. Sorotan LISA bersifat opsional dan dapat digabung dengan sorotan kuartil.

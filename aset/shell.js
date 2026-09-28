@@ -29,7 +29,7 @@ export function markupShell(halamanAktif, opsi = {}) {
   return `<header class="topbar">
   <div class="brand-lockup">
     <a class="ipb-mark-link" href="https://www.ipb.ac.id/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi situs IPB University">
-      <img class="ipb-mark" src="aset/logo-ipb-mark.png" alt="Lambang IPB University">
+      <img class="ipb-mark" src="https://www.ipb.ac.id/wp-content/uploads/2023/12/Logo-IPB-University_Vertical.png" alt="IPB University" align="middle">
     </a>
     <a class="logo" href="index.html" aria-label="Ruang Data, beranda">
       <span class="logo-copy"><strong>Ruang Data</strong><small>DASHBOARD TESIS · IPB · SUMATERA</small></span>

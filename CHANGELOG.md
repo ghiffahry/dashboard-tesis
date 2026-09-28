@@ -1,5 +1,9 @@
 # Catatan perubahan
 
+## 1.0.2 - 2026-09-28
+
+- Menggunakan gambar logo vertikal dari URL resmi IPB pada header. CSS menampilkan bagian lambang sebagai ikon ringkas.
+
 ## 1.0.1 - 2026-09-28
 
 - Menggunakan biru tua IPB sebagai aksen antarmuka dan menambahkan lambang resmi IPB ke header semua halaman.
