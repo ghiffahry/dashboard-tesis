@@ -8,8 +8,8 @@
 <link rel="stylesheet" href="aset/tokens.css">
 <link rel="stylesheet" href="aset/gaya.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="aset/desain.css?v=biru-putih-20260928">
-<link rel="stylesheet" href="aset/polesan.css?v=indicator-aware-2-20260928">
+<link rel="stylesheet" href="aset/desain.css?v=ipb-navy-map-20260928">
+<link rel="stylesheet" href="aset/polesan.css?v=ipb-navy-map-20260928">
 </head>
 <body class="body-peta">
 <div id="shell"></div>
@@ -26,8 +26,17 @@
       <h3 id="judul-moran">Autokorelasi spasial</h3>
       <p class="status-memuat" id="anotasi-moran">Memuat anotasi Moran…</p>
       <div id="daftar-lisa" class="bar-moran" role="list"></div>
-      <p>Kode HH, LL, HL, LH pada berkas dibaca sebagai Tinggi-Tinggi, Rendah-Rendah, Tinggi-Rendah, Rendah-Tinggi. Wilayah kepulauan tanpa tetangga dibaca sebagai Tidak Terhubung.</p>
+      <p>Ringkasan menghitung kuadran seluruh wilayah. Hanya wilayah signifikan setelah koreksi FDR yang dibaca sebagai klaster lokal.</p>
+      <label class="lisa-filter" for="toggle-lisa-signifikan">
+        <input id="toggle-lisa-signifikan" type="checkbox">
+        <span><strong>Sorot klaster signifikan</strong><small>FDR 5%; kuartil nilai tetap terlihat</small></span>
+      </label>
     </section>
+    <details class="map-summary">
+      <summary>Ringkasan sebaran wilayah</summary>
+      <div id="map-summary-stats" class="map-summary-stats" aria-live="polite">Memuat statistik…</div>
+      <p>Q1 dan Q3 memakai interpolasi linear. IQR = Q3 - Q1. Kuartil nilai bukan klasifikasi LISA.</p>
+    </details>
   </aside>
   <main class="peta-konten">
     <div class="kanvas-peta" data-peta-style="warna">
@@ -56,8 +65,8 @@
 </footer>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script type="module">
-import { inisialisasiPeta } from "./aset/peta.js?v=indicator-aware-20260928";
-import { renderShell } from "./aset/shell.js";
+import { inisialisasiPeta } from "./aset/peta.js?v=ipb-lisa-filter-20260928";
+import { renderShell } from "./aset/shell.js?v=ipb-logo-20260928";
 import { renderFooter, SUMBER_DATA } from "./aset/umum.js";
 
 async function main() {

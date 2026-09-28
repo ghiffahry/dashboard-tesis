@@ -27,10 +27,14 @@ export function markupShell(halamanAktif, opsi = {}) {
     ? '\n  <button class="ikon-cari" id="tombol-cari" type="button" aria-label="Fokus ke pencarian peubah">Cari</button>'
     : "";
   return `<header class="topbar">
-  <a class="logo" href="index.html" aria-label="Ruang Data Sumatera">
-    <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 7h24v16L20 34 8 23z"/><path d="M14 12h12M14 17h8M20 22v7"/></svg>
-    <span class="logo-copy"><strong>Ruang Data</strong><small>DASHBOARD TESIS · SUMATERA</small></span>
-  </a>
+  <div class="brand-lockup">
+    <a class="ipb-mark-link" href="https://www.ipb.ac.id/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi situs IPB University">
+      <img class="ipb-mark" src="aset/logo-ipb-mark.png" alt="Lambang IPB University">
+    </a>
+    <a class="logo" href="index.html" aria-label="Ruang Data, beranda">
+      <span class="logo-copy"><strong>Ruang Data</strong><small>DASHBOARD TESIS · IPB · SUMATERA</small></span>
+    </a>
+  </div>
   <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigasi-utama" aria-label="Buka navigasi"><span>☰</span></button>
   <nav id="navigasi-utama" aria-label="Navigasi utama">
 ${tautan}

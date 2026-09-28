@@ -1,5 +1,13 @@
 # Catatan perubahan
 
+## 1.0.1 - 2026-09-28
+
+- Menggunakan biru tua IPB sebagai aksen antarmuka dan menambahkan lambang resmi IPB ke header semua halaman.
+- Memperbaiki lebar header peta dan jarak filter untuk ponsel, termasuk layar sempit.
+- Menampilkan status signifikansi LISA terpisah dari kuartil, serta menyediakan sorotan klaster signifikan FDR 5%.
+- Menambahkan ringkasan jumlah wilayah, median, IQR, dan rentang nilai yang mengikuti indikator dan tahun aktif.
+- Menambahkan `TODO.md` untuk rencana fitur statistik, peta, metode, dan aksesibilitas.
+
 ## 1.0.0 - 2026-09-28
 
 Rilis pertama Dashboard Tesis yang siap dibangun dan diterbitkan sebagai situs statis.

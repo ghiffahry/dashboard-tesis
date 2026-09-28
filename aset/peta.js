@@ -312,11 +312,16 @@ export async function inisialisasiPeta(elemenPeta, opsi) {
 
   const lapisanPerWilayah = new Map();
   let filterKuantil = null;
+  let filterLisaSignifikan = false;
   function gayaWilayah(nama) {
     const token = warnaDariKuantil(ambilNilai(nama), batas, TOKEN_KUANTIL);
     const gaya = { fillColor: `var(${token})`, color: WARNA_GARIS, weight: 1, fillOpacity: 1 };
     if (filterKuantil !== null && batas.length === 3 && TOKEN_KUANTIL.indexOf(token) !== filterKuantil) {
       gaya.fillOpacity = 0.15;
+    }
+    if (filterLisaSignifikan) {
+      const lisa = bacaLisaWilayah(moran, meta.kunci, state.tahun, nama);
+      if (!lisa?.signifikan) gaya.fillOpacity = Math.min(gaya.fillOpacity, 0.14);
     }
     return gaya;
   }
@@ -378,7 +383,7 @@ export async function inisialisasiPeta(elemenPeta, opsi) {
     const lisa = bacaLisaWilayah(moran, meta.kunci, state.tahun, namaWilayah);
     const cagr = hitungCAGR(n15, n25, 10);
     const teksCagr = cagr === "TIDAK_TERDEFINISI" ? "TIDAK_TERDEFINISI" : formatProporsiSebagaiPersen(cagr) + " per tahun";
-    const teksLisa = lisa ? (LABEL_LISA[lisa.kuadran] || lisa.kuadran) : "-";
+    const teksLisa = !lisa ? "Tidak tersedia" : `${LABEL_LISA[lisa.kuadran] || lisa.kuadran}, ${lisa.signifikan ? "signifikan" : "tidak signifikan"} (FDR 5%)`;
 
     const judul = document.createElement("h3");
     judul.textContent = namaWilayah;
@@ -392,7 +397,7 @@ export async function inisialisasiPeta(elemenPeta, opsi) {
       ["Nilai " + state.tahun, formatNilaiPeubah(nAktif, meta.satuan)],
       ["Perubahan 2015-2025", selisih],
       ["CAGR 2015-2025", teksCagr],
-      ["Kuadran LISA", teksLisa],
+      ["Kuadran dan status LISA", teksLisa],
     ]) {
       const div = document.createElement("div");
       const l = document.createElement("span");
@@ -483,6 +488,34 @@ export async function inisialisasiPeta(elemenPeta, opsi) {
     }
   }
 
+  function renderRingkasanSebaran() {
+    const el = document.getElementById("map-summary-stats");
+    if (!el) return;
+    const urut = [...daftarNilai].sort((a, b) => a - b);
+    if (!urut.length) { el.textContent = "Belum ada nilai valid."; return; }
+    const kuantil = (p) => {
+      const posisi = (urut.length - 1) * p;
+      const bawah = Math.floor(posisi);
+      const fraksi = posisi - bawah;
+      return urut[bawah] + ((urut[Math.min(bawah + 1, urut.length - 1)] - urut[bawah]) * fraksi);
+    };
+    const median = kuantil(0.5);
+    const q1 = kuantil(0.25);
+    const q3 = kuantil(0.75);
+    const ringkas = [
+      ["Wilayah terisi", String(urut.length)],
+      ["Median", formatNilaiPeubah(median, meta.satuan)],
+      ["IQR (Q3-Q1)", formatNilaiPeubah(q3 - q1, meta.satuan)],
+      ["Rentang", `${formatNilaiPeubah(urut[0], meta.satuan)} sampai ${formatNilaiPeubah(urut.at(-1), meta.satuan)}`],
+    ];
+    el.replaceChildren(...ringkas.map(([label, nilai]) => {
+      const item = document.createElement("div");
+      const nama = document.createElement("span"); nama.textContent = label;
+      const angka = document.createElement("strong"); angka.textContent = nilai;
+      item.append(nama, angka); return item;
+    }));
+  }
+
   function renderWidget() {
     const elRingkasan = opsi.elRingkasan;
     if (!elRingkasan) return;
@@ -528,8 +561,16 @@ export async function inisialisasiPeta(elemenPeta, opsi) {
       li.textContent = "Batas kuantil degenerat (nilai seragam), seluruh wilayah satu kelas.";
       opsi.elLegenda.append(li);
     }
-    renderAnotasiMoran(opsi.elMoran ?? null, opsi.elLisa ?? null, bacaAnotasiMoran(moran, meta.kunci, state.tahun));
+    const anotasiAktif = bacaAnotasiMoran(moran, meta.kunci, state.tahun);
+    renderAnotasiMoran(opsi.elMoran ?? null, opsi.elLisa ?? null, anotasiAktif);
+    if (toggleLisa) {
+      toggleLisa.disabled = !anotasiAktif;
+      toggleLisa.checked = Boolean(anotasiAktif && filterLisaSignifikan);
+      if (!anotasiAktif) filterLisaSignifikan = false;
+      toggleLisa.setAttribute("aria-label", anotasiAktif ? "Sorot klaster LISA signifikan setelah koreksi FDR 5%" : "Penyaringan LISA tidak tersedia untuk indikator dan tahun ini");
+    }
     renderWidget();
+    renderRingkasanSebaran();
     if (state.provinsi) {
       pasangPin(state.provinsi);
       renderKartu(state.provinsi);
@@ -550,6 +591,13 @@ export async function inisialisasiPeta(elemenPeta, opsi) {
       state.tahun = Number(opsi.elTahun.value);
       applyState();
       ubahURL();
+    });
+  }
+  const toggleLisa = document.getElementById("toggle-lisa-signifikan");
+  if (toggleLisa) {
+    toggleLisa.addEventListener("change", () => {
+      filterLisaSignifikan = toggleLisa.checked;
+      lapisan.setStyle((fitur) => gayaWilayah(fitur.properties?.[KUNCI_NAMA_WILAYAH] ?? fitur.properties?.nama ?? ""));
     });
   }
   if (opsi.elPencarian) {

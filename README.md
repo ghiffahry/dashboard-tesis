@@ -1,6 +1,6 @@
 # Dashboard Tesis
 
-Dashboard statis untuk mengeksplorasi indikator 154 kabupaten/kota di Sumatera, 2015-2025. Rilis proyek: **1.0.0**.
+Dashboard statis untuk mengeksplorasi indikator 154 kabupaten/kota di Sumatera, 2015-2025. Rilis proyek: **1.0.1**.
 
 ## Pratinjau lokal
 
@@ -38,11 +38,11 @@ Pipeline lengkap membutuhkan CSV tesis dan komponen shapefile di `data/` dan `da
 
 ## Terbitkan ke GitHub Pages
 
-Repository publik proyek: [ghiffahry/dashboard-tesis](https://github.com/ghiffahry/dashboard-tesis). GitHub Pages sudah diatur memakai GitHub Actions dan situs v1.0.0 telah terbit di [https://ghiffahry.github.io/dashboard-tesis/](https://ghiffahry.github.io/dashboard-tesis/).
+Repository publik proyek: [ghiffahry/dashboard-tesis](https://github.com/ghiffahry/dashboard-tesis). GitHub Pages sudah diatur memakai GitHub Actions dan situs v1.0.1 telah terbit di [https://ghiffahry.github.io/dashboard-tesis/](https://ghiffahry.github.io/dashboard-tesis/).
 
 Setiap push ke branch `main` menjalankan uji modul, membangun `_site/`, lalu menerbitkannya. Jika pengaturan Pages perlu diperiksa, buka **Settings > Pages > Build and deployment** dan pilih **GitHub Actions**. Semua tautan aset relatif terhadap root repository.
 
-Branch `main` dan tag `v1.0.0` sudah dikirim ke GitHub. Input tesis tetap lokal dan tidak dilacak Git; data runtime yang dipakai situs berada dalam repository.
+Branch `main` dan tag `v1.0.1` sudah dikirim ke GitHub. Input tesis tetap lokal dan tidak dilacak Git; data runtime yang dipakai situs berada dalam repository.
 
 ## Halaman dan navigasi
 
@@ -62,5 +62,6 @@ Rata-rata wilayah bukan estimasi berbobot jumlah penduduk. Moran dan LISA menunj
 - Spesifikasi data dan metode: `docs/spesifikasi-dashboard-eda.md`.
 - Arah desain yang berlaku: `docs/rencana-desain.md`.
 - Prompt lama disimpan sebagai arsip lokal dan tidak masuk rilis.
+- Backlog pengembangan: `TODO.md`.
 - Keputusan dan audit proyek: `.apos/`.
 - Catatan rilis: `CHANGELOG.md`.
