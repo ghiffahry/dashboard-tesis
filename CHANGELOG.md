@@ -14,3 +14,5 @@ Rilis pertama Dashboard Tesis yang siap dibangun dan diterbitkan sebagai situs s
 ### Catatan metodologis
 
 Hasil dashboard bersifat deskriptif dan asosiatif. Moran global dan LISA tidak mengukur pengaruh kausal. Pembacaan tren wilayah tidak sama dengan estimasi tingkat penduduk berbobot.
+
+- Deploy awal v1.0.0 diterbitkan di https://ghiffahry.github.io/dashboard-tesis/ dari repository publik ghiffahry/dashboard-tesis.

@@ -38,11 +38,11 @@ Pipeline lengkap membutuhkan CSV tesis dan komponen shapefile di `data/` dan `da
 
 ## Terbitkan ke GitHub Pages
 
-Folder ini merupakan proyek Git tersendiri. Buat repository GitHub untuk dashboard ini, hubungkan remote repository tersebut, lalu push branch `main`. Workflow `.github/workflows/deploy.yml` menjalankan uji modul, membangun `_site/`, lalu menerbitkannya.
+Repository publik proyek: [ghiffahry/dashboard-tesis](https://github.com/ghiffahry/dashboard-tesis). GitHub Pages sudah diatur memakai GitHub Actions dan situs v1.0.0 telah terbit di [https://ghiffahry.github.io/dashboard-tesis/](https://ghiffahry.github.io/dashboard-tesis/).
 
-Di repository GitHub, buka **Settings > Pages > Build and deployment** dan pilih **GitHub Actions**. URL akan berbentuk `https://USERNAME.github.io/NAMA-REPO/`. Semua tautan aset bersifat relatif terhadap root repository.
+Setiap push ke branch `main` menjalankan uji modul, membangun `_site/`, lalu menerbitkannya. Jika pengaturan Pages perlu diperiksa, buka **Settings > Pages > Build and deployment** dan pilih **GitHub Actions**. Semua tautan aset relatif terhadap root repository.
 
-Commit dan tag `v1.0.0` dibuat lokal. Push dilakukan terpisah setelah repository tujuan dikonfirmasi.
+Branch `main` dan tag `v1.0.0` sudah dikirim ke GitHub. Input tesis tetap lokal dan tidak dilacak Git; data runtime yang dipakai situs berada dalam repository.
 
 ## Halaman dan navigasi
 

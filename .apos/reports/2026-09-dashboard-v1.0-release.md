@@ -22,4 +22,4 @@ Paket proyek disiapkan sebagai repository mandiri untuk GitHub Pages. Perubahan 
 
 ## Batas rilis
 
-Data Moran dan statistik tidak dihitung ulang dalam paket ini. Workflow Pages memakai data runtime yang sudah tersedia. Jalankan `build.ps1` hanya saat memang ingin mengolah ulang data dan semua input lokal siap. Push belum dilakukan; repository remote perlu ditautkan oleh pemilik sebelum publikasi.
+Data Moran dan statistik tidak dihitung ulang dalam paket ini. Workflow Pages memakai data runtime yang sudah tersedia. Jalankan `build.ps1` hanya saat memang ingin mengolah ulang data dan semua input lokal siap. Repository publik `ghiffahry/dashboard-tesis` sudah menerima branch `main` dan tag `v1.0.0`. Setelah Pages disetel ke GitHub Actions, run kedua berhasil dan situs aktif di `https://ghiffahry.github.io/dashboard-tesis/`.
