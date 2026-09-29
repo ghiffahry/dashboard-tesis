@@ -6,7 +6,7 @@
  * Nama cache menyertakan versi build; activate menghapus cache versi lama.
  */
 
-const VERSI_BAWAAN = "site-2eaf474edb6e";
+const VERSI_BAWAAN = "site-62093e156617";
 
 /**
  * Aset inti: wajib tersedia saat install. Kegagalan addAll dicatat dan
