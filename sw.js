@@ -6,7 +6,7 @@
  * Nama cache menyertakan versi build; activate menghapus cache versi lama.
  */
 
-const VERSI_BAWAAN = "site-28aebd76e93b";
+const VERSI_BAWAAN = "site-2eaf474edb6e";
 
 /**
  * Aset inti: wajib tersedia saat install. Kegagalan addAll dicatat dan
@@ -24,6 +24,11 @@ const ASET_INTIS = [
   "aset/cache-data.js",
   "aset/analisis-moran.js",
   "aset/analisis.js",
+  "aset/beranda-visual.js",
+  "aset/analisis-visual.js",
+  "aset/metode-visual.js",
+  "aset/draft.js",
+  "aset/ruang-tambahan.css",
   "aset/peta.js",
 ];
 
@@ -41,7 +46,7 @@ const ASET_FONT = [
  * precache opsional saat install; kegagalan dicatat, tidak menggagalkan.
  */
 const ASET_DATA_PER_HALAMAN = {
-  "index.html": ["data/seri-tahunan.json", "data/peringkat.json", "data/moran.json", "data/nilai-wilayah-tahunan.json"],
+  "index.html": ["data/seri-tahunan.json", "data/peringkat.json", "data/moran.json", "data/nilai-wilayah-tahunan.json", "data/indikator.json"],
   "peta.html": [
     "data/sumatera.geojson.gz",
     "data/sumatera.geojson",
@@ -57,7 +62,8 @@ const ASET_DATA_PER_HALAMAN = {
     "data/indikator.json",
     "data/scatter-moran.json",
   ],
-  "metode.html": ["data/indikator.json"],
+  "metode.html": ["data/indikator.json", "data/nilai-wilayah-tahunan.json", "data/tetangga.json"],
+  "draft.html": [],
 };
 
 const namaCacheAset = (v) => `eda-aset-${v}`;
@@ -146,4 +152,5 @@ self.addEventListener("fetch", (event) => {
     event.respondWith(cacheFirst(event.request));
   }
 });
+
 

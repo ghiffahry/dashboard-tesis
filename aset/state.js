@@ -27,6 +27,7 @@ export function bacaState(untiQuery = "", bawaan = STATE_BAWAAN) {
     tahun,
     peubah: params.get("peubah") || bawaan.peubah,
     provinsi: params.get("provinsi") || "",
+    lisa: ["HH", "LL", "HL", "LH"].includes(params.get("lisa")) ? params.get("lisa") : "",
   };
 }
 
@@ -40,6 +41,7 @@ export function tulisState(state) {
   params.set("tahun", String(state.tahun));
   params.set("peubah", state.peubah);
   if (state.provinsi) params.set("provinsi", state.provinsi);
+  if (["HH", "LL", "HL", "LH"].includes(state.lisa)) params.set("lisa", state.lisa);
   return `?${params.toString()}`;
 }
 
@@ -52,3 +54,6 @@ export function tulisState(state) {
 export function tautanKe(namaHalaman, state) {
   return `${namaHalaman}.html${tulisState(state)}`;
 }
+
+
+

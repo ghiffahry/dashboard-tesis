@@ -1,5 +1,5 @@
 /**
- * shell.js - header identik untuk keempat halaman dashboard.
+ * shell.js - header bersama untuk halaman dashboard.
  * renderShell(halamanAktif, opsi) menyisipkan markup header ke #shell;
  * aria-current="page" otomatis hanya di tautan halaman aktif.
  * markupShell murni (string) agar bisa diuji di Node.
@@ -10,6 +10,7 @@ const DAFTAR_HALAMAN = [
   { nama: "peta", label: "Peta", href: "peta.html" },
   { nama: "analisis", label: "Analisis", href: "analisis.html" },
   { nama: "metode", label: "Metode", href: "metode.html" },
+  { nama: "draft", label: "Draft", href: "draft.html" },
 ];
 
 /**
@@ -85,3 +86,5 @@ export function renderShell(halamanAktif, opsi = {}) {
   });
   return kepala;
 }
+
+

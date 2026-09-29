@@ -64,6 +64,12 @@ const contohBaris = [
   uji("format_proporsi_sebagai_persen",
     keluar === "22,4%" && formatProporsiSebagaiPersen(null) === "-", keluar);
 }
+// 6b. lisa_query_state_and_filter
+{
+  const selected = bacaState("?tahun=2024&peubah=Miskin_(persen)&lisa=HH");
+  const url = tautanKe("peta", selected);
+  uji("lisa_query_state_and_filter", selected.lisa === "HH" && url.includes("lisa=HH"), url);
+}
 // 7. hitung_cagr_nilai_awal_nol
 {
   const nol = hitungCAGR(0, 0.5, 10);
@@ -101,16 +107,18 @@ const contohBaris = [
 // 11. render_shell_aria_current (aset/shell.js)
 {
   const pola = (m) => m.replace(/ aria-current="page"/g, "");
-  const halaman = ["index", "peta", "analisis", "metode"];
+  const halaman = ["index", "peta", "analisis", "metode", "draft"];
   const markup = halaman.map((n) => markupShell(n, { cari: n === "peta" }));
   const satuAria = markup.every((m) => (m.match(/aria-current="page"/g) || []).length === 1);
+const navDraft = markup.every((m) => m.includes("draft.html") && m.includes("Draft"));
   const hrefBenar = markup[0].includes('href="index.html" class="pil" aria-current="page"')
     && markup[1].includes('href="peta.html" class="pil" aria-current="page"')
     && markup[2].includes('href="analisis.html" class="pil" aria-current="page"')
-    && markup[3].includes('href="metode.html" class="pil" aria-current="page"');
-  const identik = pola(markup[0]) === pola(markup[2]) && pola(markup[2]) === pola(markup[3]);
+    && markup[3].includes('href="metode.html" class="pil" aria-current="page"')
+    && markup[4].includes('href="draft.html" class="pil" aria-current="page"');
+  const identik = pola(markup[0]) === pola(markup[2]) && pola(markup[2]) === pola(markup[3]) && pola(markup[3]) === pola(markup[4]);
   const cariKhususPeta = markup[1].includes("tombol-cari")
-    && !markup[0].includes("tombol-cari") && !markup[2].includes("tombol-cari") && !markup[3].includes("tombol-cari");
+    && !markup[0].includes("tombol-cari") && !markup[2].includes("tombol-cari") && !markup[3].includes("tombol-cari") && !markup[4].includes("tombol-cari");
   const logo = markup.every((m) => m.includes('class="logo"') && m.includes("Ruang Data") && m.includes('class="ipb-mark"') && m.includes("https://www.ipb.ac.id/wp-content/uploads/2023/12/Logo-IPB-University_Vertical.png") && m.includes('rel="noopener noreferrer"') && m.includes('align="middle"'));
   const wadah = { _html: "", set innerHTML(v) { this._html = v; }, get innerHTML() { return this._html; } };
   globalThis.document = { getElementById: () => wadah, documentElement: { dataset: {} } };
@@ -119,7 +127,7 @@ const contohBaris = [
   const domOk = (html.match(/aria-current="page"/g) || []).length === 1
     && html.includes('href="peta.html" class="pil" aria-current="page"')
     && html.includes("tombol-cari");
-  uji("render_shell_aria_current", satuAria && hrefBenar && identik && cariKhususPeta && logo && domOk);
+  uji("render_shell_aria_current", satuAria && hrefBenar && identik && cariKhususPeta && logo && navDraft && domOk);
 }
 // 12. hitung_naik_reduced_motion (aset/format.js)
 {
@@ -143,4 +151,7 @@ for (const h of hasil) {
 }
 console.log(`${hasil.length - gagal}/${hasil.length} lulus`);
 process.exit(gagal === 0 ? 0 : 1);
+
+
+
 

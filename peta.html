@@ -8,8 +8,9 @@
 <link rel="stylesheet" href="aset/tokens.css">
 <link rel="stylesheet" href="aset/gaya.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="aset/desain.css?v=ipb-logo-hotlink-20260928">
-<link rel="stylesheet" href="aset/polesan.css?v=ipb-logo-hotlink-20260928">
+<link rel="stylesheet" href="aset/desain.css?v=dashboard-suite-20260929">
+<link rel="stylesheet" href="aset/polesan.css?v=dashboard-suite-20260929">
+<link rel="stylesheet" href="aset/ruang-tambahan.css?v=dashboard-suite-20260929">
 </head>
 <body class="body-peta">
 <div id="shell"></div>
@@ -42,7 +43,7 @@
     <div class="kanvas-peta" data-peta-style="warna">
       <div class="map-toolbar" role="group" aria-label="Kontrol tampilan peta">
         <button id="toggle-filter" type="button" aria-expanded="true" aria-controls="panel-filter">Tutup filter</button>
-        <button id="toggle-legend" type="button" aria-expanded="true" aria-controls="panel-legenda">Legenda</button>
+        <button id="toggle-legend" type="button" aria-expanded="true" aria-controls="panel-legenda">Legenda</button><button id="clear-lisa-filter" type="button" hidden>Hapus filter LISA</button>
         <div class="map-style-control" role="group" aria-label="Gaya basemap">
           <button type="button" data-peta-style="warna" aria-pressed="true">Warna</button>
           <button type="button" data-peta-style="netral" aria-pressed="false">Netral</button>
@@ -154,3 +155,5 @@ main();
 </script>
 </body>
 </html>
+
+

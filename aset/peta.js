@@ -312,7 +312,8 @@ export async function inisialisasiPeta(elemenPeta, opsi) {
 
   const lapisanPerWilayah = new Map();
   let filterKuantil = null;
-  let filterLisaSignifikan = false;
+  let filterLisaSignifikan = Boolean(state.lisa);
+  let filterLisaKuadran = state.lisa || "";
   function gayaWilayah(nama) {
     const token = warnaDariKuantil(ambilNilai(nama), batas, TOKEN_KUANTIL);
     const gaya = { fillColor: `var(${token})`, color: WARNA_GARIS, weight: 1, fillOpacity: 1 };
@@ -321,7 +322,8 @@ export async function inisialisasiPeta(elemenPeta, opsi) {
     }
     if (filterLisaSignifikan) {
       const lisa = bacaLisaWilayah(moran, meta.kunci, state.tahun, nama);
-      if (!lisa?.signifikan) gaya.fillOpacity = Math.min(gaya.fillOpacity, 0.14);
+      if (!lisa?.signifikan || (filterLisaKuadran && lisa.kuadran !== filterLisaKuadran)) gaya.fillOpacity = Math.min(gaya.fillOpacity, 0.12);
+      else { gaya.color = "#ffffff"; gaya.weight = 1.6; }
     }
     return gaya;
   }
@@ -568,6 +570,7 @@ export async function inisialisasiPeta(elemenPeta, opsi) {
       toggleLisa.checked = Boolean(anotasiAktif && filterLisaSignifikan);
       if (!anotasiAktif) filterLisaSignifikan = false;
       toggleLisa.setAttribute("aria-label", anotasiAktif ? "Sorot klaster LISA signifikan setelah koreksi FDR 5%" : "Penyaringan LISA tidak tersedia untuk indikator dan tahun ini");
+      toggleLisa.checked = Boolean(anotasiAktif && (filterLisaSignifikan || filterLisaKuadran));
     }
     renderWidget();
     renderRingkasanSebaran();
@@ -585,6 +588,12 @@ export async function inisialisasiPeta(elemenPeta, opsi) {
     history.replaceState(null, "", tulisState(event.detail));
   });
 
+  const clearLisa = document.getElementById("clear-lisa-filter");
+  if (clearLisa) {
+    clearLisa.hidden = !filterLisaKuadran;
+    clearLisa.textContent = filterLisaKuadran ? "Hapus filter " + filterLisaKuadran : "";
+    clearLisa.addEventListener("click", () => { filterLisaKuadran = ""; filterLisaSignifikan = false; state.lisa = ""; clearLisa.hidden = true; if (toggleLisa) toggleLisa.checked = false; lapisan.setStyle((fitur) => gayaWilayah(fitur.properties?.[KUNCI_NAMA_WILAYAH] ?? fitur.properties?.nama ?? "")); history.replaceState(null, "", tulisState(state)); });
+  }
   if (opsi.elTahun) {
     isiPilihanTahun(opsi.elTahun, state.tahun);
     opsi.elTahun.addEventListener("change", () => {
@@ -614,3 +623,6 @@ export async function inisialisasiPeta(elemenPeta, opsi) {
 
   return { peta, anotasi: bacaAnotasiMoran(moran, meta.kunci, state.tahun), batas, daftarNilai, meta, state };
 }
+
+
+

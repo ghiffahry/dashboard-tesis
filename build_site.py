@@ -3,9 +3,9 @@ from pathlib import Path
 import argparse, shutil, hashlib, json, re
 from datetime import datetime, timezone
 ROOT = Path(__file__).resolve().parent
-PAGES = ("index.html", "peta.html", "analisis.html", "metode.html", "sw.js")
+PAGES = ("index.html", "peta.html", "analisis.html", "metode.html", "draft.html", "sw.js")
 DATA = ("build-info.json", "indikator.json", "moran.json", "nilai-wilayah-tahunan.json",
-        "peringkat.json", "sebaran.json", "seri-tahunan.json", "sumatera.geojson", "sumatera.geojson.gz", "scatter-moran.json")
+        "peringkat.json", "sebaran.json", "seri-tahunan.json", "sumatera.geojson", "sumatera.geojson.gz", "scatter-moran.json", "tetangga.json")
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", default="_site")
@@ -19,6 +19,9 @@ def main():
         if not source.is_file(): raise SystemExit(f"Halaman wajib tidak ada: {name}")
         shutil.copy2(source, out / name)
     shutil.copytree(ROOT / "aset", out / "aset")
+    (out / "dokumen").mkdir()
+    shutil.copy2(ROOT / "dokumen" / "draft-contoh.pdf", out / "dokumen" / "draft-contoh.pdf")
+    shutil.copy2(ROOT / "dokumen" / "README.md", out / "dokumen" / "README.md")
     (out / "data").mkdir()
     for name in DATA:
         source = ROOT / "data" / name
@@ -27,7 +30,7 @@ def main():
     (out / ".nojekyll").write_text("", encoding="utf-8")
     for html in out.glob("*.html"):
         body = html.read_text(encoding="utf-8")
-        for ref in ("aset/tokens.css", "aset/gaya.css", "aset/desain.css", "aset/polesan.css"):
+        for ref in ("aset/tokens.css", "aset/gaya.css", "aset/desain.css", "aset/polesan.css", "aset/ruang-tambahan.css"):
             if ref not in body: raise SystemExit(f"Referensi aset hilang: {html.name}: {ref}")
     digest = hashlib.sha256()
     runtime = [p for p in out.rglob("*") if p.is_file() and p.name not in (".nojekyll", "build-info.json")]
@@ -50,4 +53,6 @@ def main():
         sw_path.write_text(sw_text, encoding="utf-8")
     print(f"Artifact siap: {out} ({sum(1 for x in out.rglob('*') if x.is_file())} files, {info['versi']})")
 if __name__ == "__main__": main()
+
+
 

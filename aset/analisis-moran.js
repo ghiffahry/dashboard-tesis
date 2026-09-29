@@ -45,7 +45,8 @@ function drawLineChart(element, values, label, benchmark) {
   element.append(svg("polyline", { class: "series", points: values.map((v, i) => x(i) + "," + y(v[1])).join(" ") }));
   values.forEach((v, i) => {
     const point = svg("circle", { class: "point", cx: x(i), cy: y(v[1]), r: 4 });
-    point.append(svg("title", {}, v[0] + ": " + fmt(v[1]) + " " + label));
+    point.setAttribute("class", "point" + (v[2] ? " point-significant" : ""));
+    point.append(svg("title", {}, v[0] + ": " + fmt(v[1]) + " " + label + (v[2] ? " · p mentah < 0,05" : " · p mentah ≥ 0,05")));
     element.append(point);
     if (i % 2 === 0 || i === values.length - 1) element.append(svg("text", { "text-anchor": "middle", x: x(i), y: h - 10 }, v[0]));
   });
@@ -58,8 +59,12 @@ function initializeScatter(data, preferredYear) {
   const labels = { queen: "Queen", jarak_110_km: "Jarak 110 km", knn_5: "KNN 5 tetangga" };
 
   function showRegion(point) {
-    $("scatter-detail").textContent = point.wilayah + ", " + point.provinsi + " · Kuadran " + point.kuadran +
-      " · Nilai wilayah " + fmt(point.x, 2) + " SD · Lag tetangga " + fmt(point.lag, 2) + " SD";
+    const panel = $("scatter-detail"), link = document.createElement("a");
+    link.className = "pil scatter-map-link";
+    link.href = "peta.html?" + new URLSearchParams({tahun: yearSelect.value, peubah: "Miskin_(persen)", provinsi: point.wilayah});
+    link.textContent = "Lihat lokasi di peta →";
+    panel.replaceChildren(document.createTextNode(point.wilayah + ", " + point.provinsi + " · Kuadran " + point.kuadran +
+      " · Nilai wilayah " + fmt(point.x, 2) + " SD · Lag tetangga " + fmt(point.lag, 2) + " SD · "), link);
   }
 
   function render() {
@@ -193,9 +198,13 @@ Promise.all([
     Object.values(target?.lisa_per_wilayah || {}).forEach((item) => { if (item.signifikan) counts[item.kuadran] = (counts[item.kuadran] || 0) + 1; });
     $("a-klaster").replaceChildren();
     Object.entries(counts).forEach(([name, count]) => {
-      const chip = document.createElement("span"), strong = document.createElement("strong");
-      chip.className = "stat-chip"; strong.textContent = name;
-      chip.append(strong, document.createTextNode(" · " + count + " wilayah signifikan")); $("a-klaster").append(chip);
+      if (!["HH", "LL", "HL", "LH"].includes(name)) return;
+      const chip = document.createElement("a"), strong = document.createElement("strong");
+      chip.className = "stat-chip lisa-filter-chip";
+      chip.href = "peta.html?" + new URLSearchParams({tahun: year, peubah: "Miskin_(persen)", lisa: name});
+      chip.setAttribute("aria-label", `Tampilkan ${count} wilayah signifikan kategori ${name} di peta`);
+      strong.textContent = name;
+      chip.append(strong, document.createTextNode(" · " + count + " wilayah signifikan · buka peta →")); $("a-klaster").append(chip);
     });
     const satuanPersen = selectedIndicator?.satuan === "persen";
     const annual = Object.entries(series[variable]?.Sumatera || {})
@@ -211,14 +220,15 @@ Promise.all([
       $("a-perubahan").textContent = "Perubahan " + (delta >= 0 ? "naik " : "turun ") + fmt(Math.abs(delta), satuanPersen ? 2 : 3) + (satuanPersen ? " poin persentase" : " " + labelUnit) + " dari " + annual[0][0] + " ke " + annual.at(-1)[0] + ".";
     }
     const annualMoran = Object.entries(models[variable] || {})
-      .sort((a, b) => Number(a[0]) - Number(b[0])).map(([yr, value]) => [yr, value.moran_i]);
+      .sort((a, b) => Number(a[0]) - Number(b[0])).map(([yr, value]) => [yr, value.moran_i, value.signifikan]);
     $("a-moran-tren-subjudul").textContent = "Moran’s I " + (selectedIndicator?.label || variable) + ", 2015-2025 · skema Queen";
-    $("a-moran-tren-status").textContent = annualMoran.length ? "Garis putus-putus menunjukkan nilai harapan di bawah pengacakan." : "Moran belum dihitung untuk indikator ini. Grafik temporal tetap tersedia di panel Temporal.";
+    $("a-moran-tren-status").textContent = annualMoran.length ? "Titik berwarna menandai p mentah < 0,05. Uji global ini belum dikoreksi lintas tahun dan peubah." : "Moran belum dihitung untuk indikator ini. Grafik temporal tetap tersedia di panel Temporal.";
     if (annualMoran.length) drawLineChart($("a-moran-tren"), annualMoran, "I", -1 / 153);
     else $("a-moran-tren").replaceChildren();
     const url = new URL(location);
     url.searchParams.set("tahun", year); url.searchParams.set("peubah", variable);
     history.replaceState({}, "", url);
+    document.dispatchEvent(new CustomEvent("analisis:update", {detail:{year:Number(year),variable}}));
   }
   variableSelect.addEventListener("change", render);
   yearSelect.addEventListener("change", render);
@@ -228,6 +238,7 @@ Promise.all([
   $("a-moran-konteks").textContent = "Data analisis tidak dapat dimuat.";
   $("scatter-summary").textContent = "Data sensitivitas Moran tidak dapat dimuat.";
 });
+
 
 
 
