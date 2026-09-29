@@ -13,7 +13,7 @@ export {
 } from "./state.js";
 
 /** Sumber data untuk footer (lihat header index.html). */
-export const SUMBER_DATA = "Sumber internal tesis 2015-2025 + geometri Sumatera (154 kab/kota)";
+export const SUMBER_DATA = "Ghardapaty Ghaly Ghiffary - G1501231086 - Statistika dan Sains Data - Desain Visualisasi Interaktif dari Data Penelitian";
 
 /**
  * Ambil versi build dari build-info.json; tak pernah throw.
@@ -41,6 +41,5 @@ export async function bacaVersiBuild(tautan = "data/build-info.json") {
  */
 export async function renderFooter(elemen, info = {}) {
   if (!elemen) return;
-  const versi = await bacaVersiBuild(info.tautanBuild);
-  elemen.textContent = `Sumber: ${info.sumber} | Versi: ${versi}`;
+  elemen.textContent = info.sumber || SUMBER_DATA;
 }

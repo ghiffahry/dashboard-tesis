@@ -46,7 +46,12 @@ function drawLineChart(element, values, label, benchmark) {
   values.forEach((v, i) => {
     const point = svg("circle", { class: "point", cx: x(i), cy: y(v[1]), r: 4 });
     point.setAttribute("class", "point" + (v[2] ? " point-significant" : ""));
-    point.append(svg("title", {}, v[0] + ": " + fmt(v[1]) + " " + label + (v[2] ? " · p mentah < 0,05" : " · p mentah ≥ 0,05")));
+    if (element.id === "a-moran-tren") {
+      point.setAttribute("tabindex", "0"); point.setAttribute("role", "button");
+      point.append(svg("title", {}, v[0] + ": I = " + fmt(v[1], 4) + " · p mentah = " + fmt(v[3], 3) + " · q BH = " + fmt(v[4], 3)));
+      const pilihTahun = () => { const year = $("a-tahun"); year.value = v[0]; year.dispatchEvent(new Event("change", {bubbles:true})); $("st-summary").textContent = `Kemiskinan ${v[0]} · Moran’s I ${fmt(v[1],4)} · p mentah ${fmt(v[3],3)} · q BH ${fmt(v[4],3)}. Buka peta untuk melihat pola wilayah.`; $("st-map-link").href = "peta.html?" + new URLSearchParams({tahun:v[0],peubah:"Miskin_(persen)"}); };
+      point.addEventListener("click", pilihTahun); point.addEventListener("keydown", (event) => {if(event.key === "Enter" || event.key === " "){event.preventDefault();pilihTahun();}});
+    } else point.append(svg("title", {}, v[0] + ": " + fmt(v[1]) + " " + label + (v[2] ? " · p mentah < 0,05" : " · p mentah ≥ 0,05")));
     element.append(point);
     if (i % 2 === 0 || i === values.length - 1) element.append(svg("text", { "text-anchor": "middle", x: x(i), y: h - 10 }, v[0]));
   });
@@ -160,6 +165,7 @@ function initializeScatter(data, preferredYear) {
     $("scatter-detail").textContent = "Arahkan kursor ke titik atau sentuh dekat titik untuk melihat nama wilayah.";
   }
   yearSelect.addEventListener("change", render);
+  $("st-bobot")?.addEventListener("change", render);
   weightSelect.addEventListener("change", render);
   window.addEventListener("resize", render);
   render();
@@ -219,12 +225,14 @@ Promise.all([
     const delta = annual.at(-1)[1] - annual[0][1];
       $("a-perubahan").textContent = "Perubahan " + (delta >= 0 ? "naik " : "turun ") + fmt(Math.abs(delta), satuanPersen ? 2 : 3) + (satuanPersen ? " poin persentase" : " " + labelUnit) + " dari " + annual[0][0] + " ke " + annual.at(-1)[0] + ".";
     }
-    const annualMoran = Object.entries(models[variable] || {})
-      .sort((a, b) => Number(a[0]) - Number(b[0])).map(([yr, value]) => [yr, value.moran_i, value.signifikan]);
-    $("a-moran-tren-subjudul").textContent = "Moran’s I " + (selectedIndicator?.label || variable) + ", 2015-2025 · skema Queen";
-    $("a-moran-tren-status").textContent = annualMoran.length ? "Titik berwarna menandai p mentah < 0,05. Uji global ini belum dikoreksi lintas tahun dan peubah." : "Moran belum dihitung untuk indikator ini. Grafik temporal tetap tersedia di panel Temporal.";
-    if (annualMoran.length) drawLineChart($("a-moran-tren"), annualMoran, "I", -1 / 153);
-    else $("a-moran-tren").replaceChildren();
+    const skemaAktif = $("st-bobot")?.value || "queen";
+    const annualMoran = years.map((yr) => {
+      const result = scatter.skema[skemaAktif]?.[String(yr)];
+      return result ? [String(yr), result.moran_i, result.q_bh <= .05, result.p_value, result.q_bh] : null;
+    }).filter(Boolean);
+    $("a-moran-tren-subjudul").textContent = "Moran’s I kemiskinan · " + (skemaAktif === "queen" ? "Queen" : skemaAktif === "jarak_110_km" ? "Jarak 110 km" : "KNN 5") + " · respons Y tetap";
+    $("a-moran-tren-status").textContent = "Pilih titik untuk membuka peta pada tahun tersebut. Warna titik menunjukkan q BH ≤ 0,05 lintas 33 kombinasi bobot dan tahun.";
+    drawLineChart($("a-moran-tren"), annualMoran, "I", -1 / 153);
     const url = new URL(location);
     url.searchParams.set("tahun", year); url.searchParams.set("peubah", variable);
     history.replaceState({}, "", url);
@@ -234,7 +242,8 @@ Promise.all([
   yearSelect.addEventListener("change", render);
   initializeScatter(scatter, state.tahun);
   render();
-}).catch(() => {
+}).catch((error) => {
+  console.error("Gagal menyiapkan analisis Moran:", error);
   $("a-moran-konteks").textContent = "Data analisis tidak dapat dimuat.";
   $("scatter-summary").textContent = "Data sensitivitas Moran tidak dapat dimuat.";
 });

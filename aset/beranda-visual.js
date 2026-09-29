@@ -67,7 +67,7 @@ function render() {
 }
 function init() {
  const variables=Object.keys(data.values),rankRows=data.ranks;
- const provinceMap=new Map();for(const rows of Object.values(rankRows))for(const row of rows||[])if(row.wilayah&&row.provinsi)provinceMap.set(row.wilayah,row.provinsi);data.province=provinceMap;
+ const provinceMap=new Map();for(const rows of Object.values(rankRows))if(Array.isArray(rows))for(const row of rows)if(row?.wilayah&&row?.provinsi)provinceMap.set(row.wilayah,row.provinsi);data.province=provinceMap;
  [...new Set([...provinceMap.values()])].sort((a,b)=>a.localeCompare(b,"id")).forEach(p=>$("home-provinsi").add(new Option(p,p)));
  peubahSelect.addEventListener("change",render);tahunSelect.addEventListener("change",render);$("home-provinsi").addEventListener("change",render);render();
 }
@@ -75,5 +75,5 @@ Promise.all([ambilJson("data/indikator.json"),ambilJson("data/nilai-wilayah-tahu
  data={indicators,values,ranks,province:new Map()};
  if(!peubahSelect.options.length || !peubahSelect.value){await new Promise(resolve=>{const observer=new MutationObserver(()=>{if(peubahSelect.value){observer.disconnect();resolve();}});observer.observe(peubahSelect,{childList:true});setTimeout(()=>{observer.disconnect();resolve();},5000);});}
  init();
-}).catch(()=>{$("home-insight").textContent="Data tambahan tidak termuat. Ringkasan utama tetap tersedia.";});
+}).catch((error)=>{console.error("Gagal menyiapkan visual beranda:",error);$("home-insight").textContent="Data tambahan tidak termuat. Ringkasan utama tetap tersedia.";});
 

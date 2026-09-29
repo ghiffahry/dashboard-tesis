@@ -1,6 +1,6 @@
 # Dashboard Tesis
 
-Dashboard statis untuk mengeksplorasi indikator 154 kabupaten/kota di Sumatera, 2015-2025. Rilis proyek: **1.1.0**.
+Dashboard statis untuk mengeksplorasi indikator 154 kabupaten/kota di Sumatera, 2015-2025. Rilis proyek: **1.1.1**.
 
 ## Pratinjau lokal
 
@@ -25,3 +25,4 @@ Repository: [ghiffahry/dashboard-tesis](https://github.com/ghiffahry/dashboard-t
 Rerata kabupaten/kota memberi bobot yang sama untuk setiap wilayah, bukan bobot penduduk. Moran dan LISA mengukur asosiasi spasial, bukan sebab-akibat. Perpindahan kuadran LISA bersifat deskriptif dan tidak membuktikan persistensi klaster. Moran global memakai nilai p mentah; koreksi FDR diterapkan pada pengujian LISA per indikator dan tahun. Definisi operasional indikator hanya ditampilkan jika tersedia dalam metadata.
 
 Data runtime berada di repository dan dipakai untuk situs statis. Berkas sumber tesis pribadi tidak disertakan.
+

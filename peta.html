@@ -43,7 +43,7 @@
     <div class="kanvas-peta" data-peta-style="warna">
       <div class="map-toolbar" role="group" aria-label="Kontrol tampilan peta">
         <button id="toggle-filter" type="button" aria-expanded="true" aria-controls="panel-filter">Tutup filter</button>
-        <button id="toggle-legend" type="button" aria-expanded="true" aria-controls="panel-legenda">Legenda</button><button id="clear-lisa-filter" type="button" hidden>Hapus filter LISA</button>
+        <button id="toggle-legend" type="button" aria-expanded="true" aria-controls="panel-legenda">Legenda</button><button id="clear-lisa-filter" type="button" hidden>Hapus filter LISA</button><button id="toggle-map-fullscreen" type="button" aria-pressed="false">Layar penuh</button>
         <div class="map-style-control" role="group" aria-label="Gaya basemap">
           <button type="button" data-peta-style="warna" aria-pressed="true">Warna</button>
           <button type="button" data-peta-style="netral" aria-pressed="false">Netral</button>
@@ -120,8 +120,9 @@ async function main() {
     try { localStorage.setItem("eda-gaya-peta", gaya); } catch { /* peta tetap dapat digunakan */ }
   }));
   await renderFooter(document.getElementById("info-build"), { sumber: SUMBER_DATA });
+  let instancePeta = null;
   try {
-    await inisialisasiPeta(document.getElementById("elemen-peta"), {
+    instancePeta = await inisialisasiPeta(document.getElementById("elemen-peta"), {
       geojsonPrimer: "data/sumatera.geojson.gz",
       geojsonCadangan: "data/sumatera.geojson",
       tautanMoran: "data/moran.json",
@@ -142,6 +143,19 @@ async function main() {
   } catch {
     document.getElementById("ringkasan-widget").textContent = "Gagal membangun peta, periksa berkas GeoJSON dan JSON precompute.";
   }
+  const tombolLayarPenuh = document.getElementById("toggle-map-fullscreen");
+  tombolLayarPenuh?.addEventListener("click", async () => {
+    try {
+      if (document.fullscreenElement) await document.exitFullscreen();
+      else await gayaPeta.requestFullscreen();
+    } catch { tombolLayarPenuh.textContent = "Layar penuh tidak didukung"; }
+  });
+  document.addEventListener("fullscreenchange", () => {
+    const penuh = document.fullscreenElement === gayaPeta;
+    tombolLayarPenuh?.setAttribute("aria-pressed", String(penuh));
+    if (tombolLayarPenuh) tombolLayarPenuh.textContent = penuh ? "Keluar layar penuh" : "Layar penuh";
+    setTimeout(() => instancePeta?.peta?.invalidateSize(), 180);
+  });
   if ("serviceWorker" in navigator) {
     try {
       await navigator.serviceWorker.register("sw.js");

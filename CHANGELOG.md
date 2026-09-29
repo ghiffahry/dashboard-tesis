@@ -1,5 +1,14 @@
 # Catatan perubahan
 
+## 1.1.1 - 2026-09-29
+
+- Memperbaiki urutan pemuatan beranda agar indikator menunggu opsi dan metadata siap; KPI kembali memuat seluruh 154 wilayah dan filter provinsi terisi.
+- Memperlebar peta hingga seluruh area tampilan, menambah kendali layar penuh, dan menghapus celah tepi serta luapan horizontal pada ponsel.
+- Mengisi panel spasial-temporal dengan lintasan Moran kemiskinan yang tersedia, tiga pilihan bobot, status q BH, dan tautan tahun ke peta.
+- Mengganti diagram tetangga dengan batas geografis 154 wilayah dan garis konektivitas yang dapat dipilih.
+- Menyederhanakan laman Draft ke pratinjau PDF dan kontrol dokumen; menghapus kartu petunjuk tambahan.
+- Mengganti teks footer dengan identitas dan judul penelitian sesuai permintaan.
+- Memeriksa lima halaman pada desktop dan viewport ponsel; tidak ditemukan luapan horizontal. Uji modul lulus 13/13 dan build situs berhasil.
 ## 1.1.0 - 2026-09-29
 
 - Menambah halaman Draft dengan PDF dummy, pratinjau, unduh, navigasi halaman, zoom, dan mode layar penuh.
@@ -29,3 +38,4 @@ Rilis pertama Dashboard Tesis sebagai situs statis GitHub Pages.
 ### Catatan metodologis
 
 Hasil dashboard bersifat deskriptif dan asosiatif. Moran global dan LISA tidak mengukur pengaruh kausal. Ringkasan wilayah tidak sama dengan estimasi penduduk berbobot.
+

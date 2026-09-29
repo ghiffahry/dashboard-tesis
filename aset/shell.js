@@ -39,7 +39,7 @@ export function markupShell(halamanAktif, opsi = {}) {
   <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigasi-utama" aria-label="Buka navigasi"><span>☰</span></button>
   <nav id="navigasi-utama" aria-label="Navigasi utama">
 ${tautan}
-  </nav>${tombolCari}<button class="theme-toggle" type="button" aria-label="Ganti tema" title="Ganti tema">☾ Gelap</button>
+  </nav><span class="site-context"><i aria-hidden="true"></i> SUMATERA · 154 KAB/KOTA · 2015–2025</span>${tombolCari}<button class="theme-toggle" type="button" aria-label="Ganti tema" title="Ganti tema">☾ Gelap</button>
 </header>`;
 }
 
