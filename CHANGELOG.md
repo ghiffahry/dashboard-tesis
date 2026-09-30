@@ -1,5 +1,14 @@
 # Catatan perubahan
 
+## 1.2.0 - 2026-09-30
+
+- Menambahkan beta mixed model sebagai metode utama, dengan pemilih struktur M1, M2, M3, dan M5.
+- Menampilkan persamaan respons Beta, efek area IID/SAR, efek waktu IID/AR(1), dan tabel komponen model yang berubah sesuai pilihan.
+- Menambahkan rumus log-likelihood Beta, AIC, BIC, dan cAIC beserta penjelasan parameter.
+- Menambahkan rekap angka fit dari stmmlib dengan status konvergensi, versi bobot, dan batas keterbandingan. M5 ditandai belum valid; M2 memakai keluaran fallback; cAIC M3 tidak tersedia.
+- Mengisi ruang kosong kartu metode dengan panduan kuadran Moran yang membedakan pola klaster dan pencilan lokal.
+- Memeriksa interaksi M5/cAIC, error JavaScript, dan luapan horizontal pada viewport desktop dan ponsel.
+
 ## 1.1.1 - 2026-09-29
 
 - Memperbaiki urutan pemuatan beranda agar indikator menunggu opsi dan metadata siap; KPI kembali memuat seluruh 154 wilayah dan filter provinsi terisi.

@@ -1,6 +1,6 @@
 # Dashboard Tesis
 
-Dashboard statis untuk mengeksplorasi indikator 154 kabupaten/kota di Sumatera, 2015-2025. Rilis proyek: **1.1.1**.
+Dashboard statis untuk mengeksplorasi indikator 154 kabupaten/kota di Sumatera, 2015-2025. Rilis proyek: **1.2.0**.
 
 ## Pratinjau lokal
 
@@ -11,7 +11,7 @@ Jalankan `python alat/serve.py`, lalu buka `http://localhost:8000`. Untuk memban
 - **Beranda:** KPI, rerata dan median tahunan, histogram, boxplot, peringkat, dan perpindahan kuartil.
 - **Peta:** choropleth indikator dan tahun, ringkasan sebaran, tooltip wilayah, serta filter kuartil dan LISA.
 - **Analisis:** Moran global kemiskinan, scatterplot Moran, LISA, tren tahunan, sensitivitas bobot, dan perubahan wilayah.
-- **Metode:** alur kerja, rumus, kamus data, dan penjelajah tetangga.
+- **Metode:** beta mixed model M1/M2/M3/M5, struktur efek acak area dan waktu, log-likelihood/AIC/BIC/cAIC, rumus Moran/LISA, kamus data, dan penjelajah tetangga. Status dan keterbatasan fit ditampilkan bersama hasil.
 - **Draft:** PDF contoh tesis dengan kontrol halaman, zoom, buka, dan unduh. PDF ini dummy, bukan dokumen hasil penelitian.
 
 Halaman dirancang responsif untuk desktop dan ponsel. Pilihan indikator/tahun dibawa dalam URL jika relevan.
