@@ -123,9 +123,10 @@ def baca_daftar_peubah_peta(jalur_peta_js: Path, daftar_valid: list) -> list:
         log.warning("aset/peta.js tak ada: pakai semua %d peubah.", len(daftar_valid))
         return list(daftar_valid)
     # Kupas komentar agar contoh di JSDoc tak terbaca sebagai daftar pakai.
+    # Satuan dalam tanda kurung opsional karena beberapa indikator tidak punya satuan.
     teks_bersih = re.sub(r"/\*.*?\*/", " ", teks, flags=re.DOTALL)
     teks_bersih = re.sub(r"//.*", " ", teks_bersih)
-    kandidat = sorted(set(re.findall(r"[A-Za-z0-9_.]+\([^)]+\)", teks_bersih)))
+    kandidat = sorted(set(re.findall(r"[A-Za-z0-9_.]+(?:\([^)]+\))?", teks_bersih)))
     cocok = sorted(k for k in kandidat if k in daftar_valid)
     if not cocok:
         log.warning("Tak ada kunci peubah eksplisit di aset/peta.js: pakai semua %d peubah.",

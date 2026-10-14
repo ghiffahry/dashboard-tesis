@@ -1,8 +1,17 @@
 # Catatan perubahan
 
+## 1.3.2 - 2026-10-14
+
+- Menghapus tiga kartu di bawah pembaca PDF Draft. Halaman kini berfokus pada header, navigasi PDF, unduh, zoom, dan layar penuh.
+- Mengganti whisker boxplot menjadi nilai terjauh di dalam batas Tukey 1,5 × IQR; pencilan kini tampil sebagai titik bernama, dapat difokuskan, dan dapat diklik.
+- Memperbaiki ekstraksi indikator peta tanpa notasi satuan dan salah eja kunci kepadatan. Semua 18 indikator kini memiliki seri peta untuk 154 wilayah sepanjang 2015–2025.
+- Memperbaiki label tampil menjadi “Kepadatan Penduduk”.
+- Menyelaraskan README dan catatan audit dengan tampilan Draft terbaru.
+- Memeriksa tampilan desktop dan ponsel, jumlah pencilan terhadap perhitungan kuartil linear, panel peta, tabel model, build, dan uji modul.
+
 ## 1.3.1 - 2026-10-14
 
-- Merapikan laman Draft menjadi header ringkas, pembaca PDF selebar konten, dan tepat tiga kartu informasi di bawahnya.
+- Merapikan laman Draft menjadi header ringkas, pembaca PDF selebar konten, dan tiga kartu informasi di bawahnya.
 - Memperbaiki aturan grid warisan yang membuat konten menyempit dan kartu hilang pada desktop.
 - Menyesuaikan ukuran pembaca PDF, toolbar, dan susunan kartu untuk ponsel.
 

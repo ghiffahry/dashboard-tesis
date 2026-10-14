@@ -32,7 +32,7 @@ export const KATEGORI_PEubah = [
   { nama: "Pembangunan", anggota: ["IPM.Indeks_(indeks)", "IDG_(indeks)"] },
   { nama: "Ketenagakerjaan", anggota: ["TPT_(persen)", "TPAK_(persen)"] },
   { nama: "Ekonomi", anggota: ["Laju.PE.ADHK_(persen)", "PDRB.Kapita_(juta.rupiah)", "PAD.JtTh_(juta.rupiah)"] },
-  { nama: "Sosial", anggota: ["RLS.Tahun_(tahun)", "Kepadatan.Pendududuk_(jiwa.per.km2)", "Sanitasi.Layak_(persen)", "Akses.Air.Bersih_(persen)", "Rasio.Puskesmas.per.10rb.Penduduk"] },
+  { nama: "Sosial", anggota: ["RLS.Tahun_(tahun)", "Kepadatan.Pendudukan_(jiwa.per.km2)", "Sanitasi.Layak_(persen)", "Akses.Air.Bersih_(persen)", "Rasio.Puskesmas.per.10rb.Penduduk"] },
   { nama: "Pendapatan", anggota: ["Pendapatan.Pertanian_(Juta)", "Pendapatan.Industri_(Juta)", "Pendapatan.Jasa_(Juta)"] },
   { nama: "Ketimpangan", anggota: ["Gini.indeks_(indeks)"] },
 ];
@@ -302,8 +302,13 @@ export async function inisialisasiPeta(elemenPeta, opsi) {
     janjiNilai,
   ]);
 
-  const labelPeubah = new Map(indikator.map((d) => [d.kunci, d.label]));
-  let meta = indikator.find((d) => d.kunci === state.peubah) ?? indikator[0];
+  const indikatorTersedia = indikator.filter((d) => Number.isFinite(d.min)
+    && Object.prototype.hasOwnProperty.call(dokumenNilai, d.kunci));
+  if (!indikatorTersedia.length) throw new Error("Tidak ada indikator peta dengan data valid.");
+  const labelPeubah = new Map(indikatorTersedia.map((d) => [d.kunci, d.label]));
+  let meta = indikatorTersedia.find((d) => d.kunci === state.peubah)
+    ?? indikatorTersedia.find((d) => d.kunci === "Miskin_(persen)")
+    ?? indikatorTersedia[0];
   let ambilNilai = buatAmbilNilai(dokumenNilai, meta.kunci, state.tahun);
   let daftarNilai = (geojson.features ?? [])
     .map((f) => ambilNilai(f.properties?.[KUNCI_NAMA_WILAYAH] ?? f.properties?.nama ?? ""))
@@ -444,18 +449,19 @@ export async function inisialisasiPeta(elemenPeta, opsi) {
     if (!elDaftar) return;
     elDaftar.innerHTML = "";
     for (const kategori of KATEGORI_PEubah) {
-      const anggota = kategori.anggota.filter((k) => (labelPeubah.get(k) || k).toLowerCase().includes(saring));
+      const anggota = kategori.anggota.filter((k) => labelPeubah.has(k)
+        && (labelPeubah.get(k) || k).toLowerCase().includes(saring));
       if (anggota.length === 0) continue;
       const blok = document.createElement("div");
       blok.className = "kategori";
       const kepala = document.createElement("button");
       kepala.type = "button";
-      kepala.addEventListener("click", () => pilihPeubah(kategori.anggota[0]));
+      kepala.addEventListener("click", () => pilihPeubah(anggota[0]));
       const namaK = document.createElement("span");
       namaK.textContent = kategori.nama;
       const jumlah = document.createElement("span");
       jumlah.className = "jumlah";
-      jumlah.textContent = "(" + kategori.anggota.length + ")";
+      jumlah.textContent = "(" + anggota.length + ")";
       kepala.append(namaK, jumlah);
       const ul = document.createElement("ul");
       for (const kunci of anggota) {
@@ -537,7 +543,9 @@ export async function inisialisasiPeta(elemenPeta, opsi) {
   }
 
   function applyState() {
-    meta = indikator.find((d) => d.kunci === state.peubah) ?? indikator[0];
+    meta = indikatorTersedia.find((d) => d.kunci === state.peubah)
+      ?? indikatorTersedia.find((d) => d.kunci === "Miskin_(persen)")
+      ?? indikatorTersedia[0];
     state.peubah = meta.kunci;
     const makna = MAKNA_PEUBAH[meta.kunci] || "konteks";
     document.body.dataset.petaMakna = makna;

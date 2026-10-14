@@ -227,10 +227,13 @@ function isiEksplorasi(indikator) {
   for (const x of indikator) {
     const op = document.createElement("option");
     op.value = x.kunci;
-    op.textContent = `${x.label} · ${x.satuan || "indikator"}`;
+    op.disabled = !Number.isFinite(x.min);
+    op.textContent = `${x.label} · ${x.satuan || "indikator"}${op.disabled ? " · data belum tersedia" : ""}`;
     pilihPeubah.append(op);
   }
-  pilihPeubah.value = indikator.some((x) => x.kunci === state.peubah) ? state.peubah : "Miskin_(persen)";
+  const tersedia = indikator.filter((x) => Number.isFinite(x.min));
+  pilihPeubah.value = tersedia.some((x) => x.kunci === state.peubah) ? state.peubah : "Miskin_(persen)";
+  if (!pilihPeubah.value && tersedia.length) pilihPeubah.value = tersedia[0].kunci;
   state.peubah = pilihPeubah.value;
   indikatorAktif = indikator.find((x) => x.kunci === pilihPeubah.value) || indikatorAktif;
   pilihPeubah.addEventListener("change", () => {

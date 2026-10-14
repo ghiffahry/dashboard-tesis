@@ -38,7 +38,12 @@ def cari_repo_root(mulai: Path) -> Path:
 
 
 def ekstrak_label_dari_nama_kolom(nama: str) -> str:
-    """Ambil label tampil dari format Nama_(satuan); tanpa kurung jadi nama utuh."""
+    """Ambil label tampil dari format Nama_(satuan); pertahankan istilah baku."""
+    label_khusus = {
+        "Kepadatan.Pendudukan_(jiwa.per.km2)": "Kepadatan Penduduk",
+    }
+    if nama in label_khusus:
+        return label_khusus[nama]
     m = POLA_SATUAN.match(nama)
     inti = m.group("label") if m else nama
     return inti.replace(".", " ").replace("_", " ").strip()

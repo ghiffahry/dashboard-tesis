@@ -33,7 +33,7 @@
   },
   {
     "kunci": "Kepadatan.Pendudukan_(jiwa.per.km2)",
-    "label": "Kepadatan Pendudukan",
+    "label": "Kepadatan Penduduk",
     "satuan": "jiwa.per.km2",
     "min": 2.98,
     "maks": 9286.26,
