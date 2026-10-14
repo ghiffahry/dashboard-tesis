@@ -20,7 +20,7 @@ def main():
         shutil.copy2(source, out / name)
     shutil.copytree(ROOT / "aset", out / "aset")
     (out / "dokumen").mkdir()
-    shutil.copy2(ROOT / "dokumen" / "draft-contoh.pdf", out / "dokumen" / "draft-contoh.pdf")
+    shutil.copy2(ROOT / "dokumen" / "draft-seminar-hasil.pdf", out / "dokumen" / "draft-seminar-hasil.pdf")
     shutil.copy2(ROOT / "dokumen" / "README.md", out / "dokumen" / "README.md")
     (out / "data").mkdir()
     for name in DATA:

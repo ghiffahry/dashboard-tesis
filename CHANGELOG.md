@@ -1,5 +1,14 @@
 # Catatan perubahan
 
+## 1.3.0 - 2026-10-14
+
+- Mengganti PDF dummy dengan naskah Seminar Hasil yang diberikan. Salinan diverifikasi memiliki SHA-256 sama dengan sumber; metadata tidak diubah.
+- Menyelaraskan laman Draft dengan ringkasan penelitian, delapan fit, grafik cAIC, komponen varians interaktif, dan pembaca PDF 11 halaman.
+- Menyelaraskan laman Metode dengan angka hasil dalam PDF dan menampilkan delapan kombinasi struktur serta bobot.
+- Menjelaskan pemetaan M4 pada naskah sebagai M5 pada kode stmmlib. M4 SAR KNN-5 + AR(1) ditandai sebagai model dengan cAIC terendah menurut PDF.
+- Memperbarui README, panduan dokumen, versi, cache service worker, dan catatan keputusan proyek.
+
+
 ## 1.2.0 - 2026-09-30
 
 - Menambahkan beta mixed model sebagai metode utama, dengan pemilih struktur M1, M2, M3, dan M5.

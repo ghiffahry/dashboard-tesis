@@ -6,7 +6,7 @@
  * Nama cache menyertakan versi build; activate menghapus cache versi lama.
  */
 
-const VERSI_BAWAAN = "site-675d519194b1";
+const VERSI_BAWAAN = "site-868703ed89b2";
 
 /**
  * Aset inti: wajib tersedia saat install. Kegagalan addAll dicatat dan
@@ -27,6 +27,7 @@ const ASET_INTIS = [
   "aset/beranda-visual.js",
   "aset/analisis-visual.js",
   "aset/metode-visual.js",
+  "aset/model-beta.js",
   "aset/draft.js",
   "aset/ruang-tambahan.css",
   "aset/peta.js",

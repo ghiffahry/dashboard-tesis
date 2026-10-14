@@ -1,101 +1,18 @@
 const $ = (id) => document.getElementById(id);
-
-const models = {
-  M1: {
-    label: "IID area + IID waktu",
-    equation: "yᵢₜ ~ Beta(μᵢₜκ, (1 − μᵢₜ)κ)\nlogit(μᵢₜ) = xᵢₜ′β + uᵢ + ηᵢₜ",
-    description: "Model dasar. Perbedaan tetap antarwilayah dan sisa variasi wilayah-tahun dimodelkan saling bebas.",
-    area: "IID · uᵢ ~ N(0, σᵥ²)", areaMeaning: "Variasi acak antarwilayah",
-    time: "IID · ηᵢₜ ~ N(0, σ²)", timeMeaning: "Variasi acak wilayah-tahun",
-    visualArea: "Efek area saling bebas", visualTime: "Efek waktu saling bebas",
-    metrics: { logLik: "5.746,689", aic: "−11.453,377", bic: "−11.344,680", caic: "−12.861,183", k: "20" },
-    status: "Sertifikat valid, estimasi berada di dalam batas parameter.", statusClass: "fit-ok",
-  },
-  M2: {
-    label: "IID area + AR(1) per area",
-    equation: "yᵢₜ ~ Beta(μᵢₜκ, (1 − μᵢₜ)κ)\nlogit(μᵢₜ) = xᵢₜ′β + uᵢ + ηᵢₜ\nηᵢₜ = φₜηᵢ,ₜ₋₁ + εᵢₜ",
-    description: "Efek area tetap IID. Efek waktu mengikuti AR(1) di dalam setiap area, dengan inovasi yang saling bebas antararea.",
-    area: "IID · uᵢ ~ N(0, σᵥ²)", areaMeaning: "Variasi acak antarwilayah",
-    time: "AR(1) · ηᵢₜ = φₜηᵢ,ₜ₋₁ + εᵢₜ", timeMeaning: "Korelasi waktu dalam area; inovasi εᵢₜ",
-    visualArea: "Efek area saling bebas", visualTime: "Nilai tahun berurutan berkorelasi",
-    metrics: { logLik: "6.136,938", aic: "−12.231,877", bic: "−12.117,745", caic: "−14.821,450", k: "21" },
-    status: "Angka pada rekap adalah fallback dari HTML karena fit tersimpan lain tidak valid. φₜ menyentuh batas 0,95; jangan anggap estimasi ini final.", statusClass: "fit-bound",
-  },
-  M3: {
-    label: "SAR area + IID waktu",
-    equation: "yᵢₜ ~ Beta(μᵢₜκ, (1 − μᵢₜ)κ)\nlogit(μᵢₜ) = xᵢₜ′β + uᵢ + ηᵢₜ\nu ~ N(0, σᵥ² (I − ρW)⁻¹(I − ρW)⁻ᵀ)",
-    description: "Efek area SAR menghubungkan wilayah melalui matriks bobot W. Efek wilayah-tahun tetap IID. Fit yang direkap memakai W jarak 110 km.",
-    area: "SAR · Σᵤ = σᵥ²(I − ρW)⁻¹(I − ρW)⁻ᵀ", areaMeaning: "Dependensi area mengikuti W dan parameter ρ",
-    time: "IID · ηᵢₜ ~ N(0, σ²)", timeMeaning: "Variasi acak wilayah-tahun",
-    visualArea: "Efek area terhubung oleh bobot W", visualTime: "Efek waktu saling bebas",
-    metrics: { logLik: "5.774,982", aic: "−11.507,963", bic: "−11.393,831", caic: "Tidak tersedia", k: "21" },
-    status: "Sertifikat valid dan interior. Rekap memakai bobot jarak 110 km.", statusClass: "fit-ok",
-  },
-  M5: {
-    label: "SAR area + AR(1) per area · SEBLUP Rao–Yu",
-    equation: "yᵢₜ ~ Beta(μᵢₜκ, (1 − μᵢₜ)κ)\nlogit(μᵢₜ) = xᵢₜ′β + uᵢ + ηᵢₜ\nu ~ N(0, σᵥ² (I − ρW)⁻¹(I − ρW)⁻ᵀ)\nηᵢₜ = φₜηᵢ,ₜ₋₁ + εᵢₜ",
-    description: "Menggabungkan dependensi area SAR dan AR(1) waktu khusus per area. Inilah struktur gabungan yang dituju, tetapi fit yang tersimpan belum lolos sertifikat validitas.",
-    area: "SAR · Σᵤ = σᵥ²(I − ρW)⁻¹(I − ρW)⁻ᵀ", areaMeaning: "Dependensi area mengikuti W dan parameter ρ",
-    time: "AR(1) · ηᵢₜ = φₜηᵢ,ₜ₋₁ + εᵢₜ", timeMeaning: "Korelasi waktu di dalam setiap area",
-    visualArea: "Efek area terhubung oleh bobot W", visualTime: "Nilai tahun berurutan berkorelasi",
-    metrics: { logLik: "6.162,900", aic: "−12.281,800", bic: "−12.162,233", caic: "−14.962,949", k: "22" },
-    status: "Sertifikat fit tidak valid. log κ dan parameter dependensi menyentuh batas; gradien 28,3. Estimasi ini belum layak menjadi hasil final.", statusClass: "fit-warn",
-  },
-};
-
-const criteria = {
-  likelihood: {
-    formula: "ℓc = Σᵢ₌₁ⁿ [(μκ−1) log(y) + ((1−μ)κ−1) log(1−y) − log B(μκ,(1−μ)κ)]",
-    text: "Likelihood Beta bersyarat memakai respons y, rerata μ, dan presisi κ. logLik pada rekap adalah likelihood model yang dioptimalkan dengan pendekatan Laplace. Nilai lebih besar menunjukkan fit relatif lebih baik pada data dan likelihood yang sama.",
-  },
-  aic: {
-    formula: "AIC = −2 logLik + 2k",
-    text: "k adalah jumlah parameter yang diestimasi. Dari rekap, k = 20 untuk M1, 21 untuk M2/M3, dan 22 untuk M5. AIC yang lebih kecil lebih baik hanya saat likelihood, respons, dan observasi yang dibandingkan sama.",
-  },
-  bic: {
-    formula: "BIC = −2 logLik + k log(n),   n = 1.694 observasi",
-    text: "BIC memberi penalti kompleksitas sebesar log(n) untuk setiap parameter. Angka n adalah jumlah observasi wilayah-tahun, bukan jumlah wilayah. BIC lebih kecil lebih baik pada himpunan fit yang sebanding.",
-  },
-  caic: {
-    formula: "cAIC = −2ℓcond + 2 df̂,   df̂ = tr(Hpen⁻¹ Hunpen)",
-    text: "cAIC menilai prediksi bersyarat setelah efek acak ikut dimasukkan. Implementasi stmmlib memakai likelihood Beta bersyarat dan derajat bebas efektif dari matriks informasi terpenalti. Nilai M3 tidak tersedia. Jangan mencampur cAIC dengan AIC marginal sebagai satu peringkat.",
-  },
-};
-
-function renderModel(key) {
-  const model = models[key];
-  $("beta-model-label").textContent = `${key} · ${model.label}`;
-  $("beta-equation").textContent = model.equation;
-  $("beta-model-description").textContent = model.description;
-  $("beta-area-visual").textContent = model.visualArea;
-  $("beta-time-visual").textContent = model.visualTime;
-  const body = $("beta-components");
-  body.replaceChildren();
-  [["Area", model.area, model.areaMeaning], ["Waktu", model.time, model.timeMeaning], ["Presisi Beta", "κ = φ > 0", "Mengatur ketelitian/sebaran respons Beta"]].forEach((row) => {
-    const tr = document.createElement("tr");
-    row.forEach((value) => { const td = document.createElement("td"); td.textContent = value; tr.append(td); });
-    body.append(tr);
-  });
-  const metrics = $("beta-fit-metrics");
-  metrics.replaceChildren();
-  [["logLik", model.metrics.logLik], ["AIC", model.metrics.aic], ["BIC", model.metrics.bic], ["cAIC", model.metrics.caic]].forEach(([label, value]) => {
-    const item = document.createElement("div"); item.className = "beta-metric";
-    const name = document.createElement("span"); name.textContent = label;
-    const result = document.createElement("strong"); result.textContent = value;
-    item.append(name, result); metrics.append(item);
-  });
-  const status = $("beta-fit-status"); status.className = `beta-fit-status ${model.statusClass}`; status.textContent = model.status;
-  document.querySelectorAll("[data-beta-model]").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.betaModel === key)));
-}
-
-function renderCriterion(key) {
-  const item = criteria[key];
-  $("beta-criterion-formula").textContent = item.formula;
-  $("beta-criterion-description").textContent = item.text;
-  document.querySelectorAll("[data-beta-criterion]").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.betaCriterion === key)));
-}
-
-document.querySelectorAll("[data-beta-model]").forEach((button) => button.addEventListener("click", () => renderModel(button.dataset.betaModel)));
-document.querySelectorAll("[data-beta-criterion]").forEach((button) => button.addEventListener("click", () => renderCriterion(button.dataset.betaCriterion)));
-renderModel("M5");
-renderCriterion("likelihood");
+const fits = [
+ {id:'M1',paper:'M1',area:'IID',time:'IID',w:'—',label:'M1 · IID area + IID waktu',ll:5746.69,aic:-11453.38,bic:-11344.68,caic:-12861.18,r2:.26,k:20,va:.2048,sda:.4526,vt:.0029,sdt:.0539},
+ {id:'M2',paper:'M2',area:'IID',time:'AR(1)',w:'—',label:'M2 · IID area + AR(1)',ll:6136.94,aic:-12231.88,bic:-12117.74,caic:-14821.45,r2:.23,k:21,va:.2146,sda:.4632,vt:.0028,sdt:.0529},
+ {id:'M3',paper:'M3',area:'SAR',time:'IID',w:'KNN-5',label:'M3 · SAR KNN-5 + IID',ll:5774.46,aic:-11506.93,bic:-11392.80,caic:-12893.11,r2:.26,k:21,va:.1311,sda:.3621,vt:.0030,sdt:.0548,rho:.6324},
+ {id:'M3',paper:'M3',area:'SAR',time:'IID',w:'Jarak 110 km',label:'M3 · SAR jarak 110 km + IID',ll:5774.98,aic:-11507.96,bic:-11393.83,caic:-12891.22,r2:.26,k:21,va:.1302,sda:.3608,vt:.0030,sdt:.0548,rho:.6461},
+ {id:'M3',paper:'M3',area:'SAR',time:'IID',w:'Queen',label:'M3 · SAR Queen + IID',ll:5769.26,aic:-11496.51,bic:-11382.38,caic:-12887.37,r2:.25,k:21,va:.1388,sda:.3726,vt:.0029,sdt:.0539,rho:.5767},
+ {id:'M5',paper:'M4',area:'SAR',time:'AR(1)',w:'KNN-5',label:'M4 (kode stmmlib: M5) · SAR KNN-5 + AR(1)',ll:6169.44,aic:-12294.87,bic:-12175.31,caic:-14963.73,r2:.23,k:22,va:.1274,sda:.3569,vt:.0028,sdt:.0529,rho:.6678,best:true},
+ {id:'M5',paper:'M4',area:'SAR',time:'AR(1)',w:'Jarak 110 km',label:'M4 (kode stmmlib: M5) · SAR jarak 110 km + AR(1)',ll:6169.29,aic:-12294.57,bic:-12175.01,caic:-14963.31,r2:.23,k:22,va:.1275,sda:.3571,vt:.0028,sdt:.0529,rho:.6778},
+ {id:'M5',paper:'M4',area:'SAR',time:'AR(1)',w:'Queen',label:'M4 (kode stmmlib: M5) · SAR Queen + AR(1)',ll:6162.90,aic:-12281.80,bic:-12162.23,caic:-14962.95,r2:.22,k:22,va:.1368,sda:.3699,vt:.0028,sdt:.0529,rho:.6098},
+];
+const fmt=(x,d=2)=>new Intl.NumberFormat('id-ID',{minimumFractionDigits:d,maximumFractionDigits:d}).format(x);
+function renderModel(i=5){const m=fits[i];$('beta-model-label').textContent=m.label;$('beta-equation').textContent=`yᵢₜ ~ Beta(μᵢₜκ, (1 − μᵢₜ)κ)\nlogit(μᵢₜ) = xᵢₜ′β + uᵢ + ηᵢₜ${m.area==='SAR'?'\nu ~ N(0, σᵥ² (I − ρW)⁻¹(I − ρW)⁻ᵀ)':''}${m.time==='AR(1)'?'\nηᵢₜ = φηᵢ,ₜ₋₁ + εᵢₜ':''}`;$('beta-model-description').textContent=`Struktur ini memakai efek area ${m.area} dan efek waktu ${m.time}${m.w==='—'?'':` dengan bobot ${m.w}`}. Angka fit mengikuti tabel hasil pada PDF final.`;$('beta-area-visual').textContent=m.area==='SAR'?`SAR · bobot ${m.w}, ρ = ${fmt(m.rho,4)}`:'Efek acak area IID';$('beta-time-visual').textContent=m.time==='AR(1)'?'AR(1) dalam area':'Efek acak waktu IID';
+ const rows=[['Area',m.area==='SAR'?`SAR, W ${m.w}; σ²ᵥ = ${fmt(m.va,4)}; SD = ${fmt(m.sda,4)}`:`IID; σ²ᵥ = ${fmt(m.va,4)}; SD = ${fmt(m.sda,4)}`,'Variasi antarwilayah'],['Waktu',m.time==='AR(1)'?`AR(1); σ²ₜ = ${fmt(m.vt,4)}; SD = ${fmt(m.sdt,4)}`:`IID; σ²ₜ = ${fmt(m.vt,4)}; SD = ${fmt(m.sdt,4)}`,'Variasi temporal'],['Presisi respons','κ > 0','Ketelitian distribusi Beta']];const body=$('beta-components');body.replaceChildren(...rows.map(row=>{const tr=document.createElement('tr');row.forEach(v=>{const td=document.createElement('td');td.textContent=v;tr.append(td)});return tr}));const metrics=$('beta-fit-metrics');metrics.replaceChildren(...[['logLik',fmt(m.ll)],['AIC',fmt(m.aic)],['BIC',fmt(m.bic)],['cAIC',fmt(m.caic)],['R² marginal',fmt(m.r2*100,0)+'%'],['Jumlah parameter',String(m.k)]].map(([a,b])=>{const d=document.createElement('div');d.className='beta-metric';d.innerHTML=`<span>${a}</span><strong>${b}</strong>`;return d}));$('beta-fit-status').textContent=m.best?'Nilai terbaik di antara delapan fit pada PDF, menurut cAIC. Ini perbandingan pada data penelitian yang sama.':'Fit dilaporkan pada PDF final. Angka AIC, BIC, dan cAIC dibaca sebagai ukuran relatif pada data yang sama.';document.querySelectorAll('[data-beta-model]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.betaModel)===i)));renderTable();}
+function renderTable(){const body=$('beta-fit-table');if(!body)return;body.replaceChildren(...fits.map(m=>{const tr=document.createElement('tr');if(m.best)tr.className='model-best';[`${m.paper}${m.paper==='M4'?' · kode M5':''}`,m.area,m.w,m.time,fmt(m.ll),fmt(m.aic),fmt(m.bic),fmt(m.caic),fmt(m.r2*100,0)+'%'].forEach(v=>{const td=document.createElement('td');td.textContent=v;tr.append(td)});return tr}));}
+const criteria={likelihood:['ℓ = Σᵢ₌₁ⁿ log f(yᵢ | μᵢ, κ)','logLik merangkum kecocokan model pada seluruh observasi. Nilai lebih besar menunjukkan kecocokan relatif lebih baik jika respons dan data yang dibandingkan sama.'],aic:['AIC = −2 logLik + 2k','k adalah jumlah parameter. AIC lebih kecil menunjukkan kompromi fit dan kompleksitas yang lebih baik pada himpunan model sebanding.'],bic:['BIC = −2 logLik + k log(n), n = 1.694','BIC memberi penalti kompleksitas berdasarkan jumlah observasi. Gunakan pada data dan definisi likelihood yang sama.'],caic:['cAIC = −2ℓcond + 2 df̂','cAIC menilai kecocokan kondisional dengan memperhitungkan efek acak dan derajat bebas efektif. Pada PDF, M4 KNN-5 memiliki cAIC terendah.']};
+function renderCriterion(k){$('beta-criterion-formula').textContent=criteria[k][0];$('beta-criterion-description').textContent=criteria[k][1];document.querySelectorAll('[data-beta-criterion]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.betaCriterion===k)));}
+document.querySelectorAll('[data-beta-model]').forEach(b=>b.addEventListener('click',()=>renderModel(Number(b.dataset.betaModel))));document.querySelectorAll('[data-beta-criterion]').forEach(b=>b.addEventListener('click',()=>renderCriterion(b.dataset.betaCriterion)));renderModel(5);renderCriterion('likelihood');

@@ -1,3 +1,5 @@
-# Dokumen draft
+# Dokumen publik
 
-`draft-contoh.pdf` adalah PDF dummy tiga halaman untuk menguji pembaca dan tombol unduh. File ini tidak memuat isi tesis. Sebelum publikasi, ganti dengan PDF yang memang sudah boleh dibagikan secara publik dan pastikan metadata sensitif dihapus.
+`draft-seminar-hasil.pdf` adalah naskah Seminar Hasil yang menjadi sumber final untuk ringkasan hasil dan informasi model pada Dashboard Tesis. Berkas disalin tanpa perubahan dari dokumen yang diberikan. Metadata PDF dipertahankan sesuai konfirmasi pemilik.
+
+Sebelum mengganti dokumen publik, pastikan isi dan metadata memang boleh dibagikan melalui GitHub Pages.
