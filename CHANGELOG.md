@@ -1,5 +1,12 @@
 # Catatan perubahan
 
+## 1.3.1 - 2026-10-14
+
+- Merapikan laman Draft menjadi header ringkas, pembaca PDF selebar konten, dan tepat tiga kartu informasi di bawahnya.
+- Memperbaiki aturan grid warisan yang membuat konten menyempit dan kartu hilang pada desktop.
+- Menyesuaikan ukuran pembaca PDF, toolbar, dan susunan kartu untuk ponsel.
+
+
 ## 1.3.0 - 2026-10-14
 
 - Mengganti PDF dummy dengan naskah Seminar Hasil yang diberikan. Salinan diverifikasi memiliki SHA-256 sama dengan sumber; metadata tidak diubah.
