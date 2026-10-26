@@ -62,3 +62,11 @@ Backlog ini mengumpulkan gagasan pengembangan sebelumnya. Fitur yang sudah berja
 - [ ] Konfirmasi median kemiskinan yang benar: dashboard 11,34% (2015) dan 8,35% (2025), presentasi 11,5% dan 8,5%.
 - [ ] Sediakan hasil Spatial EBLUP Rao-Yu jika metode tersebut tetap dilaporkan sebagai hasil utama.
 - [ ] Lengkapi definisi operasional dan sumber 18 indikator.
+
+
+## Audit antarmuka dan notasi 1.4.1
+
+- [x] Hapus banner catatan/cakupan sejenis dari halaman.
+- [x] Bedakan ϕ untuk presisi Beta dan φ untuk koefisien AR(1).
+- [x] Tulis formula Beta dalam parameterisasi rerata-presisi.
+- [x] Isi kolom kosong Analisis dengan temuan model utama dari presentasi.

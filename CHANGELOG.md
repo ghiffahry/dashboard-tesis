@@ -1,5 +1,12 @@
 # Catatan perubahan
 
+## 1.4.1 - 2026-10-26
+
+- Menghapus banner peringatan/cakupan sejenis dari antarmuka; konflik sumber tetap tercatat dalam TODO dan laporan audit.
+- Mengisi ruang di halaman Analisis dengan ringkasan temuan M4 dari presentasi dan grafik arah 16 prediktor.
+- Menegaskan notasi presisi Beta ϕ dan koefisien AR(1) φ serta menulis ulang formula Beta dalam parameterisasi rerata-presisi.
+- Menyusun ulang pasangan kartu agar mengisi lebar desktop dan bertumpuk pada ponsel.
+
 ## 1.4.0 - 2026-10-26
 
 - Menyelaraskan istilah, struktur model, delapan hasil fit, ragam area/waktu, dan koefisien 16 prediktor dengan tabel draft serta presentasi Seminar Hasil.

@@ -1,6 +1,6 @@
 # Dashboard Tesis
 
-Dashboard statis untuk mengeksplorasi indikator 154 kabupaten/kota di Sumatera, 2015-2025. Rilis proyek: **1.4.0**.
+Dashboard statis untuk mengeksplorasi indikator 154 kabupaten/kota di Sumatera, 2015-2025. Rilis proyek: **1.4.1**.
 
 ## Pratinjau lokal
 

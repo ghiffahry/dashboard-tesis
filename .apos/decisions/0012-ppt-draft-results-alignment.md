@@ -10,8 +10,8 @@
 3. Moran dan LISA di laman Analisis adalah eksplorasi spasial nilai kemiskinan per tahun. Keduanya dibedakan dari hasil Model Campuran Beta Spatio-Temporal.
 4. IPM tetap tersedia sebagai indikator eksplorasi, tetapi bukan bagian dari respons Y atau 16 prediktor model tesis.
 5. Draft menyebut Spatial EBLUP Rao-Yu, tetapi hasil model tersebut tidak ada di dua dokumen yang diberikan. Dashboard tidak mengklaim atau menampilkan hasil Rao-Yu sampai tabel hasilnya tersedia.
-6. Tabel koefisien serta presentasi selaras, tetapi narasi hasil halaman 8 draft bertentangan dengan tabel. Dashboard mengikuti tabel dan memberi catatan yang terlihat.
-7. Median kemiskinan pada data runtime berbeda dari angka median pada presentasi. Dashboard mempertahankan nilai hasil data dan memberi catatan perbedaan agar angka tidak disamakan secara paksa.
+6. Tabel koefisien serta presentasi selaras, tetapi narasi hasil halaman 8 draft bertentangan dengan tabel. Dashboard mengikuti tabel; konflik disimpan dalam TODO dan laporan audit, tanpa banner peringatan di antarmuka.
+7. Median kemiskinan pada data runtime berbeda dari angka median pada presentasi. Dashboard mempertahankan nilai hasil data; selisih dicatat di TODO dan laporan audit, bukan sebagai banner antarmuka.
 
 ## Dampak
 

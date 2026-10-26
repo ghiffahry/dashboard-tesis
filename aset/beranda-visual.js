@@ -9,7 +9,6 @@ document.body.classList.add("beranda-lengkap");
 const area = document.createElement("div");
 area.id = "beranda-visual";
 area.innerHTML = `
-  <section class="interpretasi insight-banner"><span class="mark">i</span><div><strong id="home-insight-title">Ringkasan wilayah</strong><p id="home-insight">Nilai setiap kabupaten/kota diberi bobot sama. Ringkasan ini bukan estimasi berbobot penduduk.</p></div><a class="pil" id="home-map-link" href="peta.html">Buka peta</a></section>
   <section class="home-kpis" aria-label="KPI wilayah">
     <article><span>Rerata wilayah</span><strong id="home-mean">-</strong><small id="home-mean-note">Bobot sama per wilayah</small></article>
     <article><span>Median</span><strong id="home-median">-</strong><small>Nilai tengah wilayah</small></article>
@@ -42,7 +41,6 @@ function drawTrend() {
   for(let j=0;j<4;j++){const yy=p.t+j*(h-p.t-p.b)/3,val=hi+pad-j*(hi-lo+2*pad)/3;s.append(svg("line",{class:"chart-grid",x1:p.l,y1:yy,x2:w-p.r,y2:yy}),svg("text",{class:"chart-tick","text-anchor":"end",x:p.l-8,y:yy+4},format(val,unit)));}
   annual.forEach((d,i)=>{if(i%2===0||i===10)s.append(svg("text",{class:"chart-tick","text-anchor":"middle",x:x(i),y:h-8},String(d.year)));});
   for(const key of ["mean","median"]){const cls=key==="mean"?"home-line-mean":"home-line-median",pts=annual.map((d,i)=>`${i===0?"M":"L"}${x(i)},${y(d[key])}`).join(" ");s.append(svg("path",{class:cls,d:pts}));annual.forEach((d,i)=>{const c=svg("circle",{class:`home-point ${cls}`,cx:x(i),cy:y(d[key]),r:d.year===Number(tahunSelect.value)?5:3.5,tabindex:0,role:"button"});c.append(svg("title",{},`${d.year} · ${key==="mean"?"Rerata":"Median"} ${format(d[key],unit)} · n=${d.n}. Pilih untuk memperbarui tahun.`));c.addEventListener("click",()=>setYear(d.year));c.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();setYear(d.year);}});s.append(c);});}
-  $("home-map-link").href=`peta.html?tahun=${tahunSelect.value}&peubah=${encodeURIComponent(variable)}`;
 }
 function drawHistogram(rows, unit) {
  const s=$("home-histogram");s.replaceChildren();if(!rows.length)return;const xs=rows.map(x=>x.value),lo=Math.min(...xs),hi=Math.max(...xs),bins=12,w=430,h=270,p={l:52,r:12,t:15,b:42},width=(hi-lo||1)/bins,counts=Array(bins).fill(0);xs.forEach(v=>counts[Math.min(bins-1,Math.floor((v-lo)/(hi-lo||1)*bins))]++);const max=Math.max(...counts),bw=(w-p.l-p.r)/bins;
@@ -81,7 +79,7 @@ function drawTransitions(variable) {
 }
 function render() {
  const variable=peubahSelect.value,year=Number(tahunSelect.value),filterKey=variable+":"+year;if(filterKey!==lastFilterKey){histRange=null;lastFilterKey=filterKey;}const meta=data.indicators.find(x=>x.kunci===variable),unit=meta?.satuan||"nilai",rows=valuesFor(variable,year),st=stats(rows),complete=rows.length;
- $("home-mean").textContent=format(st.mean,unit);$("home-median").textContent=format(st.median,unit);$("home-range").textContent=`${format(st.min,unit)} – ${format(st.max,unit)}`;$("home-iqr").textContent=format(st.q3-st.q1,unit);$("home-n").textContent=`${complete} / 154`;$("home-missing").textContent=`${154-complete} belum tersedia`;$("home-insight-title").textContent=`${meta?.label||variable} · ${year}`;$("home-insight").textContent=`Rerata ${format(st.mean,unit)} dan median ${format(st.median,unit)} dihitung dari ${complete} wilayah dengan data. Setiap wilayah berbobot sama; bukan rata-rata berbobot jumlah penduduk.`+(variable==="Miskin_(persen)"?" Catatan pencocokan: median dari data dashboard adalah 11,34% pada 2015 dan 8,35% pada 2025; presentasi menampilkan 11,5% dan 8,5%. Periksa kembali sumber atau cara hitung sebelum menyamakan angka.":"");$("home-mean-note").textContent=`n = ${complete} wilayah · ${unit}`;
+ $("home-mean").textContent=format(st.mean,unit);$("home-median").textContent=format(st.median,unit);$("home-range").textContent=`${format(st.min,unit)} – ${format(st.max,unit)}`;$("home-iqr").textContent=format(st.q3-st.q1,unit);$("home-n").textContent=`${complete} / 154`;$("home-missing").textContent=`${154-complete} belum tersedia`;$("home-mean-note").textContent=`n = ${complete} wilayah · ${unit}`;
  drawTrend();drawHistogram(rows,unit);drawBoxplot(variable,unit);drawRanks(rows,unit);drawTransitions(variable);
 }
 function init() {
@@ -94,5 +92,5 @@ Promise.all([ambilJson("data/indikator.json"),ambilJson("data/nilai-wilayah-tahu
  data={indicators,values,ranks,province:new Map()};
  if(!peubahSelect.options.length || !peubahSelect.value){await new Promise(resolve=>{const observer=new MutationObserver(()=>{if(peubahSelect.value){observer.disconnect();resolve();}});observer.observe(peubahSelect,{childList:true});setTimeout(()=>{observer.disconnect();resolve();},5000);});}
  init();
-}).catch((error)=>{console.error("Gagal menyiapkan visual beranda:",error);$("home-insight").textContent="Data tambahan tidak termuat. Ringkasan utama tetap tersedia.";});
+}).catch((error)=>{console.error("Gagal menyiapkan visual beranda:",error);});
 
