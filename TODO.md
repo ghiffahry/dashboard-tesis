@@ -76,3 +76,7 @@ Backlog ini mengumpulkan gagasan pengembangan sebelumnya. Fitur yang sudah berja
 - [x] Pulihkan lima card KPI berjajar pada desktop dengan jarak visual yang konsisten.
 - [x] Susun card menjadi tiga kolom pada tablet dan dua kolom pada ponsel.
 - [x] Perbaiki selector CSS kartu perpindahan kuartil.
+
+## Cache tampilan KPI 1.4.3
+
+- [x] Ganti versi URL stylesheet di seluruh laman agar cache lama tidak menutupi grid yang sudah diperbaiki.

@@ -1,5 +1,9 @@
 # Catatan perubahan
 
+## 1.4.3 - 2026-10-26
+
+- Mengganti versi URL CSS agar browser dan service worker memuat grid KPI yang telah diperbaiki.
+
 ## 1.4.2 - 2026-10-26
 
 - Memulihkan grid KPI Beranda: lima card pada desktop, tiga kolom pada tablet, dan dua kolom pada ponsel.
