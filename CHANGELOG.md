@@ -1,5 +1,10 @@
 # Catatan perubahan
 
+## 1.4.2 - 2026-10-26
+
+- Memulihkan grid KPI Beranda: lima card pada desktop, tiga kolom pada tablet, dan dua kolom pada ponsel.
+- Memperbaiki selector kartu perpindahan kuartil yang kehilangan titik CSS.
+
 ## 1.4.1 - 2026-10-26
 
 - Menghapus banner peringatan/cakupan sejenis dari antarmuka; konflik sumber tetap tercatat dalam TODO dan laporan audit.

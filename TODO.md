@@ -70,3 +70,9 @@ Backlog ini mengumpulkan gagasan pengembangan sebelumnya. Fitur yang sudah berja
 - [x] Bedakan ϕ untuk presisi Beta dan φ untuk koefisien AR(1).
 - [x] Tulis formula Beta dalam parameterisasi rerata-presisi.
 - [x] Isi kolom kosong Analisis dengan temuan model utama dari presentasi.
+
+## Tampilan KPI Beranda 1.4.2
+
+- [x] Pulihkan lima card KPI berjajar pada desktop dengan jarak visual yang konsisten.
+- [x] Susun card menjadi tiga kolom pada tablet dan dua kolom pada ponsel.
+- [x] Perbaiki selector CSS kartu perpindahan kuartil.
