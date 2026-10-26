@@ -49,3 +49,16 @@ Backlog ini mengumpulkan gagasan pengembangan sebelumnya. Fitur yang sudah berja
 3. Jangan menambah dekorasi yang mengurangi ruang peta atau menyulitkan pembacaan.
 4. Semua komponen desktop yang bermakna harus memiliki padanan ponsel yang bisa digunakan.
 
+## Penyelarasan PPT dan draft seminar hasil (rilis 1.4.0)
+
+- [x] Gunakan M1–M4 sebagai nama model; jelaskan M5 sebagai label kode stmmlib untuk M4.
+- [x] Tampilkan delapan fit, komponen ragam, ukuran kecocokan, dan 16 koefisien dengan pilihan model interaktif.
+- [x] Pisahkan eksplorasi Moran/LISA dari hasil Model Campuran Beta Spatio-Temporal.
+- [x] Tandai IPM sebagai indikator eksplorasi, bukan salah satu dari 16 prediktor model.
+- [x] Tandai beda narasi hasil draft dari tabel koefisien dan presentasi.
+- [x] Tandai perbedaan median dashboard dari angka pada presentasi tanpa memalsukan nilai.
+- [x] Pertahankan halaman Draft sebagai pembaca PDF tanpa kartu tambahan.
+- [ ] Selaraskan narasi hasil koefisien halaman 8 draft dengan Tabel 4–5 dan presentasi. Dashboard sementara mengikuti tabel.
+- [ ] Konfirmasi median kemiskinan yang benar: dashboard 11,34% (2015) dan 8,35% (2025), presentasi 11,5% dan 8,5%.
+- [ ] Sediakan hasil Spatial EBLUP Rao-Yu jika metode tersebut tetap dilaporkan sebagai hasil utama.
+- [ ] Lengkapi definisi operasional dan sumber 18 indikator.

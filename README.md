@@ -1,6 +1,6 @@
 # Dashboard Tesis
 
-Dashboard statis untuk mengeksplorasi indikator 154 kabupaten/kota di Sumatera, 2015-2025. Rilis proyek: **1.3.2**.
+Dashboard statis untuk mengeksplorasi indikator 154 kabupaten/kota di Sumatera, 2015-2025. Rilis proyek: **1.4.0**.
 
 ## Pratinjau lokal
 
@@ -11,7 +11,7 @@ Jalankan `python alat/serve.py`, lalu buka `http://localhost:8000`. Untuk memban
 - **Beranda:** KPI, rerata dan median tahunan, histogram, boxplot, peringkat, dan perpindahan kuartil.
 - **Peta:** choropleth indikator dan tahun, ringkasan sebaran, tooltip wilayah, serta filter kuartil dan LISA.
 - **Analisis:** Moran global kemiskinan, scatterplot Moran, LISA, tren tahunan, sensitivitas bobot, dan perubahan wilayah.
-- **Metode:** beta mixed model M1/M2/M3/M4; label M4 dipetakan ke M5 pada kode stmmlib, struktur efek acak area dan waktu, log-likelihood/AIC/BIC/cAIC, rumus Moran/LISA, kamus data, dan penjelajah tetangga. Status dan keterbatasan fit ditampilkan bersama hasil.
+- **Metode:** Model Campuran Beta Spatio-Temporal, dengan M1–M4 sesuai naskah dan alias M5 untuk M4 pada kode stmmlib. Delapan fit, komponen ragam, 16 koefisien, sensitivitas bobot, logLik/AIC/BIC/cAIC, rumus Moran/LISA, kamus data, dan jaringan tetangga. Moran/LISA eksploratif dipisahkan dari hasil model.
 - **Draft:** Naskah Seminar Hasil PDF dengan pembaca 11 halaman, navigasi, unduh, zoom, dan layar penuh.
 
 Halaman dirancang responsif untuk desktop dan ponsel. Pilihan indikator/tahun dibawa dalam URL jika relevan.
@@ -19,6 +19,10 @@ Halaman dirancang responsif untuk desktop dan ponsel. Pilihan indikator/tahun di
 ## GitHub Pages
 
 Repository: [ghiffahry/dashboard-tesis](https://github.com/ghiffahry/dashboard-tesis). Situs: [ghiffahry.github.io/dashboard-tesis](https://ghiffahry.github.io/dashboard-tesis/). Push ke `main` menjalankan pemeriksaan modul, membangun `_site/`, lalu menerbitkan dengan GitHub Actions.
+
+## Penyelarasan dokumen
+
+Tabel angka pada draft dan presentasi dipakai untuk hasil model. Narasi hasil halaman 8 draft memiliki perbedaan arah dan signifikansi dengan tabel koefisien; dashboard menandai perbedaan tersebut dan mengikuti tabel yang konsisten dengan presentasi. Median kemiskinan hasil hitung ulang data dashboard juga sedikit berbeda dari angka pada slide. IPM tersedia sebagai indikator eksplorasi, bukan salah satu dari 16 prediktor model. Dokumen menyebut Spatial EBLUP Rao-Yu, tetapi hasil model itu belum tersedia pada draft atau presentasi sehingga belum ditampilkan sebagai hasil.
 
 ## Data dan batas interpretasi
 

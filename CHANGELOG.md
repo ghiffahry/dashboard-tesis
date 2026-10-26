@@ -1,5 +1,17 @@
 # Catatan perubahan
 
+## 1.4.0 - 2026-10-26
+
+- Menyelaraskan istilah, struktur model, delapan hasil fit, ragam area/waktu, dan koefisien 16 prediktor dengan tabel draft serta presentasi Seminar Hasil.
+- Menjelaskan bahwa M4 pada naskah adalah M5 pada kode stmmlib, dan menjaga label M4 sebagai nama model yang ditampilkan.
+- Memisahkan Moran/LISA eksploratif dari keluaran Model Campuran Beta Spatio-Temporal. Menandai IPM sebagai indikator di luar 16 prediktor tesis.
+- Menambah grafik interaktif untuk membandingkan cAIC, ragam, ρ SAR, dan koefisien menurut struktur model; tabel koefisien berubah saat model dipilih.
+- Menandai perbedaan narasi koefisien di halaman 8 draft dengan Tabel 4–5 dan presentasi.
+- Menandai selisih median kemiskinan hasil hitung ulang data dashboard dengan angka pada presentasi tanpa mengubah data sumber.
+- Menjelaskan bahwa hasil Spatial EBLUP Rao-Yu belum tersedia pada dua dokumen acuan dan tidak diisi dengan angka perkiraan.
+- Menjaga laman Draft sebagai pembaca PDF saja tanpa kartu tambahan.
+- Memvalidasi build, modul, data indikator, grafik desktop dan ponsel, serta kontrol interaktif.
+
 ## 1.3.2 - 2026-10-14
 
 - Menghapus tiga kartu di bawah pembaca PDF Draft. Halaman kini berfokus pada header, navigasi PDF, unduh, zoom, dan layar penuh.
