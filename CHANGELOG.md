@@ -1,5 +1,12 @@
 # Catatan perubahan
 
+## 1.4.4 - 2026-10-27
+
+- Memperbaiki grid Model Beta yang meluap pada ponsel dan mengaktifkan kembali aturan tampilan card hasil.
+- Menyesuaikan kontrol kamus, tinggi pembaca PDF, lapisan kontrol peta, dan safe area iPhone.
+- Mengganti versi stylesheet agar semua halaman memuat layout mobile terbaru.
+
+
 ## 1.4.3 - 2026-10-26
 
 - Mengganti versi URL CSS agar browser dan service worker memuat grid KPI yang telah diperbaiki.

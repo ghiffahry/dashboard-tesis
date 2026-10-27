@@ -80,3 +80,11 @@ Backlog ini mengumpulkan gagasan pengembangan sebelumnya. Fitur yang sudah berja
 ## Cache tampilan KPI 1.4.3
 
 - [x] Ganti versi URL stylesheet di seluruh laman agar cache lama tidak menutupi grid yang sudah diperbaiki.
+
+## Audit mobile 1.4.4
+
+- [x] Cegah grid Model Beta meluap pada Android dan iPhone.
+- [x] Pastikan card hasil, tabel yang dapat digeser, dan grafik tetap berada di dalam viewport.
+- [x] Sisakan area aman untuk navigasi bawah dan home indicator iPhone.
+- [x] Cegah kontrol zoom menutupi panel filter peta.
+- [x] Atur tinggi pembaca PDF agar tidak tertutup navigasi bawah.
