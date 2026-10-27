@@ -1,5 +1,10 @@
 # Catatan perubahan
 
+## 1.4.6 - 2026-10-27
+
+- Menambahkan pratinjau PDF berbasis PDF.js langsung di halaman Draft pada ponsel.
+- Kontrol halaman dan zoom tetap tersedia; tombol buka tab dan unduh menjadi jalur cadangan.
+
 ## 1.4.5 - 2026-10-27
 
 - Menghapus perilaku tombol palsu pada matriks perpindahan kuartil dan mempertahankan visualisasi sebagai grafik statis yang aksesibel.

@@ -91,3 +91,6 @@ body main.draft-main.draft-clean-main{display:flex!important;flex-direction:colu
  .beta-results .beta-chart-scroll,.beta-results .data-table-wrap,.beta-component-wrap,.beta-comparison .data-table-wrap{width:100%;max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain}
  .draft-viewer-full #draft-pdf-viewer{height:min(560px,max(220px,calc(100dvh - 405px - env(safe-area-inset-bottom))));min-height:220px}
 }
+
+/* Pratinjau PDF berbasis canvas untuk browser ponsel yang tidak mendukung PDF di iframe. */
+.pdf-canvas-preview{display:grid;gap:8px;padding:8px 0}.pdf-canvas-preview[hidden]{display:none}.pdf-canvas-preview>p{margin:0;color:var(--muted);font-size:12px}.pdf-page-surface{display:flex;justify-content:center;overflow:auto;max-width:100%;padding:8px;background:#e9eef3;border:1px solid var(--line);border-radius:8px;overscroll-behavior:contain}.pdf-page-surface canvas{display:block;max-width:none;height:auto;box-shadow:0 2px 12px #0f284733;background:#fff}.draft-viewer-full iframe[hidden]{display:none}@media(max-width:760px){.draft-viewer-full .pdf-page-surface{min-height:58dvh;align-items:flex-start;justify-content:flex-start;padding:8px}.pdf-canvas-preview{min-height:60dvh}}
