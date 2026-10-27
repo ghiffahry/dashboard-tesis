@@ -1,9 +1,9 @@
 # Catatan perubahan
 
-## 1.4.6 - 2026-10-27
+## 1.4.7 - 2026-10-27
 
 - Menambahkan pratinjau PDF berbasis PDF.js langsung di halaman Draft pada ponsel.
-- Kontrol halaman dan zoom tetap tersedia; tombol buka tab dan unduh menjadi jalur cadangan.
+- Kontrol halaman dan zoom tetap tersedia; satu pratinjau dipakai bersama tombol unduh.
 
 ## 1.4.5 - 2026-10-27
 

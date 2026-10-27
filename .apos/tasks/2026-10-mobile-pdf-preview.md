@@ -9,8 +9,11 @@
 - Browser dengan lebar layar sampai 760 px memakai PDF.js 5.4.624 untuk merender satu halaman PDF pada canvas.
 - Kontrol halaman dan zoom yang ada tetap dipakai.
 - Desktop tetap memakai PDF viewer bawaan browser.
-- Tombol buka tab baru dan unduh tetap tersedia. Jika PDF.js atau jaringan CDN gagal, iframe dan jalur cadangan ditampilkan.
+- Tombol unduh tetap tersedia. Jika PDF.js atau jaringan CDN gagal, iframe native ditampilkan sebagai fallback.
 - PDF.js dimuat dari CDN jsDelivr; tidak memerlukan server, backend, atau API key. Pratinjau perlu koneksi internet.
+
+- Menghapus tautan buka tab baru agar tidak muncul pembaca PDF kedua bersama pratinjau ponsel.
+- Memaksa iframe native tersembunyi pada ponsel; iframe hanya dipakai di desktop atau saat fallback.
 
 ## Validasi
 - Build artifact `_site` berhasil, 43 berkas.

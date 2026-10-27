@@ -86,7 +86,7 @@ function showPreviewFallback(error) {
   preview.hidden = true;
   frame.hidden = false;
   previewStatus.textContent = "Pratinjau tidak dapat dimuat. Buka PDF di tab baru atau unduh berkas.";
-  document.querySelector(".draft-viewer-note").textContent = "Pratinjau PDF tidak tersedia di perangkat ini. Gunakan Buka tab baru atau Unduh PDF.";
+  document.querySelector(".draft-viewer-note").textContent = "Pratinjau PDF tidak tersedia di perangkat ini. Unduh PDF untuk membukanya di aplikasi pembaca.";
 }
 
 async function startMobilePreview() {
@@ -148,6 +148,6 @@ document.getElementById("pdf-fullscreen").addEventListener("click", async () => 
     if (document.fullscreenElement) await document.exitFullscreen();
     else await target.requestFullscreen();
   } catch {
-    note.textContent = "Mode layar penuh tidak tersedia di browser ini. Gunakan tombol Buka tab baru atau Unduh PDF.";
+    note.textContent = "Mode layar penuh tidak tersedia di browser ini. Gunakan Unduh PDF untuk membuka berkas di aplikasi pembaca.";
   }
 });
