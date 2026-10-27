@@ -1,5 +1,11 @@
 # Catatan perubahan
 
+## 1.4.5 - 2026-10-27
+
+- Menghapus perilaku tombol palsu pada matriks perpindahan kuartil dan mempertahankan visualisasi sebagai grafik statis yang aksesibel.
+- Menyamakan istilah “Moran lokal (LISA)” dan menambahkan navigasi tombol panah pada tab Metode.
+- Memastikan kontrol peta, filter, navigasi, tautan, dan PDF bekerja lintas halaman.
+
 ## 1.4.4 - 2026-10-27
 
 - Memperbaiki grid Model Beta yang meluap pada ponsel dan mengaktifkan kembali aturan tampilan card hasil.
